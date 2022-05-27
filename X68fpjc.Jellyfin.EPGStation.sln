@@ -1,0 +1,28 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X68fpjc.Jellyfin.EPGStation.Infrastructure", "X68fpjc.Jellyfin.EPGStation.Infrastructure\X68fpjc.Jellyfin.EPGStation.Infrastructure.csproj", "{3835582F-97E9-46BE-9F83-B5B0AF442271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X68fpjc.Jellyfin.EPGStation", "X68fpjc.Jellyfin.EPGStation\X68fpjc.Jellyfin.EPGStation.csproj", "{A0888CDC-4C6F-4861-A6DC-B61DA77C62B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X68fpjc.Jellyfin.EPGStation.OpenAPI", "X68fpjc.Jellyfin.EPGStation.OpenAPI\X68fpjc.Jellyfin.EPGStation.OpenAPI.csproj", "{1CABC209-ADD2-4F90-8F7C-06A8C7B3D125}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3835582F-97E9-46BE-9F83-B5B0AF442271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3835582F-97E9-46BE-9F83-B5B0AF442271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3835582F-97E9-46BE-9F83-B5B0AF442271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3835582F-97E9-46BE-9F83-B5B0AF442271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0888CDC-4C6F-4861-A6DC-B61DA77C62B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0888CDC-4C6F-4861-A6DC-B61DA77C62B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0888CDC-4C6F-4861-A6DC-B61DA77C62B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0888CDC-4C6F-4861-A6DC-B61DA77C62B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CABC209-ADD2-4F90-8F7C-06A8C7B3D125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CABC209-ADD2-4F90-8F7C-06A8C7B3D125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CABC209-ADD2-4F90-8F7C-06A8C7B3D125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CABC209-ADD2-4F90-8F7C-06A8C7B3D125}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>X68fpjc.Jellyfin.EPGStation.Infrastructure</RootNamespace>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\X68fpjc.Jellyfin.EPGStation\X68fpjc.Jellyfin.EPGStation.csproj" />
+    <ProjectReference Include="..\X68fpjc.Jellyfin.EPGStation.OpenAPI\X68fpjc.Jellyfin.EPGStation.OpenAPI.csproj" />
+  </ItemGroup>
+
+</Project>

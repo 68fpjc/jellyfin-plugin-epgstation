@@ -1,0 +1,20 @@
+---
+name: "EPGStation"
+guid: "aa93bc86-2b92-4139-aa56-7cc83c282a32"
+version: "1.0.0.0"
+targetAbi: "10.7.0.0"
+framework: "net5.0"
+overview: "EPGStation metadata provider"
+description: >-
+  Get metadata for video files recorded with EPGStation
+category: "Metadata"
+owner: "68fpjc"
+artifacts:
+  - "X68fpjc.Jellyfin.EPGStation.dll"
+  - "X68fpjc.Jellyfin.EPGStation.Infrastructure.dll"
+  - "X68fpjc.Jellyfin.EPGStation.OpenAPI.dll"
+  - "JsonSubTypes.dll"
+  - "RestSharp.dll"
+  - "Polly.dll"
+changelog: >-
+  Initial release
