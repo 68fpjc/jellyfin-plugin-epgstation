@@ -21,6 +21,12 @@
                         <label class="inputLabel inputLabelUnfocused" for="Limit">表示上限</label>
                         <input id="Limit" name="Limit" type="number" is="emby-input" min="0" />
                     </div>
+                    <div class="checkboxContainer checkboxContainer-withDescription">
+                        <label class="emby-checkbox-label">
+                            <input id="SyncRemove" name="SyncRemove" type="checkbox" is="emby-checkbox" />
+                            <span>メディア削除時にEPGStation側の録画情報も削除する</span>
+                        </label>
+                    </div>
                     <div>
                         <button is="emby-button" type="submit" class="raised button-submit block emby-button">
                             <span>Save</span>
@@ -40,6 +46,7 @@
                     ApiClient.getPluginConfiguration(Config.pluginUniqueId).then(function (config) {
                         document.querySelector('#Url').value = config.Url;
                         document.querySelector('#Limit').value = config.Limit;
+                        document.querySelector('#SyncRemove').checked = config.SyncRemove;
                         Dashboard.hideLoadingMsg();
                     });
                 });
@@ -50,6 +57,7 @@
                     ApiClient.getPluginConfiguration(Config.pluginUniqueId).then(function (config) {
                         config.Url = document.querySelector('#Url').value;
                         config.Limit = document.querySelector('#Limit').value;
+                        config.SyncRemove = document.querySelector('#SyncRemove').checked;
                         ApiClient.updatePluginConfiguration(Config.pluginUniqueId, config).then(function (result) {
                             Dashboard.processPluginConfigurationUpdateResult(result);
                         });

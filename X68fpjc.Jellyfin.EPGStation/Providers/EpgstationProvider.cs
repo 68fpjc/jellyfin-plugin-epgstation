@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using MediaBrowser.Controller.Entities.Movies;
+using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Providers;
 using MediaBrowser.Model.Providers;
 
@@ -15,12 +16,12 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
         /// <inheritdoc />
         public string Name => EpgstationPlugin.Instance.Name;
 
-
         private readonly IEpgstationClient _epgstationClient;
 
-        public EPGStationProvider(IEpgstationClient epgstationClient)
+        public EPGStationProvider(IEpgstationClient epgstationClient, ILibraryManager libraryManager)
         {
             _epgstationClient = epgstationClient;
+            libraryManager.ItemRemoved += OnItemRemoved;
         }
 
         /// <inheritdoc />
@@ -38,10 +39,10 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
             };
             if (info.ProviderIds.TryGetValue(Name, out var providerId))
             {
-                if (int.TryParse(providerId, out var id))
+                if (int.TryParse(providerId, out var recordedId))
                 {
                     var searchResult = await _epgstationClient.FindRecordedByIdAsync(
-                        id,
+                        recordedId,
                         EpgstationPlugin.Instance.Configuration.Url,
                         EpgstationPlugin.Instance.Configuration.Limit,
                         cancellationToken);
@@ -117,6 +118,24 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
             };
             ret.ProviderIds.Add(Name, sour.Id.ToString());
             return ret;
+        }
+
+        private void OnItemRemoved(object sender, ItemChangeEventArgs e)
+        {
+            if (EpgstationPlugin.Instance.Configuration.SyncRemove
+                && e.Item is Movie item
+                && item.ProviderIds.TryGetValue(Name, out var providerId)
+                && int.TryParse(providerId, out var recordedId)
+                && item.Path != null)
+            {
+                using CancellationTokenSource cts = new CancellationTokenSource();
+                _epgstationClient.DeleteVideoFileAsync(
+                    recordedId,
+                    item.Path,
+                    EpgstationPlugin.Instance.Configuration.Url,
+                    EpgstationPlugin.Instance.Configuration.Limit,
+                    cts.Token);
+            }
         }
     }
 }

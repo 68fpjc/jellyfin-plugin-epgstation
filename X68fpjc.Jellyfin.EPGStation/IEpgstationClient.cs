@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,10 +28,12 @@ namespace X68fpjc.Jellyfin.EPGStation
 
     public interface IEpgstationClient
     {
-        Task<Recorded> FindRecordedByIdAsync(int id, string url, int limit, CancellationToken cancellationToken);
+        Task<Recorded> FindRecordedByIdAsync(int recordedId, string url, int limit, CancellationToken cancellationToken);
 
         Task<Recorded> FindRecordedByFilenameAsync(string pathname, string url, int limit, CancellationToken cancellationToken);
 
         Task<IEnumerable<Recorded>> FindRecordedByKeywordAsync(string keyword, string url, int limit, CancellationToken cancellationToken);
+
+        Task DeleteVideoFileAsync(int recordedId, string pathname, string url, int limit, CancellationToken cancellationToken);
     }
 }

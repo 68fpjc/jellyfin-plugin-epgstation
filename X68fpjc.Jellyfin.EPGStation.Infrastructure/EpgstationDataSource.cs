@@ -9,30 +9,28 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
 {
     public class EpgstationDataSource : IEpgstationClient
     {
-        async Task<Recorded> IEpgstationClient.FindRecordedByIdAsync(int id, string url, int limit, CancellationToken cancellationToken)
+        async Task<Recorded> IEpgstationClient.FindRecordedByIdAsync(int recordedId, string url, int limit, CancellationToken cancellationToken)
         {
-            var recordedApi = CreateApi(url);
-            var ret = await recordedApi.RecordedRecordedIdGetAsync(
-                recordedId: id,
+            var recordedItem = await CreateApi(url).RecordedRecordedIdGetAsync(
+                recordedId: recordedId,
                 isHalfWidth: true,
                 cancellationToken: cancellationToken)
                 .ConfigureAwait(false);
-            return ret == null ? null
+            return recordedItem == null ? null
                 : new Recorded(
-                    ret.Id,
-                    ret.Name,
-                    ret.Description,
-                    ret.Extended,
-                    ret.StartAt,
-                    ret.EndAt,
-                    ret.Thumbnails);
+                    recordedItem.Id,
+                    recordedItem.Name,
+                    recordedItem.Description,
+                    recordedItem.Extended,
+                    recordedItem.StartAt,
+                    recordedItem.EndAt,
+                    recordedItem.Thumbnails);
         }
 
         async Task<Recorded> IEpgstationClient.FindRecordedByFilenameAsync(string pathname, string url, int limit, CancellationToken cancellationToken)
         {
             string filename = Path.GetFileName(pathname);
-            var recordedApi = CreateApi(url);
-            var records = await recordedApi.RecordedGetAsync(
+            var records = await CreateApi(url).RecordedGetAsync(
                 isHalfWidth: true,
                 limit: limit,
                 cancellationToken: cancellationToken)
@@ -54,8 +52,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
 
         async Task<IEnumerable<Recorded>> IEpgstationClient.FindRecordedByKeywordAsync(string keyword, string url, int limit, CancellationToken cancellationToken)
         {
-            var recordedApi = CreateApi(url);
-            var records = await recordedApi.RecordedGetAsync(
+            var records = await CreateApi(url).RecordedGetAsync(
                 isHalfWidth: true,
                 limit: limit,
                 cancellationToken: cancellationToken)
@@ -75,7 +72,36 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
                     a.Thumbnails));
         }
 
+        async Task IEpgstationClient.DeleteVideoFileAsync(int recordedId, string pathname, string url, int limit, CancellationToken cancellationToken)
+        {
+            string filename = Path.GetFileName(pathname);
+            var recordedItem = await CreateApi(url).RecordedRecordedIdGetAsync(
+                recordedId: recordedId,
+                isHalfWidth: true,
+                cancellationToken: cancellationToken)
+                .ConfigureAwait(false);
+            if (recordedItem != null)
+            {
+                var videoFile = recordedItem.VideoFiles
+                    .Where(a => a.Filename.Equals(filename))
+                    .FirstOrDefault();
+                if (videoFile != null)
+                {
+                    _ = CreateVideosApi(url).VideosVideoFileIdDeleteAsync(videoFile.Id, cancellationToken)
+                        .ConfigureAwait(false);
+                }
+            }
+        }
+
         private static RecordedApi CreateApi(string url)
+        {
+            return new(new OpenAPI.Client.Configuration
+            {
+                BasePath = url + "/api"
+            });
+        }
+
+        private static VideosApi CreateVideosApi(string url)
         {
             return new(new OpenAPI.Client.Configuration
             {
