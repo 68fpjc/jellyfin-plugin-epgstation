@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
@@ -13,9 +14,6 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
 {
     public class EPGStationProvider : IRemoteMetadataProvider<Movie, MovieInfo>
     {
-        /// <inheritdoc />
-        public string Name => EpgstationPlugin.Instance.Name;
-
         private readonly IEpgstationClient _epgstationClient;
 
         public EPGStationProvider(IEpgstationClient epgstationClient, ILibraryManager libraryManager)
@@ -23,6 +21,9 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
             _epgstationClient = epgstationClient;
             libraryManager.ItemRemoved += OnItemRemoved;
         }
+
+        /// <inheritdoc />
+        public string Name => EpgstationPlugin.Instance.Name;
 
         /// <inheritdoc />
         Task<HttpResponseMessage> IRemoteSearchProvider.GetImageResponse(string url, CancellationToken cancellationToken)
@@ -72,6 +73,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
                     }
                 }
             }
+
             return result;
         }
 
@@ -99,9 +101,9 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
                         PremiereDate = DateTimeOffset.FromUnixTimeMilliseconds(a.StartAt).LocalDateTime,
                         ImageUrl = a.Thumbnails == null || a.Thumbnails.Count == 0
                             ? null
-                            : EpgstationPlugin.Instance.Configuration.Url + "/api/thumbnails/" + a.Thumbnails[0].ToString()
+                            : EpgstationPlugin.Instance.Configuration.Url + "/api/thumbnails/" + a.Thumbnails[0].ToString(CultureInfo.InvariantCulture)
                     };
-                    ret.ProviderIds.Add(Name, a.Id.ToString());
+                    ret.ProviderIds.Add(Name, a.Id.ToString(CultureInfo.InvariantCulture));
                     return ret;
                 });
             }
@@ -116,7 +118,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
                 PremiereDate = DateTimeOffset.FromUnixTimeMilliseconds(sour.StartAt).LocalDateTime,
                 EndDate = DateTimeOffset.FromUnixTimeMilliseconds(sour.EndAt).LocalDateTime
             };
-            ret.ProviderIds.Add(Name, sour.Id.ToString());
+            ret.ProviderIds.Add(Name, sour.Id.ToString(CultureInfo.InvariantCulture));
             return ret;
         }
 

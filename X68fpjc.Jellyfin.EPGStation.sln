@@ -1,4 +1,4 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 #
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X68fpjc.Jellyfin.EPGStation.Infrastructure", "X68fpjc.Jellyfin.EPGStation.Infrastructure\X68fpjc.Jellyfin.EPGStation.Infrastructure.csproj", "{3835582F-97E9-46BE-9F83-B5B0AF442271}"
 EndProject

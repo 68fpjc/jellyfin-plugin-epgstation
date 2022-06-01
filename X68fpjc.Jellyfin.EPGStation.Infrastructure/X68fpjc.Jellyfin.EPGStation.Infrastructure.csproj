@@ -5,11 +5,19 @@
     <RootNamespace>X68fpjc.Jellyfin.EPGStation.Infrastructure</RootNamespace>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <FileVersion>1.1.0.0</FileVersion>
+    <CodeAnalysisRuleSet>../jellyfin.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\X68fpjc.Jellyfin.EPGStation\X68fpjc.Jellyfin.EPGStation.csproj" />
     <ProjectReference Include="..\X68fpjc.Jellyfin.EPGStation.OpenAPI\X68fpjc.Jellyfin.EPGStation.OpenAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

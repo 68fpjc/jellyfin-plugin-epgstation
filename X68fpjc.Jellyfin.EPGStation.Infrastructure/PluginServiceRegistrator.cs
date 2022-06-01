@@ -1,4 +1,4 @@
-﻿using MediaBrowser.Common.Plugins;
+using MediaBrowser.Common.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using X68fpjc.Jellyfin.EPGStation.Infrastructure;
 

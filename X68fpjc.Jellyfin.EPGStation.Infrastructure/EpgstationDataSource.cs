@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -37,8 +37,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
                 .ConfigureAwait(false);
             return records._Records
                     .Where(a => a.VideoFiles
-                        .Any(b => b.Filename.Equals(filename))
-                    )
+                        .Any(b => b.Filename.Equals(filename)))
                     .Select(a => new Recorded(
                         a.Id,
                         a.Name,
@@ -60,8 +59,8 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
             return records._Records
                 .Where(a =>
                     a.Name.Contains(keyword)
-                    || a.Description != null && a.Description.Contains(keyword)
-                    || a.Extended != null && a.Extended.Contains(keyword))
+                    || (a.Description != null && a.Description.Contains(keyword))
+                    || (a.Extended != null && a.Extended.Contains(keyword)))
                 .Select(a => new Recorded(
                     a.Id,
                     a.Name,
@@ -95,7 +94,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
 
         private static RecordedApi CreateApi(string url)
         {
-            return new(new OpenAPI.Client.Configuration
+            return new (new OpenAPI.Client.Configuration
             {
                 BasePath = url + "/api"
             });
@@ -103,7 +102,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
 
         private static VideosApi CreateVideosApi(string url)
         {
-            return new(new OpenAPI.Client.Configuration
+            return new (new OpenAPI.Client.Configuration
             {
                 BasePath = url + "/api"
             });
