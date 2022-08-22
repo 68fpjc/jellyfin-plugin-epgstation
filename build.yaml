@@ -2,8 +2,8 @@
 name: "EPGStation"
 guid: "aa93bc86-2b92-4139-aa56-7cc83c282a32"
 version: "1.1.0.0"
-targetAbi: "10.7.0.0"
-framework: "net5.0"
+targetAbi: "10.8.0.0"
+framework: "net6.0"
 overview: "EPGStation metadata provider"
 description: >-
   Get metadata for video files recorded with EPGStation
