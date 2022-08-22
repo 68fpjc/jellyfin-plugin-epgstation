@@ -38,21 +38,18 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
             {
                 HasMetadata = false
             };
-            if (info.ProviderIds.TryGetValue(Name, out var providerId))
+            if (info.ProviderIds.TryGetValue(Name, out var providerId) && int.TryParse(providerId, out var recordedId))
             {
-                if (int.TryParse(providerId, out var recordedId))
+                var searchResult = await _epgstationClient.FindRecordedByIdAsync(
+                    recordedId,
+                    EpgstationPlugin.Instance.Configuration.Url,
+                    EpgstationPlugin.Instance.Configuration.Limit,
+                    cancellationToken);
+                if (searchResult != null)
                 {
-                    var searchResult = await _epgstationClient.FindRecordedByIdAsync(
-                        recordedId,
-                        EpgstationPlugin.Instance.Configuration.Url,
-                        EpgstationPlugin.Instance.Configuration.Limit,
-                        cancellationToken);
-                    if (searchResult != null)
-                    {
-                        result.HasMetadata = true;
-                        result.ResultLanguage = info.MetadataLanguage;
-                        result.Item = ToMovie(searchResult);
-                    }
+                    result.HasMetadata = true;
+                    result.ResultLanguage = info.MetadataLanguage;
+                    result.Item = ToMovie(searchResult);
                 }
             }
             else
@@ -80,11 +77,17 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
         /// <inheritdoc />
         async Task<IEnumerable<RemoteSearchResult>> IRemoteSearchProvider<MovieInfo>.GetSearchResults(MovieInfo searchInfo, CancellationToken cancellationToken)
         {
-            if (string.IsNullOrWhiteSpace(searchInfo.Name))
+            if (searchInfo.ProviderIds.TryGetValue(Name, out var providerId) && int.TryParse(providerId, out var recordedId))
             {
-                return Enumerable.Empty<RemoteSearchResult>();
+                var searchResult = await _epgstationClient.FindRecordedByIdAsync(
+                    recordedId,
+                    EpgstationPlugin.Instance.Configuration.Url,
+                    EpgstationPlugin.Instance.Configuration.Limit,
+                    cancellationToken)
+                    .ConfigureAwait(false);
+                return Enumerable.Repeat(searchResult, 1).Where(a => a != null).Select(a => ToRemoteSearchResult(a));
             }
-            else
+            else if (!string.IsNullOrWhiteSpace(searchInfo.Name))
             {
                 var searchResult = await _epgstationClient.FindRecordedByKeywordAsync(
                     searchInfo.Name,
@@ -92,21 +95,25 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
                     EpgstationPlugin.Instance.Configuration.Limit,
                     cancellationToken)
                     .ConfigureAwait(false);
-                return searchResult.Select(a =>
-                {
-                    var ret = new RemoteSearchResult
-                    {
-                        Name = a.Name,
-                        Overview = a.Description + "\n\n" + a.Extended,
-                        PremiereDate = DateTimeOffset.FromUnixTimeMilliseconds(a.StartAt).LocalDateTime,
-                        ImageUrl = a.Thumbnails == null || a.Thumbnails.Count == 0
-                            ? null
-                            : EpgstationPlugin.Instance.Configuration.Url + "/api/thumbnails/" + a.Thumbnails[0].ToString(CultureInfo.InvariantCulture)
-                    };
-                    ret.ProviderIds.Add(Name, a.Id.ToString(CultureInfo.InvariantCulture));
-                    return ret;
-                });
+                return searchResult.Select(a => ToRemoteSearchResult(a));
             }
+
+            return Enumerable.Empty<RemoteSearchResult>();
+        }
+
+        private RemoteSearchResult ToRemoteSearchResult(Recorded sour)
+        {
+            var ret = new RemoteSearchResult
+            {
+                Name = sour.Name,
+                Overview = sour.Description + "\n\n" + sour.Extended,
+                PremiereDate = DateTimeOffset.FromUnixTimeMilliseconds(sour.StartAt).LocalDateTime,
+                ImageUrl = sour.Thumbnails == null || sour.Thumbnails.Count == 0
+                    ? null
+                    : EpgstationPlugin.Instance.Configuration.Url + "/api/thumbnails/" + sour.Thumbnails[0].ToString(CultureInfo.InvariantCulture)
+            };
+            ret.ProviderIds.Add(Name, sour.Id.ToString(CultureInfo.InvariantCulture));
+            return ret;
         }
 
         private Movie ToMovie(Recorded sour)

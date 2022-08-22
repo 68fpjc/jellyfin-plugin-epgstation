@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using X68fpjc.Jellyfin.EPGStation.OpenAPI.Api;
+using X68fpjc.Jellyfin.EPGStation.OpenAPI.Client;
 
 namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
 {
@@ -11,20 +12,27 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
     {
         async Task<Recorded> IEpgstationClient.FindRecordedByIdAsync(int recordedId, string url, int limit, CancellationToken cancellationToken)
         {
-            var recordedItem = await CreateApi(url).RecordedRecordedIdGetAsync(
-                recordedId: recordedId,
-                isHalfWidth: true,
-                cancellationToken: cancellationToken)
-                .ConfigureAwait(false);
-            return recordedItem == null ? null
-                : new Recorded(
-                    recordedItem.Id,
-                    recordedItem.Name,
-                    recordedItem.Description,
-                    recordedItem.Extended,
-                    recordedItem.StartAt,
-                    recordedItem.EndAt,
-                    recordedItem.Thumbnails);
+            try
+            {
+                var recordedItem = await CreateApi(url).RecordedRecordedIdGetAsync(
+                    recordedId: recordedId,
+                    isHalfWidth: true,
+                    cancellationToken: cancellationToken)
+                    .ConfigureAwait(false);
+                return recordedItem == null ? null
+                    : new Recorded(
+                        recordedItem.Id,
+                        recordedItem.Name,
+                        recordedItem.Description,
+                        recordedItem.Extended,
+                        recordedItem.StartAt,
+                        recordedItem.EndAt,
+                        recordedItem.Thumbnails);
+            }
+            catch (ApiException)
+            {
+                return null;
+            }
         }
 
         async Task<Recorded> IEpgstationClient.FindRecordedByFilenameAsync(string pathname, string url, int limit, CancellationToken cancellationToken)
@@ -94,7 +102,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
 
         private static RecordedApi CreateApi(string url)
         {
-            return new (new OpenAPI.Client.Configuration
+            return new(new OpenAPI.Client.Configuration
             {
                 BasePath = url + "/api"
             });
@@ -102,7 +110,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
 
         private static VideosApi CreateVideosApi(string url)
         {
-            return new (new OpenAPI.Client.Configuration
+            return new(new OpenAPI.Client.Configuration
             {
                 BasePath = url + "/api"
             });
