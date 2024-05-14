@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// recorded が持つ genre のリスト
     /// </summary>
     [DataContract(Name = "RecordedGenreListItem")]
-    public partial class RecordedGenreListItem : IEquatable<RecordedGenreListItem>, IValidatableObject
+    public partial class RecordedGenreListItem : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordedGenreListItem" /> class.
@@ -51,14 +51,14 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 録画数
         /// </summary>
         /// <value>録画数</value>
-        [DataMember(Name = "cnt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "cnt", IsRequired = true, EmitDefaultValue = true)]
         public int Cnt { get; set; }
 
         /// <summary>
         /// ジャンル
         /// </summary>
         /// <value>ジャンル</value>
-        [DataMember(Name = "genre", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "genre", IsRequired = true, EmitDefaultValue = true)]
         public int Genre { get; set; }
 
         /// <summary>
@@ -85,58 +85,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RecordedGenreListItem);
-        }
-
-        /// <summary>
-        /// Returns true if RecordedGenreListItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RecordedGenreListItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RecordedGenreListItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Cnt == input.Cnt ||
-                    this.Cnt.Equals(input.Cnt)
-                ) && 
-                (
-                    this.Genre == input.Genre ||
-                    this.Genre.Equals(input.Genre)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Cnt.GetHashCode();
-                hashCode = (hashCode * 59) + this.Genre.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

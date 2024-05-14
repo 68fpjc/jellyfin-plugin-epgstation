@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 予約リストitem
     /// </summary>
     [DataContract(Name = "ReserveListItem")]
-    public partial class ReserveListItem : IEquatable<ReserveListItem>, IValidatableObject
+    public partial class ReserveListItem : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReserveListItem" /> class.
@@ -53,7 +53,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 予約 id
         /// </summary>
         /// <value>予約 id</value>
-        [DataMember(Name = "reserveId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "reserveId", IsRequired = true, EmitDefaultValue = true)]
         public int ReserveId { get; set; }
 
         /// <summary>
@@ -95,63 +95,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ReserveListItem);
-        }
-
-        /// <summary>
-        /// Returns true if ReserveListItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ReserveListItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ReserveListItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ReserveId == input.ReserveId ||
-                    this.ReserveId.Equals(input.ReserveId)
-                ) && 
-                (
-                    this.ProgramId == input.ProgramId ||
-                    this.ProgramId.Equals(input.ProgramId)
-                ) && 
-                (
-                    this.RuleId == input.RuleId ||
-                    this.RuleId.Equals(input.RuleId)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.ReserveId.GetHashCode();
-                hashCode = (hashCode * 59) + this.ProgramId.GetHashCode();
-                hashCode = (hashCode * 59) + this.RuleId.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ProgramId (long) maximum
             if (this.ProgramId > (long)655356553565535)

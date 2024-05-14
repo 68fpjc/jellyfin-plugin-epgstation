@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// ストレージ使用状況
     /// </summary>
     [DataContract(Name = "StorageItem")]
-    public partial class StorageItem : IEquatable<StorageItem>, IValidatableObject
+    public partial class StorageItem : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StorageItem" /> class.
@@ -60,28 +60,28 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// ディスク名
         /// </summary>
         /// <value>ディスク名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// 空き容量 (byte)
         /// </summary>
         /// <value>空き容量 (byte)</value>
-        [DataMember(Name = "available", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "available", IsRequired = true, EmitDefaultValue = true)]
         public int Available { get; set; }
 
         /// <summary>
         /// 使用量 (byte)
         /// </summary>
         /// <value>使用量 (byte)</value>
-        [DataMember(Name = "used", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "used", IsRequired = true, EmitDefaultValue = true)]
         public int Used { get; set; }
 
         /// <summary>
         /// 総容量 (byte)
         /// </summary>
         /// <value>総容量 (byte)</value>
-        [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = true)]
         public int Total { get; set; }
 
         /// <summary>
@@ -110,72 +110,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as StorageItem);
-        }
-
-        /// <summary>
-        /// Returns true if StorageItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of StorageItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(StorageItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Available == input.Available ||
-                    this.Available.Equals(input.Available)
-                ) && 
-                (
-                    this.Used == input.Used ||
-                    this.Used.Equals(input.Used)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    this.Total.Equals(input.Total)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Available.GetHashCode();
-                hashCode = (hashCode * 59) + this.Used.GetHashCode();
-                hashCode = (hashCode * 59) + this.Total.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

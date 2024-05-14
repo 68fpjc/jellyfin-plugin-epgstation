@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 予約カウント
     /// </summary>
     [DataContract(Name = "ReserveCnts")]
-    public partial class ReserveCnts : IEquatable<ReserveCnts>, IValidatableObject
+    public partial class ReserveCnts : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReserveCnts" /> class.
@@ -55,28 +55,28 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 通常予約数
         /// </summary>
         /// <value>通常予約数</value>
-        [DataMember(Name = "normal", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "normal", IsRequired = true, EmitDefaultValue = true)]
         public int Normal { get; set; }
 
         /// <summary>
         /// 競合予約数
         /// </summary>
         /// <value>競合予約数</value>
-        [DataMember(Name = "conflicts", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "conflicts", IsRequired = true, EmitDefaultValue = true)]
         public int Conflicts { get; set; }
 
         /// <summary>
         /// 競合予約数
         /// </summary>
         /// <value>競合予約数</value>
-        [DataMember(Name = "skips", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "skips", IsRequired = true, EmitDefaultValue = true)]
         public int Skips { get; set; }
 
         /// <summary>
         /// 重複予約数
         /// </summary>
         /// <value>重複予約数</value>
-        [DataMember(Name = "overlaps", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "overlaps", IsRequired = true, EmitDefaultValue = true)]
         public int Overlaps { get; set; }
 
         /// <summary>
@@ -105,68 +105,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ReserveCnts);
-        }
-
-        /// <summary>
-        /// Returns true if ReserveCnts instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ReserveCnts to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ReserveCnts input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Normal == input.Normal ||
-                    this.Normal.Equals(input.Normal)
-                ) && 
-                (
-                    this.Conflicts == input.Conflicts ||
-                    this.Conflicts.Equals(input.Conflicts)
-                ) && 
-                (
-                    this.Skips == input.Skips ||
-                    this.Skips.Equals(input.Skips)
-                ) && 
-                (
-                    this.Overlaps == input.Overlaps ||
-                    this.Overlaps.Equals(input.Overlaps)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Normal.GetHashCode();
-                hashCode = (hashCode * 59) + this.Conflicts.GetHashCode();
-                hashCode = (hashCode * 59) + this.Skips.GetHashCode();
-                hashCode = (hashCode * 59) + this.Overlaps.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

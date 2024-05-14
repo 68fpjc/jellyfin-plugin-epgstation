@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 録画番組情報
     /// </summary>
     [DataContract(Name = "RecordedItem")]
-    public partial class RecordedItem : IEquatable<RecordedItem>, IValidatableObject
+    public partial class RecordedItem : IValidatableObject
     {
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 録画済み番組 id
         /// </summary>
         /// <value>録画済み番組 id</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public int Id { get; set; }
 
         /// <summary>
@@ -156,21 +156,21 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 時刻 (ms)
         /// </summary>
         /// <value>時刻 (ms)</value>
-        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = true)]
         public long StartAt { get; set; }
 
         /// <summary>
         /// 時刻 (ms)
         /// </summary>
         /// <value>時刻 (ms)</value>
-        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = true)]
         public long EndAt { get; set; }
 
         /// <summary>
         /// 番組名
         /// </summary>
         /// <value>番組名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -350,228 +350,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RecordedItem);
-        }
-
-        /// <summary>
-        /// Returns true if RecordedItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RecordedItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RecordedItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.RuleId == input.RuleId ||
-                    this.RuleId.Equals(input.RuleId)
-                ) && 
-                (
-                    this.ProgramId == input.ProgramId ||
-                    this.ProgramId.Equals(input.ProgramId)
-                ) && 
-                (
-                    this.ChannelId == input.ChannelId ||
-                    this.ChannelId.Equals(input.ChannelId)
-                ) && 
-                (
-                    this.StartAt == input.StartAt ||
-                    this.StartAt.Equals(input.StartAt)
-                ) && 
-                (
-                    this.EndAt == input.EndAt ||
-                    this.EndAt.Equals(input.EndAt)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Extended == input.Extended ||
-                    (this.Extended != null &&
-                    this.Extended.Equals(input.Extended))
-                ) && 
-                (
-                    this.RawExtended == input.RawExtended ||
-                    (this.RawExtended != null &&
-                    this.RawExtended.Equals(input.RawExtended))
-                ) && 
-                (
-                    this.Genre1 == input.Genre1 ||
-                    this.Genre1.Equals(input.Genre1)
-                ) && 
-                (
-                    this.SubGenre1 == input.SubGenre1 ||
-                    this.SubGenre1.Equals(input.SubGenre1)
-                ) && 
-                (
-                    this.Genre2 == input.Genre2 ||
-                    this.Genre2.Equals(input.Genre2)
-                ) && 
-                (
-                    this.SubGenre2 == input.SubGenre2 ||
-                    this.SubGenre2.Equals(input.SubGenre2)
-                ) && 
-                (
-                    this.Genre3 == input.Genre3 ||
-                    this.Genre3.Equals(input.Genre3)
-                ) && 
-                (
-                    this.SubGenre3 == input.SubGenre3 ||
-                    this.SubGenre3.Equals(input.SubGenre3)
-                ) && 
-                (
-                    this.VideoType == input.VideoType ||
-                    this.VideoType.Equals(input.VideoType)
-                ) && 
-                (
-                    this.VideoResolution == input.VideoResolution ||
-                    this.VideoResolution.Equals(input.VideoResolution)
-                ) && 
-                (
-                    this.VideoStreamContent == input.VideoStreamContent ||
-                    this.VideoStreamContent.Equals(input.VideoStreamContent)
-                ) && 
-                (
-                    this.VideoComponentType == input.VideoComponentType ||
-                    this.VideoComponentType.Equals(input.VideoComponentType)
-                ) && 
-                (
-                    this.AudioSamplingRate == input.AudioSamplingRate ||
-                    this.AudioSamplingRate.Equals(input.AudioSamplingRate)
-                ) && 
-                (
-                    this.AudioComponentType == input.AudioComponentType ||
-                    this.AudioComponentType.Equals(input.AudioComponentType)
-                ) && 
-                (
-                    this.IsRecording == input.IsRecording ||
-                    this.IsRecording.Equals(input.IsRecording)
-                ) && 
-                (
-                    this.Thumbnails == input.Thumbnails ||
-                    this.Thumbnails != null &&
-                    input.Thumbnails != null &&
-                    this.Thumbnails.SequenceEqual(input.Thumbnails)
-                ) && 
-                (
-                    this.VideoFiles == input.VideoFiles ||
-                    this.VideoFiles != null &&
-                    input.VideoFiles != null &&
-                    this.VideoFiles.SequenceEqual(input.VideoFiles)
-                ) && 
-                (
-                    this.DropLog == input.DropLog ||
-                    (this.DropLog != null &&
-                    this.DropLog.Equals(input.DropLog))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.IsEncoding == input.IsEncoding ||
-                    this.IsEncoding.Equals(input.IsEncoding)
-                ) && 
-                (
-                    this.IsProtected == input.IsProtected ||
-                    this.IsProtected.Equals(input.IsProtected)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                hashCode = (hashCode * 59) + this.RuleId.GetHashCode();
-                hashCode = (hashCode * 59) + this.ProgramId.GetHashCode();
-                hashCode = (hashCode * 59) + this.ChannelId.GetHashCode();
-                hashCode = (hashCode * 59) + this.StartAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.EndAt.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Extended != null)
-                {
-                    hashCode = (hashCode * 59) + this.Extended.GetHashCode();
-                }
-                if (this.RawExtended != null)
-                {
-                    hashCode = (hashCode * 59) + this.RawExtended.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Genre1.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre1.GetHashCode();
-                hashCode = (hashCode * 59) + this.Genre2.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre2.GetHashCode();
-                hashCode = (hashCode * 59) + this.Genre3.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre3.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoType.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoResolution.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoStreamContent.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoComponentType.GetHashCode();
-                hashCode = (hashCode * 59) + this.AudioSamplingRate.GetHashCode();
-                hashCode = (hashCode * 59) + this.AudioComponentType.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsRecording.GetHashCode();
-                if (this.Thumbnails != null)
-                {
-                    hashCode = (hashCode * 59) + this.Thumbnails.GetHashCode();
-                }
-                if (this.VideoFiles != null)
-                {
-                    hashCode = (hashCode * 59) + this.VideoFiles.GetHashCode();
-                }
-                if (this.DropLog != null)
-                {
-                    hashCode = (hashCode * 59) + this.DropLog.GetHashCode();
-                }
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsEncoding.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsProtected.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ProgramId (long) maximum
             if (this.ProgramId > (long)655356553565535)

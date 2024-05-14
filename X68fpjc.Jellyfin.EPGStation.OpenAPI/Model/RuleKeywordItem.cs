@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// RuleKeywordItem
     /// </summary>
     [DataContract(Name = "RuleKeywordItem")]
-    public partial class RuleKeywordItem : IEquatable<RuleKeywordItem>, IValidatableObject
+    public partial class RuleKeywordItem : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RuleKeywordItem" /> class.
@@ -56,13 +56,13 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// ルール id
         /// </summary>
         /// <value>ルール id</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public int Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Keyword
         /// </summary>
-        [DataMember(Name = "keyword", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "keyword", IsRequired = true, EmitDefaultValue = true)]
         public string Keyword { get; set; }
 
         /// <summary>
@@ -89,62 +89,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RuleKeywordItem);
-        }
-
-        /// <summary>
-        /// Returns true if RuleKeywordItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RuleKeywordItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RuleKeywordItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.Keyword == input.Keyword ||
-                    (this.Keyword != null &&
-                    this.Keyword.Equals(input.Keyword))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Keyword != null)
-                {
-                    hashCode = (hashCode * 59) + this.Keyword.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

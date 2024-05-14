@@ -29,13 +29,13 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// チャンネル情報
     /// </summary>
     [DataContract(Name = "ChannelItem")]
-    public partial class ChannelItem : IEquatable<ChannelItem>, IValidatableObject
+    public partial class ChannelItem : IValidatableObject
     {
 
         /// <summary>
         /// Gets or Sets ChannelType
         /// </summary>
-        [DataMember(Name = "channelType", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "channelType", IsRequired = true, EmitDefaultValue = true)]
         public ChannelType ChannelType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ChannelItem" /> class.
@@ -84,35 +84,35 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 放送局 id
         /// </summary>
         /// <value>放送局 id</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public long Id { get; set; }
 
         /// <summary>
         /// service id
         /// </summary>
         /// <value>service id</value>
-        [DataMember(Name = "serviceId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "serviceId", IsRequired = true, EmitDefaultValue = true)]
         public long ServiceId { get; set; }
 
         /// <summary>
         /// network id
         /// </summary>
         /// <value>network id</value>
-        [DataMember(Name = "networkId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "networkId", IsRequired = true, EmitDefaultValue = true)]
         public long NetworkId { get; set; }
 
         /// <summary>
         /// 放送局名
         /// </summary>
         /// <value>放送局名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// 放送局名(半角)
         /// </summary>
         /// <value>放送局名(半角)</value>
-        [DataMember(Name = "halfWidthName", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "halfWidthName", IsRequired = true, EmitDefaultValue = true)]
         public string HalfWidthName { get; set; }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Gets or Sets Channel
         /// </summary>
-        [DataMember(Name = "channel", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "channel", IsRequired = true, EmitDefaultValue = true)]
         public string Channel { get; set; }
 
         /// <summary>
@@ -158,100 +158,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ChannelItem);
-        }
-
-        /// <summary>
-        /// Returns true if ChannelItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ChannelItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ChannelItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.ServiceId == input.ServiceId ||
-                    this.ServiceId.Equals(input.ServiceId)
-                ) && 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    this.NetworkId.Equals(input.NetworkId)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.HalfWidthName == input.HalfWidthName ||
-                    (this.HalfWidthName != null &&
-                    this.HalfWidthName.Equals(input.HalfWidthName))
-                ) && 
-                (
-                    this.HasLogoData == input.HasLogoData ||
-                    this.HasLogoData.Equals(input.HasLogoData)
-                ) && 
-                (
-                    this.ChannelType == input.ChannelType ||
-                    this.ChannelType.Equals(input.ChannelType)
-                ) && 
-                (
-                    this.Channel == input.Channel ||
-                    (this.Channel != null &&
-                    this.Channel.Equals(input.Channel))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                hashCode = (hashCode * 59) + this.ServiceId.GetHashCode();
-                hashCode = (hashCode * 59) + this.NetworkId.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.HalfWidthName != null)
-                {
-                    hashCode = (hashCode * 59) + this.HalfWidthName.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.HasLogoData.GetHashCode();
-                hashCode = (hashCode * 59) + this.ChannelType.GetHashCode();
-                if (this.Channel != null)
-                {
-                    hashCode = (hashCode * 59) + this.Channel.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Id (long) maximum
             if (this.Id > (long)6553565535)

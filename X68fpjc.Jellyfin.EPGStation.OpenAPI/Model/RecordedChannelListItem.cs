@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// recorded が持つ channelId のリスト
     /// </summary>
     [DataContract(Name = "RecordedChannelListItem")]
-    public partial class RecordedChannelListItem : IEquatable<RecordedChannelListItem>, IValidatableObject
+    public partial class RecordedChannelListItem : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordedChannelListItem" /> class.
@@ -51,14 +51,14 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 録画数
         /// </summary>
         /// <value>録画数</value>
-        [DataMember(Name = "cnt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "cnt", IsRequired = true, EmitDefaultValue = true)]
         public int Cnt { get; set; }
 
         /// <summary>
         /// 放送局 id
         /// </summary>
         /// <value>放送局 id</value>
-        [DataMember(Name = "channelId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "channelId", IsRequired = true, EmitDefaultValue = true)]
         public long ChannelId { get; set; }
 
         /// <summary>
@@ -85,58 +85,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RecordedChannelListItem);
-        }
-
-        /// <summary>
-        /// Returns true if RecordedChannelListItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RecordedChannelListItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RecordedChannelListItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Cnt == input.Cnt ||
-                    this.Cnt.Equals(input.Cnt)
-                ) && 
-                (
-                    this.ChannelId == input.ChannelId ||
-                    this.ChannelId.Equals(input.ChannelId)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Cnt.GetHashCode();
-                hashCode = (hashCode * 59) + this.ChannelId.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ChannelId (long) maximum
             if (this.ChannelId > (long)6553565535)

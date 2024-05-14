@@ -34,8 +34,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">放送局 id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ChannelsChannelIdLogoGet(long channelId);
+        void ChannelsChannelIdLogoGet(long channelId, int operationIndex = 0);
 
         /// <summary>
         /// 放送局ロゴ取得
@@ -45,8 +46,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">放送局 id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ChannelsChannelIdLogoGetWithHttpInfo(long channelId);
+        ApiResponse<Object> ChannelsChannelIdLogoGetWithHttpInfo(long channelId, int operationIndex = 0);
         /// <summary>
         /// 放送局情報取得
         /// </summary>
@@ -54,8 +56,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 放送局情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ChannelItem&gt;</returns>
-        List<ChannelItem> ChannelsGet();
+        List<ChannelItem> ChannelsGet(int operationIndex = 0);
 
         /// <summary>
         /// 放送局情報取得
@@ -64,8 +67,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 放送局情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ChannelItem&gt;</returns>
-        ApiResponse<List<ChannelItem>> ChannelsGetWithHttpInfo();
+        ApiResponse<List<ChannelItem>> ChannelsGetWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -83,9 +87,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">放送局 id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ChannelsChannelIdLogoGetAsync(long channelId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ChannelsChannelIdLogoGetAsync(long channelId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 放送局ロゴ取得
@@ -95,9 +100,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">放送局 id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ChannelsChannelIdLogoGetWithHttpInfoAsync(long channelId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ChannelsChannelIdLogoGetWithHttpInfoAsync(long channelId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 放送局情報取得
         /// </summary>
@@ -105,9 +111,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 放送局情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ChannelItem&gt;</returns>
-        System.Threading.Tasks.Task<List<ChannelItem>> ChannelsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ChannelItem>> ChannelsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 放送局情報取得
@@ -116,9 +123,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 放送局情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ChannelItem&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ChannelItem>>> ChannelsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ChannelItem>>> ChannelsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -244,8 +252,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">放送局 id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ChannelsChannelIdLogoGet(long channelId)
+        public void ChannelsChannelIdLogoGet(long channelId, int operationIndex = 0)
         {
             ChannelsChannelIdLogoGetWithHttpInfo(channelId);
         }
@@ -255,8 +264,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">放送局 id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ChannelsChannelIdLogoGetWithHttpInfo(long channelId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ChannelsChannelIdLogoGetWithHttpInfo(long channelId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -282,6 +292,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("channelId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+
+            localVarRequestOptions.Operation = "ChannelsApi.ChannelsChannelIdLogoGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -303,11 +316,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">放送局 id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ChannelsChannelIdLogoGetAsync(long channelId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ChannelsChannelIdLogoGetAsync(long channelId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ChannelsChannelIdLogoGetWithHttpInfoAsync(channelId, cancellationToken).ConfigureAwait(false);
+            await ChannelsChannelIdLogoGetWithHttpInfoAsync(channelId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -315,9 +329,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">放送局 id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ChannelsChannelIdLogoGetWithHttpInfoAsync(long channelId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ChannelsChannelIdLogoGetWithHttpInfoAsync(long channelId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -345,6 +360,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("channelId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
+            localVarRequestOptions.Operation = "ChannelsApi.ChannelsChannelIdLogoGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/channels/{channelId}/logo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -365,8 +383,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 放送局情報取得 放送局情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ChannelItem&gt;</returns>
-        public List<ChannelItem> ChannelsGet()
+        public List<ChannelItem> ChannelsGet(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ChannelItem>> localVarResponse = ChannelsGetWithHttpInfo();
             return localVarResponse.Data;
@@ -376,8 +395,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 放送局情報取得 放送局情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ChannelItem&gt;</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ChannelItem>> ChannelsGetWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ChannelItem>> ChannelsGetWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -401,6 +421,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ChannelsApi.ChannelsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -421,11 +444,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 放送局情報取得 放送局情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ChannelItem&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ChannelItem>> ChannelsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ChannelItem>> ChannelsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ChannelItem>> localVarResponse = await ChannelsGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ChannelItem>> localVarResponse = await ChannelsGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -433,9 +457,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 放送局情報取得 放送局情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ChannelItem&gt;)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ChannelItem>>> ChannelsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ChannelItem>>> ChannelsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -460,6 +485,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ChannelsApi.ChannelsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

@@ -33,8 +33,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// バージョン情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ModelVersion</returns>
-        ModelVersion VersionGet();
+        ModelVersion VersionGet(int operationIndex = 0);
 
         /// <summary>
         /// バージョン情報取得
@@ -43,8 +44,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// バージョン情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ModelVersion</returns>
-        ApiResponse<ModelVersion> VersionGetWithHttpInfo();
+        ApiResponse<ModelVersion> VersionGetWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -61,9 +63,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// バージョン情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ModelVersion</returns>
-        System.Threading.Tasks.Task<ModelVersion> VersionGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ModelVersion> VersionGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// バージョン情報取得
@@ -72,9 +75,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// バージョン情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ModelVersion)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ModelVersion>> VersionGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ModelVersion>> VersionGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -199,8 +203,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// バージョン情報取得 バージョン情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ModelVersion</returns>
-        public ModelVersion VersionGet()
+        public ModelVersion VersionGet(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ModelVersion> localVarResponse = VersionGetWithHttpInfo();
             return localVarResponse.Data;
@@ -210,8 +215,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// バージョン情報取得 バージョン情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ModelVersion</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ModelVersion> VersionGetWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ModelVersion> VersionGetWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -235,6 +241,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "VersionApi.VersionGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -255,11 +264,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// バージョン情報取得 バージョン情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ModelVersion</returns>
-        public async System.Threading.Tasks.Task<ModelVersion> VersionGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ModelVersion> VersionGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ModelVersion> localVarResponse = await VersionGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ModelVersion> localVarResponse = await VersionGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -267,9 +277,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// バージョン情報取得 バージョン情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ModelVersion)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ModelVersion>> VersionGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ModelVersion>> VersionGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -294,6 +305,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "VersionApi.VersionGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

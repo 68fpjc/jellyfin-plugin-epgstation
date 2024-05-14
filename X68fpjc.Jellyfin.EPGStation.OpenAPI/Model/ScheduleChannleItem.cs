@@ -29,13 +29,13 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 番組表の放送局データ
     /// </summary>
     [DataContract(Name = "ScheduleChannleItem")]
-    public partial class ScheduleChannleItem : IEquatable<ScheduleChannleItem>, IValidatableObject
+    public partial class ScheduleChannleItem : IValidatableObject
     {
 
         /// <summary>
         /// Gets or Sets ChannelType
         /// </summary>
-        [DataMember(Name = "channelType", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "channelType", IsRequired = true, EmitDefaultValue = true)]
         public ChannelType ChannelType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduleChannleItem" /> class.
@@ -72,28 +72,28 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 放送局 id
         /// </summary>
         /// <value>放送局 id</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public long Id { get; set; }
 
         /// <summary>
         /// service id
         /// </summary>
         /// <value>service id</value>
-        [DataMember(Name = "serviceId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "serviceId", IsRequired = true, EmitDefaultValue = true)]
         public long ServiceId { get; set; }
 
         /// <summary>
         /// network id
         /// </summary>
         /// <value>network id</value>
-        [DataMember(Name = "networkId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "networkId", IsRequired = true, EmitDefaultValue = true)]
         public long NetworkId { get; set; }
 
         /// <summary>
         /// 放送局名
         /// </summary>
         /// <value>放送局名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -139,87 +139,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ScheduleChannleItem);
-        }
-
-        /// <summary>
-        /// Returns true if ScheduleChannleItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ScheduleChannleItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ScheduleChannleItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.ServiceId == input.ServiceId ||
-                    this.ServiceId.Equals(input.ServiceId)
-                ) && 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    this.NetworkId.Equals(input.NetworkId)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.RemoteControlKeyId == input.RemoteControlKeyId ||
-                    this.RemoteControlKeyId.Equals(input.RemoteControlKeyId)
-                ) && 
-                (
-                    this.HasLogoData == input.HasLogoData ||
-                    this.HasLogoData.Equals(input.HasLogoData)
-                ) && 
-                (
-                    this.ChannelType == input.ChannelType ||
-                    this.ChannelType.Equals(input.ChannelType)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                hashCode = (hashCode * 59) + this.ServiceId.GetHashCode();
-                hashCode = (hashCode * 59) + this.NetworkId.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.RemoteControlKeyId.GetHashCode();
-                hashCode = (hashCode * 59) + this.HasLogoData.GetHashCode();
-                hashCode = (hashCode * 59) + this.ChannelType.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Id (long) maximum
             if (this.Id > (long)6553565535)

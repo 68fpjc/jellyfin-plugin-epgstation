@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// コンフィグ
     /// </summary>
     [DataContract(Name = "Config")]
-    public partial class Config : IEquatable<Config>, IValidatableObject
+    public partial class Config : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Config" /> class.
@@ -87,33 +87,33 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// socket.io 通信で使用するポート
         /// </summary>
         /// <value>socket.io 通信で使用するポート</value>
-        [DataMember(Name = "socketIOPort", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "socketIOPort", IsRequired = true, EmitDefaultValue = true)]
         public int SocketIOPort { get; set; }
 
         /// <summary>
         /// Gets or Sets Broadcast
         /// </summary>
-        [DataMember(Name = "broadcast", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "broadcast", IsRequired = true, EmitDefaultValue = true)]
         public ConfigBroadcast Broadcast { get; set; }
 
         /// <summary>
         /// 指定可能な録画ディレクトリ名
         /// </summary>
         /// <value>指定可能な録画ディレクトリ名</value>
-        [DataMember(Name = "recorded", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "recorded", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Recorded { get; set; }
 
         /// <summary>
         /// エンコードモード
         /// </summary>
         /// <value>エンコードモード</value>
-        [DataMember(Name = "encode", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "encode", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Encode { get; set; }
 
         /// <summary>
         /// Gets or Sets Urlscheme
         /// </summary>
-        [DataMember(Name = "urlscheme", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "urlscheme", IsRequired = true, EmitDefaultValue = true)]
         public ConfigUrlscheme Urlscheme { get; set; }
 
         /// <summary>
@@ -182,125 +182,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Config);
-        }
-
-        /// <summary>
-        /// Returns true if Config instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Config to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Config input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.SocketIOPort == input.SocketIOPort ||
-                    this.SocketIOPort.Equals(input.SocketIOPort)
-                ) && 
-                (
-                    this.Broadcast == input.Broadcast ||
-                    (this.Broadcast != null &&
-                    this.Broadcast.Equals(input.Broadcast))
-                ) && 
-                (
-                    this.Recorded == input.Recorded ||
-                    this.Recorded != null &&
-                    input.Recorded != null &&
-                    this.Recorded.SequenceEqual(input.Recorded)
-                ) && 
-                (
-                    this.Encode == input.Encode ||
-                    this.Encode != null &&
-                    input.Encode != null &&
-                    this.Encode.SequenceEqual(input.Encode)
-                ) && 
-                (
-                    this.Urlscheme == input.Urlscheme ||
-                    (this.Urlscheme != null &&
-                    this.Urlscheme.Equals(input.Urlscheme))
-                ) && 
-                (
-                    this.IsEnableLiveStream == input.IsEnableLiveStream ||
-                    this.IsEnableLiveStream.Equals(input.IsEnableLiveStream)
-                ) && 
-                (
-                    this.IsEnableTSRecordedStream == input.IsEnableTSRecordedStream ||
-                    this.IsEnableTSRecordedStream.Equals(input.IsEnableTSRecordedStream)
-                ) && 
-                (
-                    this.IsEnableEncodedRecordedStream == input.IsEnableEncodedRecordedStream ||
-                    this.IsEnableEncodedRecordedStream.Equals(input.IsEnableEncodedRecordedStream)
-                ) && 
-                (
-                    this.StreamConfig == input.StreamConfig ||
-                    (this.StreamConfig != null &&
-                    this.StreamConfig.Equals(input.StreamConfig))
-                ) && 
-                (
-                    this.KodiHosts == input.KodiHosts ||
-                    this.KodiHosts != null &&
-                    input.KodiHosts != null &&
-                    this.KodiHosts.SequenceEqual(input.KodiHosts)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.SocketIOPort.GetHashCode();
-                if (this.Broadcast != null)
-                {
-                    hashCode = (hashCode * 59) + this.Broadcast.GetHashCode();
-                }
-                if (this.Recorded != null)
-                {
-                    hashCode = (hashCode * 59) + this.Recorded.GetHashCode();
-                }
-                if (this.Encode != null)
-                {
-                    hashCode = (hashCode * 59) + this.Encode.GetHashCode();
-                }
-                if (this.Urlscheme != null)
-                {
-                    hashCode = (hashCode * 59) + this.Urlscheme.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsEnableLiveStream.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsEnableTSRecordedStream.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsEnableEncodedRecordedStream.GetHashCode();
-                if (this.StreamConfig != null)
-                {
-                    hashCode = (hashCode * 59) + this.StreamConfig.GetHashCode();
-                }
-                if (this.KodiHosts != null)
-                {
-                    hashCode = (hashCode * 59) + this.KodiHosts.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

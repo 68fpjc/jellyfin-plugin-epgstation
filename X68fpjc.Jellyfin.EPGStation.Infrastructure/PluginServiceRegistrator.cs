@@ -1,4 +1,5 @@
-using MediaBrowser.Common.Plugins;
+using MediaBrowser.Controller;
+using MediaBrowser.Controller.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using X68fpjc.Jellyfin.EPGStation.Infrastructure;
 
@@ -6,8 +7,7 @@ namespace X68fpjc.Jellyfin.EPGStation
 {
     public class PluginServiceRegistrator : IPluginServiceRegistrator
     {
-        /// <inheritdoc />
-        public void RegisterServices(IServiceCollection serviceCollection)
+        public void RegisterServices(IServiceCollection serviceCollection, IServerApplicationHost applicationHost)
         {
             serviceCollection.AddScoped<IEpgstationClient, EpgstationDataSource>();
         }

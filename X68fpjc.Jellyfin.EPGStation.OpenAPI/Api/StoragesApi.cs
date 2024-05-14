@@ -33,8 +33,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// ストレージ情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>StorageInfo</returns>
-        StorageInfo StoragesGet();
+        StorageInfo StoragesGet(int operationIndex = 0);
 
         /// <summary>
         /// ストレージ情報取得
@@ -43,8 +44,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// ストレージ情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of StorageInfo</returns>
-        ApiResponse<StorageInfo> StoragesGetWithHttpInfo();
+        ApiResponse<StorageInfo> StoragesGetWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -61,9 +63,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// ストレージ情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StorageInfo</returns>
-        System.Threading.Tasks.Task<StorageInfo> StoragesGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<StorageInfo> StoragesGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ストレージ情報取得
@@ -72,9 +75,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// ストレージ情報を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StorageInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StorageInfo>> StoragesGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<StorageInfo>> StoragesGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -199,8 +203,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// ストレージ情報取得 ストレージ情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>StorageInfo</returns>
-        public StorageInfo StoragesGet()
+        public StorageInfo StoragesGet(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<StorageInfo> localVarResponse = StoragesGetWithHttpInfo();
             return localVarResponse.Data;
@@ -210,8 +215,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// ストレージ情報取得 ストレージ情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of StorageInfo</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<StorageInfo> StoragesGetWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<StorageInfo> StoragesGetWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -235,6 +241,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "StoragesApi.StoragesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -255,11 +264,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// ストレージ情報取得 ストレージ情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StorageInfo</returns>
-        public async System.Threading.Tasks.Task<StorageInfo> StoragesGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<StorageInfo> StoragesGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<StorageInfo> localVarResponse = await StoragesGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<StorageInfo> localVarResponse = await StoragesGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -267,9 +277,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// ストレージ情報取得 ストレージ情報を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StorageInfo)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<StorageInfo>> StoragesGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<StorageInfo>> StoragesGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -294,6 +305,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "StoragesApi.StoragesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

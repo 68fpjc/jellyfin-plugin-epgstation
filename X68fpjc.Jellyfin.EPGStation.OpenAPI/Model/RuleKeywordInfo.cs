@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// ルールキーワード検索結果
     /// </summary>
     [DataContract(Name = "RuleKeywordInfo")]
-    public partial class RuleKeywordInfo : IEquatable<RuleKeywordInfo>, IValidatableObject
+    public partial class RuleKeywordInfo : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RuleKeywordInfo" /> class.
@@ -53,7 +53,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
-        [DataMember(Name = "items", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "items", IsRequired = true, EmitDefaultValue = true)]
         public List<RuleKeywordItem> Items { get; set; }
 
         /// <summary>
@@ -79,58 +79,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RuleKeywordInfo);
-        }
-
-        /// <summary>
-        /// Returns true if RuleKeywordInfo instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RuleKeywordInfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RuleKeywordInfo input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Items == input.Items ||
-                    this.Items != null &&
-                    input.Items != null &&
-                    this.Items.SequenceEqual(input.Items)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Items != null)
-                {
-                    hashCode = (hashCode * 59) + this.Items.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

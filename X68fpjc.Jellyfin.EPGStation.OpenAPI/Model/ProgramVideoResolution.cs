@@ -79,7 +79,6 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         [EnumMember(Value = "4320p")]
         _4320p = 8
-
     }
 
 }

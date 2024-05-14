@@ -29,13 +29,13 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// ストリーム情報
     /// </summary>
     [DataContract(Name = "StreamInfoItem")]
-    public partial class StreamInfoItem : IEquatable<StreamInfoItem>, IValidatableObject
+    public partial class StreamInfoItem : IValidatableObject
     {
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public StreamType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="StreamInfoItem" /> class.
@@ -82,14 +82,14 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// ストリーム id
         /// </summary>
         /// <value>ストリーム id</value>
-        [DataMember(Name = "streamId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "streamId", IsRequired = true, EmitDefaultValue = true)]
         public int StreamId { get; set; }
 
         /// <summary>
         /// ストリーミング設定
         /// </summary>
         /// <value>ストリーミング設定</value>
-        [DataMember(Name = "mode", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "mode", IsRequired = true, EmitDefaultValue = true)]
         public decimal Mode { get; set; }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 放送局 id
         /// </summary>
         /// <value>放送局 id</value>
-        [DataMember(Name = "channelId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "channelId", IsRequired = true, EmitDefaultValue = true)]
         public long ChannelId { get; set; }
 
         /// <summary>
@@ -124,21 +124,21 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// ストリーミング番組名
         /// </summary>
         /// <value>ストリーミング番組名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// 時刻 (ms)
         /// </summary>
         /// <value>時刻 (ms)</value>
-        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = true)]
         public long StartAt { get; set; }
 
         /// <summary>
         /// 時刻 (ms)
         /// </summary>
         /// <value>時刻 (ms)</value>
-        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = true)]
         public long EndAt { get; set; }
 
         /// <summary>
@@ -189,120 +189,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as StreamInfoItem);
-        }
-
-        /// <summary>
-        /// Returns true if StreamInfoItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of StreamInfoItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(StreamInfoItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.StreamId == input.StreamId ||
-                    this.StreamId.Equals(input.StreamId)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    this.Mode.Equals(input.Mode)
-                ) && 
-                (
-                    this.IsEnable == input.IsEnable ||
-                    this.IsEnable.Equals(input.IsEnable)
-                ) && 
-                (
-                    this.ChannelId == input.ChannelId ||
-                    this.ChannelId.Equals(input.ChannelId)
-                ) && 
-                (
-                    this.VideoFileId == input.VideoFileId ||
-                    this.VideoFileId.Equals(input.VideoFileId)
-                ) && 
-                (
-                    this.RecordedId == input.RecordedId ||
-                    this.RecordedId.Equals(input.RecordedId)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.StartAt == input.StartAt ||
-                    this.StartAt.Equals(input.StartAt)
-                ) && 
-                (
-                    this.EndAt == input.EndAt ||
-                    this.EndAt.Equals(input.EndAt)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Extended == input.Extended ||
-                    (this.Extended != null &&
-                    this.Extended.Equals(input.Extended))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.StreamId.GetHashCode();
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                hashCode = (hashCode * 59) + this.Mode.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsEnable.GetHashCode();
-                hashCode = (hashCode * 59) + this.ChannelId.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoFileId.GetHashCode();
-                hashCode = (hashCode * 59) + this.RecordedId.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.StartAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.EndAt.GetHashCode();
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Extended != null)
-                {
-                    hashCode = (hashCode * 59) + this.Extended.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ChannelId (long) maximum
             if (this.ChannelId > (long)6553565535)

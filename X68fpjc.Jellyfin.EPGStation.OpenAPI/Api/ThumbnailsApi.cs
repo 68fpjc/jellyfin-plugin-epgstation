@@ -33,8 +33,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルをクリーンアップする
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ThumbnailsCleanupPost();
+        void ThumbnailsCleanupPost(int operationIndex = 0);
 
         /// <summary>
         /// サムネイルをクリーンアップ
@@ -43,8 +44,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルをクリーンアップする
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ThumbnailsCleanupPostWithHttpInfo();
+        ApiResponse<Object> ThumbnailsCleanupPostWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// サムネイル再生成
         /// </summary>
@@ -52,8 +54,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルの追加で再生成を開始する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ThumbnailsPost();
+        void ThumbnailsPost(int operationIndex = 0);
 
         /// <summary>
         /// サムネイル再生成
@@ -62,8 +65,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルの追加で再生成を開始する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ThumbnailsPostWithHttpInfo();
+        ApiResponse<Object> ThumbnailsPostWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// サムネイル
         /// </summary>
@@ -72,8 +76,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ThumbnailsThumbnailIdDelete(int thumbnailId);
+        void ThumbnailsThumbnailIdDelete(int thumbnailId, int operationIndex = 0);
 
         /// <summary>
         /// サムネイル
@@ -83,8 +88,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ThumbnailsThumbnailIdDeleteWithHttpInfo(int thumbnailId);
+        ApiResponse<Object> ThumbnailsThumbnailIdDeleteWithHttpInfo(int thumbnailId, int operationIndex = 0);
         /// <summary>
         /// サムネイル
         /// </summary>
@@ -93,8 +99,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ThumbnailsThumbnailIdGet(int thumbnailId);
+        void ThumbnailsThumbnailIdGet(int thumbnailId, int operationIndex = 0);
 
         /// <summary>
         /// サムネイル
@@ -104,8 +111,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ThumbnailsThumbnailIdGetWithHttpInfo(int thumbnailId);
+        ApiResponse<Object> ThumbnailsThumbnailIdGetWithHttpInfo(int thumbnailId, int operationIndex = 0);
         /// <summary>
         /// サムネイル追加
         /// </summary>
@@ -114,8 +122,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="videoFileId">video file id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ThumbnailsVideosVideoFileIdPost(int videoFileId);
+        void ThumbnailsVideosVideoFileIdPost(int videoFileId, int operationIndex = 0);
 
         /// <summary>
         /// サムネイル追加
@@ -125,8 +134,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="videoFileId">video file id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ThumbnailsVideosVideoFileIdPostWithHttpInfo(int videoFileId);
+        ApiResponse<Object> ThumbnailsVideosVideoFileIdPostWithHttpInfo(int videoFileId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -143,9 +153,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルをクリーンアップする
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ThumbnailsCleanupPostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ThumbnailsCleanupPostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// サムネイルをクリーンアップ
@@ -154,9 +165,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルをクリーンアップする
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsCleanupPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsCleanupPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// サムネイル再生成
         /// </summary>
@@ -164,9 +176,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルの追加で再生成を開始する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ThumbnailsPostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ThumbnailsPostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// サムネイル再生成
@@ -175,9 +188,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルの追加で再生成を開始する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// サムネイル
         /// </summary>
@@ -186,9 +200,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ThumbnailsThumbnailIdDeleteAsync(int thumbnailId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ThumbnailsThumbnailIdDeleteAsync(int thumbnailId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// サムネイル
@@ -198,9 +213,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsThumbnailIdDeleteWithHttpInfoAsync(int thumbnailId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsThumbnailIdDeleteWithHttpInfoAsync(int thumbnailId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// サムネイル
         /// </summary>
@@ -209,9 +225,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ThumbnailsThumbnailIdGetAsync(int thumbnailId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ThumbnailsThumbnailIdGetAsync(int thumbnailId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// サムネイル
@@ -221,9 +238,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsThumbnailIdGetWithHttpInfoAsync(int thumbnailId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsThumbnailIdGetWithHttpInfoAsync(int thumbnailId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// サムネイル追加
         /// </summary>
@@ -232,9 +250,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="videoFileId">video file id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ThumbnailsVideosVideoFileIdPostAsync(int videoFileId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ThumbnailsVideosVideoFileIdPostAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// サムネイル追加
@@ -244,9 +263,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="videoFileId">video file id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsVideosVideoFileIdPostWithHttpInfoAsync(int videoFileId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ThumbnailsVideosVideoFileIdPostWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -371,8 +391,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルをクリーンアップ サムネイルをクリーンアップする
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ThumbnailsCleanupPost()
+        public void ThumbnailsCleanupPost(int operationIndex = 0)
         {
             ThumbnailsCleanupPostWithHttpInfo();
         }
@@ -381,8 +402,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルをクリーンアップ サムネイルをクリーンアップする
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsCleanupPostWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsCleanupPostWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -406,6 +428,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsCleanupPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -426,20 +451,22 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイルをクリーンアップ サムネイルをクリーンアップする
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ThumbnailsCleanupPostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ThumbnailsCleanupPostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ThumbnailsCleanupPostWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            await ThumbnailsCleanupPostWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// サムネイルをクリーンアップ サムネイルをクリーンアップする
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsCleanupPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsCleanupPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -464,6 +491,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsCleanupPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -485,8 +515,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイル再生成 サムネイルの追加で再生成を開始する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ThumbnailsPost()
+        public void ThumbnailsPost(int operationIndex = 0)
         {
             ThumbnailsPostWithHttpInfo();
         }
@@ -495,8 +526,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイル再生成 サムネイルの追加で再生成を開始する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsPostWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsPostWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -520,6 +552,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -540,20 +575,22 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// サムネイル再生成 サムネイルの追加で再生成を開始する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ThumbnailsPostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ThumbnailsPostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ThumbnailsPostWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            await ThumbnailsPostWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// サムネイル再生成 サムネイルの追加で再生成を開始する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -578,6 +615,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -600,8 +640,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ThumbnailsThumbnailIdDelete(int thumbnailId)
+        public void ThumbnailsThumbnailIdDelete(int thumbnailId, int operationIndex = 0)
         {
             ThumbnailsThumbnailIdDeleteWithHttpInfo(thumbnailId);
         }
@@ -611,8 +652,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsThumbnailIdDeleteWithHttpInfo(int thumbnailId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsThumbnailIdDeleteWithHttpInfo(int thumbnailId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -638,6 +680,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("thumbnailId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(thumbnailId)); // path parameter
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsThumbnailIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -659,11 +704,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ThumbnailsThumbnailIdDeleteAsync(int thumbnailId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ThumbnailsThumbnailIdDeleteAsync(int thumbnailId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ThumbnailsThumbnailIdDeleteWithHttpInfoAsync(thumbnailId, cancellationToken).ConfigureAwait(false);
+            await ThumbnailsThumbnailIdDeleteWithHttpInfoAsync(thumbnailId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -671,9 +717,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsThumbnailIdDeleteWithHttpInfoAsync(int thumbnailId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsThumbnailIdDeleteWithHttpInfoAsync(int thumbnailId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -700,6 +747,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("thumbnailId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(thumbnailId)); // path parameter
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsThumbnailIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -722,8 +772,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ThumbnailsThumbnailIdGet(int thumbnailId)
+        public void ThumbnailsThumbnailIdGet(int thumbnailId, int operationIndex = 0)
         {
             ThumbnailsThumbnailIdGetWithHttpInfo(thumbnailId);
         }
@@ -733,8 +784,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsThumbnailIdGetWithHttpInfo(int thumbnailId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsThumbnailIdGetWithHttpInfo(int thumbnailId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -760,6 +812,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("thumbnailId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(thumbnailId)); // path parameter
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsThumbnailIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -781,11 +836,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ThumbnailsThumbnailIdGetAsync(int thumbnailId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ThumbnailsThumbnailIdGetAsync(int thumbnailId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ThumbnailsThumbnailIdGetWithHttpInfoAsync(thumbnailId, cancellationToken).ConfigureAwait(false);
+            await ThumbnailsThumbnailIdGetWithHttpInfoAsync(thumbnailId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -793,9 +849,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="thumbnailId">thumbnail id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsThumbnailIdGetWithHttpInfoAsync(int thumbnailId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsThumbnailIdGetWithHttpInfoAsync(int thumbnailId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -822,6 +879,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("thumbnailId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(thumbnailId)); // path parameter
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsThumbnailIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -844,8 +904,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="videoFileId">video file id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ThumbnailsVideosVideoFileIdPost(int videoFileId)
+        public void ThumbnailsVideosVideoFileIdPost(int videoFileId, int operationIndex = 0)
         {
             ThumbnailsVideosVideoFileIdPostWithHttpInfo(videoFileId);
         }
@@ -855,8 +916,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="videoFileId">video file id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsVideosVideoFileIdPostWithHttpInfo(int videoFileId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ThumbnailsVideosVideoFileIdPostWithHttpInfo(int videoFileId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -881,6 +943,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("videoFileId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(videoFileId)); // path parameter
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsVideosVideoFileIdPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -902,11 +967,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="videoFileId">video file id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ThumbnailsVideosVideoFileIdPostAsync(int videoFileId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ThumbnailsVideosVideoFileIdPostAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ThumbnailsVideosVideoFileIdPostWithHttpInfoAsync(videoFileId, cancellationToken).ConfigureAwait(false);
+            await ThumbnailsVideosVideoFileIdPostWithHttpInfoAsync(videoFileId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -914,9 +980,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="videoFileId">video file id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsVideosVideoFileIdPostWithHttpInfoAsync(int videoFileId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ThumbnailsVideosVideoFileIdPostWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -942,6 +1009,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("videoFileId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(videoFileId)); // path parameter
+
+            localVarRequestOptions.Operation = "ThumbnailsApi.ThumbnailsVideosVideoFileIdPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

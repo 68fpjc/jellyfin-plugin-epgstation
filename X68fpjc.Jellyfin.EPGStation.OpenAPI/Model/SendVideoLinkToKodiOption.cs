@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// kodiへビデオリンクを送信するときのオプション
     /// </summary>
     [DataContract(Name = "SendVideoLinkToKodiOption")]
-    public partial class SendVideoLinkToKodiOption : IEquatable<SendVideoLinkToKodiOption>, IValidatableObject
+    public partial class SendVideoLinkToKodiOption : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendVideoLinkToKodiOption" /> class.
@@ -54,7 +54,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// config の kodi の name
         /// </summary>
         /// <value>config の kodi の name</value>
-        [DataMember(Name = "kodiName", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "kodiName", IsRequired = true, EmitDefaultValue = true)]
         public string KodiName { get; set; }
 
         /// <summary>
@@ -80,57 +80,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SendVideoLinkToKodiOption);
-        }
-
-        /// <summary>
-        /// Returns true if SendVideoLinkToKodiOption instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SendVideoLinkToKodiOption to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SendVideoLinkToKodiOption input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.KodiName == input.KodiName ||
-                    (this.KodiName != null &&
-                    this.KodiName.Equals(input.KodiName))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.KodiName != null)
-                {
-                    hashCode = (hashCode * 59) + this.KodiName.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

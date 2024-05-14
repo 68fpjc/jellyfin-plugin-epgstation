@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// ストリーミング設定
     /// </summary>
     [DataContract(Name = "Config_streamConfig")]
-    public partial class ConfigStreamConfig : IEquatable<ConfigStreamConfig>, IValidatableObject
+    public partial class ConfigStreamConfig : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigStreamConfig" /> class.
@@ -78,66 +78,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ConfigStreamConfig);
-        }
-
-        /// <summary>
-        /// Returns true if ConfigStreamConfig instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ConfigStreamConfig to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ConfigStreamConfig input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Live == input.Live ||
-                    (this.Live != null &&
-                    this.Live.Equals(input.Live))
-                ) && 
-                (
-                    this.Recorded == input.Recorded ||
-                    (this.Recorded != null &&
-                    this.Recorded.Equals(input.Recorded))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Live != null)
-                {
-                    hashCode = (hashCode * 59) + this.Live.GetHashCode();
-                }
-                if (this.Recorded != null)
-                {
-                    hashCode = (hashCode * 59) + this.Recorded.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

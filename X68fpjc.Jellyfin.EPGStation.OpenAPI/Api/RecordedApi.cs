@@ -33,8 +33,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画をクリーンアップする
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RecordedCleanupPost();
+        void RecordedCleanupPost(int operationIndex = 0);
 
         /// <summary>
         /// 録画をクリーンアップ
@@ -43,8 +44,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画をクリーンアップする
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RecordedCleanupPostWithHttpInfo();
+        ApiResponse<Object> RecordedCleanupPostWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 録画情報取得
         /// </summary>
@@ -61,8 +63,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="genre">ジャンル (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
         /// <param name="hasOriginalFile">オリジナルファイルを含むか (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Records</returns>
-        Records RecordedGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string keyword = default(string), bool? hasOriginalFile = default(bool?));
+        Records RecordedGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string? keyword = default(string?), bool? hasOriginalFile = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 録画情報取得
@@ -80,8 +83,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="genre">ジャンル (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
         /// <param name="hasOriginalFile">オリジナルファイルを含むか (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Records</returns>
-        ApiResponse<Records> RecordedGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string keyword = default(string), bool? hasOriginalFile = default(bool?));
+        ApiResponse<Records> RecordedGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string? keyword = default(string?), bool? hasOriginalFile = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 録画検索オプションを取得
         /// </summary>
@@ -89,8 +93,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画検索オプションを取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RecordedSearchOptions</returns>
-        RecordedSearchOptions RecordedOptionsGet();
+        RecordedSearchOptions RecordedOptionsGet(int operationIndex = 0);
 
         /// <summary>
         /// 録画検索オプションを取得
@@ -99,8 +104,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画検索オプションを取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RecordedSearchOptions</returns>
-        ApiResponse<RecordedSearchOptions> RecordedOptionsGetWithHttpInfo();
+        ApiResponse<RecordedSearchOptions> RecordedOptionsGetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 録画番組情報の新規作成
         /// </summary>
@@ -109,8 +115,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewRecordedOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreatedNewRecorded</returns>
-        CreatedNewRecorded RecordedPost(CreateNewRecordedOption createNewRecordedOption);
+        CreatedNewRecorded RecordedPost(CreateNewRecordedOption createNewRecordedOption, int operationIndex = 0);
 
         /// <summary>
         /// 録画番組情報の新規作成
@@ -120,8 +127,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewRecordedOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreatedNewRecorded</returns>
-        ApiResponse<CreatedNewRecorded> RecordedPostWithHttpInfo(CreateNewRecordedOption createNewRecordedOption);
+        ApiResponse<CreatedNewRecorded> RecordedPostWithHttpInfo(CreateNewRecordedOption createNewRecordedOption, int operationIndex = 0);
         /// <summary>
         /// 録画を削除
         /// </summary>
@@ -130,8 +138,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RecordedRecordedIdDelete(int recordedId);
+        void RecordedRecordedIdDelete(int recordedId, int operationIndex = 0);
 
         /// <summary>
         /// 録画を削除
@@ -141,8 +150,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RecordedRecordedIdDeleteWithHttpInfo(int recordedId);
+        ApiResponse<Object> RecordedRecordedIdDeleteWithHttpInfo(int recordedId, int operationIndex = 0);
         /// <summary>
         /// エンコード停止
         /// </summary>
@@ -151,8 +161,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RecordedRecordedIdEncodeDelete(int recordedId);
+        void RecordedRecordedIdEncodeDelete(int recordedId, int operationIndex = 0);
 
         /// <summary>
         /// エンコード停止
@@ -162,8 +173,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RecordedRecordedIdEncodeDeleteWithHttpInfo(int recordedId);
+        ApiResponse<Object> RecordedRecordedIdEncodeDeleteWithHttpInfo(int recordedId, int operationIndex = 0);
         /// <summary>
         /// 録画詳細情報を取得
         /// </summary>
@@ -173,8 +185,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RecordedItem</returns>
-        RecordedItem RecordedRecordedIdGet(int recordedId, bool isHalfWidth);
+        RecordedItem RecordedRecordedIdGet(int recordedId, bool isHalfWidth, int operationIndex = 0);
 
         /// <summary>
         /// 録画詳細情報を取得
@@ -185,8 +198,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RecordedItem</returns>
-        ApiResponse<RecordedItem> RecordedRecordedIdGetWithHttpInfo(int recordedId, bool isHalfWidth);
+        ApiResponse<RecordedItem> RecordedRecordedIdGetWithHttpInfo(int recordedId, bool isHalfWidth, int operationIndex = 0);
         /// <summary>
         /// 録画を自動削除対象から除外
         /// </summary>
@@ -195,8 +209,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RecordedRecordedIdProtectPut(int recordedId);
+        void RecordedRecordedIdProtectPut(int recordedId, int operationIndex = 0);
 
         /// <summary>
         /// 録画を自動削除対象から除外
@@ -206,8 +221,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RecordedRecordedIdProtectPutWithHttpInfo(int recordedId);
+        ApiResponse<Object> RecordedRecordedIdProtectPutWithHttpInfo(int recordedId, int operationIndex = 0);
         /// <summary>
         /// 録画を自動削除対象に戻す
         /// </summary>
@@ -216,8 +232,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RecordedRecordedIdUnprotectPut(int recordedId);
+        void RecordedRecordedIdUnprotectPut(int recordedId, int operationIndex = 0);
 
         /// <summary>
         /// 録画を自動削除対象に戻す
@@ -227,8 +244,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RecordedRecordedIdUnprotectPutWithHttpInfo(int recordedId);
+        ApiResponse<Object> RecordedRecordedIdUnprotectPutWithHttpInfo(int recordedId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -245,9 +263,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画をクリーンアップする
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RecordedCleanupPostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RecordedCleanupPostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画をクリーンアップ
@@ -256,9 +275,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画をクリーンアップする
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedCleanupPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedCleanupPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 録画情報取得
         /// </summary>
@@ -275,9 +295,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="genre">ジャンル (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
         /// <param name="hasOriginalFile">オリジナルファイルを含むか (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Records</returns>
-        System.Threading.Tasks.Task<Records> RecordedGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string keyword = default(string), bool? hasOriginalFile = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Records> RecordedGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string? keyword = default(string?), bool? hasOriginalFile = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画情報取得
@@ -295,9 +316,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="genre">ジャンル (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
         /// <param name="hasOriginalFile">オリジナルファイルを含むか (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Records)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Records>> RecordedGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string keyword = default(string), bool? hasOriginalFile = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Records>> RecordedGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string? keyword = default(string?), bool? hasOriginalFile = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 録画検索オプションを取得
         /// </summary>
@@ -305,9 +327,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画検索オプションを取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordedSearchOptions</returns>
-        System.Threading.Tasks.Task<RecordedSearchOptions> RecordedOptionsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RecordedSearchOptions> RecordedOptionsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画検索オプションを取得
@@ -316,9 +339,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画検索オプションを取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordedSearchOptions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RecordedSearchOptions>> RecordedOptionsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RecordedSearchOptions>> RecordedOptionsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 録画番組情報の新規作成
         /// </summary>
@@ -327,9 +351,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewRecordedOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreatedNewRecorded</returns>
-        System.Threading.Tasks.Task<CreatedNewRecorded> RecordedPostAsync(CreateNewRecordedOption createNewRecordedOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreatedNewRecorded> RecordedPostAsync(CreateNewRecordedOption createNewRecordedOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画番組情報の新規作成
@@ -339,9 +364,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewRecordedOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreatedNewRecorded)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreatedNewRecorded>> RecordedPostWithHttpInfoAsync(CreateNewRecordedOption createNewRecordedOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreatedNewRecorded>> RecordedPostWithHttpInfoAsync(CreateNewRecordedOption createNewRecordedOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 録画を削除
         /// </summary>
@@ -350,9 +376,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RecordedRecordedIdDeleteAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RecordedRecordedIdDeleteAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画を削除
@@ -362,9 +389,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedRecordedIdDeleteWithHttpInfoAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedRecordedIdDeleteWithHttpInfoAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// エンコード停止
         /// </summary>
@@ -373,9 +401,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RecordedRecordedIdEncodeDeleteAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RecordedRecordedIdEncodeDeleteAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// エンコード停止
@@ -385,9 +414,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedRecordedIdEncodeDeleteWithHttpInfoAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedRecordedIdEncodeDeleteWithHttpInfoAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 録画詳細情報を取得
         /// </summary>
@@ -397,9 +427,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordedItem</returns>
-        System.Threading.Tasks.Task<RecordedItem> RecordedRecordedIdGetAsync(int recordedId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RecordedItem> RecordedRecordedIdGetAsync(int recordedId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画詳細情報を取得
@@ -410,9 +441,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordedItem)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RecordedItem>> RecordedRecordedIdGetWithHttpInfoAsync(int recordedId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RecordedItem>> RecordedRecordedIdGetWithHttpInfoAsync(int recordedId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 録画を自動削除対象から除外
         /// </summary>
@@ -421,9 +453,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RecordedRecordedIdProtectPutAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RecordedRecordedIdProtectPutAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画を自動削除対象から除外
@@ -433,9 +466,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedRecordedIdProtectPutWithHttpInfoAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedRecordedIdProtectPutWithHttpInfoAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 録画を自動削除対象に戻す
         /// </summary>
@@ -444,9 +478,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RecordedRecordedIdUnprotectPutAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RecordedRecordedIdUnprotectPutAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画を自動削除対象に戻す
@@ -456,9 +491,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedRecordedIdUnprotectPutWithHttpInfoAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RecordedRecordedIdUnprotectPutWithHttpInfoAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -583,8 +619,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画をクリーンアップ 録画をクリーンアップする
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RecordedCleanupPost()
+        public void RecordedCleanupPost(int operationIndex = 0)
         {
             RecordedCleanupPostWithHttpInfo();
         }
@@ -593,8 +630,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画をクリーンアップ 録画をクリーンアップする
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedCleanupPostWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedCleanupPostWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -618,6 +656,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedCleanupPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -638,20 +679,22 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画をクリーンアップ 録画をクリーンアップする
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RecordedCleanupPostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RecordedCleanupPostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RecordedCleanupPostWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            await RecordedCleanupPostWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// 録画をクリーンアップ 録画をクリーンアップする
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedCleanupPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedCleanupPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -676,6 +719,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedCleanupPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -706,8 +752,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="genre">ジャンル (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
         /// <param name="hasOriginalFile">オリジナルファイルを含むか (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Records</returns>
-        public Records RecordedGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string keyword = default(string), bool? hasOriginalFile = default(bool?))
+        public Records RecordedGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string? keyword = default(string?), bool? hasOriginalFile = default(bool?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> localVarResponse = RecordedGetWithHttpInfo(isHalfWidth, offset, limit, isReverse, ruleId, channelId, genre, keyword, hasOriginalFile);
             return localVarResponse.Data;
@@ -726,8 +773,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="genre">ジャンル (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
         /// <param name="hasOriginalFile">オリジナルファイルを含むか (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Records</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> RecordedGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string keyword = default(string), bool? hasOriginalFile = default(bool?))
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> RecordedGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string? keyword = default(string?), bool? hasOriginalFile = default(bool?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -784,6 +832,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             {
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "hasOriginalFile", hasOriginalFile));
             }
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -813,11 +864,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="genre">ジャンル (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
         /// <param name="hasOriginalFile">オリジナルファイルを含むか (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Records</returns>
-        public async System.Threading.Tasks.Task<Records> RecordedGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string keyword = default(string), bool? hasOriginalFile = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Records> RecordedGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string? keyword = default(string?), bool? hasOriginalFile = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> localVarResponse = await RecordedGetWithHttpInfoAsync(isHalfWidth, offset, limit, isReverse, ruleId, channelId, genre, keyword, hasOriginalFile, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> localVarResponse = await RecordedGetWithHttpInfoAsync(isHalfWidth, offset, limit, isReverse, ruleId, channelId, genre, keyword, hasOriginalFile, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -834,9 +886,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="genre">ジャンル (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
         /// <param name="hasOriginalFile">オリジナルファイルを含むか (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Records)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records>> RecordedGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string keyword = default(string), bool? hasOriginalFile = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records>> RecordedGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), bool? isReverse = default(bool?), int? ruleId = default(int?), long? channelId = default(long?), int? genre = default(int?), string? keyword = default(string?), bool? hasOriginalFile = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -895,6 +948,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "hasOriginalFile", hasOriginalFile));
             }
 
+            localVarRequestOptions.Operation = "RecordedApi.RecordedGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Records>("/recorded", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -915,8 +971,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画検索オプションを取得 録画検索オプションを取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RecordedSearchOptions</returns>
-        public RecordedSearchOptions RecordedOptionsGet()
+        public RecordedSearchOptions RecordedOptionsGet(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedSearchOptions> localVarResponse = RecordedOptionsGetWithHttpInfo();
             return localVarResponse.Data;
@@ -926,8 +983,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画検索オプションを取得 録画検索オプションを取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RecordedSearchOptions</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedSearchOptions> RecordedOptionsGetWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedSearchOptions> RecordedOptionsGetWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -951,6 +1009,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedOptionsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -971,11 +1032,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画検索オプションを取得 録画検索オプションを取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordedSearchOptions</returns>
-        public async System.Threading.Tasks.Task<RecordedSearchOptions> RecordedOptionsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RecordedSearchOptions> RecordedOptionsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedSearchOptions> localVarResponse = await RecordedOptionsGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedSearchOptions> localVarResponse = await RecordedOptionsGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -983,9 +1045,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 録画検索オプションを取得 録画検索オプションを取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordedSearchOptions)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedSearchOptions>> RecordedOptionsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedSearchOptions>> RecordedOptionsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1010,6 +1073,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedOptionsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1032,8 +1098,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewRecordedOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreatedNewRecorded</returns>
-        public CreatedNewRecorded RecordedPost(CreateNewRecordedOption createNewRecordedOption)
+        public CreatedNewRecorded RecordedPost(CreateNewRecordedOption createNewRecordedOption, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<CreatedNewRecorded> localVarResponse = RecordedPostWithHttpInfo(createNewRecordedOption);
             return localVarResponse.Data;
@@ -1044,8 +1111,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewRecordedOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreatedNewRecorded</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<CreatedNewRecorded> RecordedPostWithHttpInfo(CreateNewRecordedOption createNewRecordedOption)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<CreatedNewRecorded> RecordedPostWithHttpInfo(CreateNewRecordedOption createNewRecordedOption, int operationIndex = 0)
         {
             // verify the required parameter 'createNewRecordedOption' is set
             if (createNewRecordedOption == null)
@@ -1077,6 +1145,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = createNewRecordedOption;
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1098,11 +1169,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewRecordedOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreatedNewRecorded</returns>
-        public async System.Threading.Tasks.Task<CreatedNewRecorded> RecordedPostAsync(CreateNewRecordedOption createNewRecordedOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreatedNewRecorded> RecordedPostAsync(CreateNewRecordedOption createNewRecordedOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<CreatedNewRecorded> localVarResponse = await RecordedPostWithHttpInfoAsync(createNewRecordedOption, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<CreatedNewRecorded> localVarResponse = await RecordedPostWithHttpInfoAsync(createNewRecordedOption, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1111,9 +1183,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewRecordedOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreatedNewRecorded)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<CreatedNewRecorded>> RecordedPostWithHttpInfoAsync(CreateNewRecordedOption createNewRecordedOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<CreatedNewRecorded>> RecordedPostWithHttpInfoAsync(CreateNewRecordedOption createNewRecordedOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'createNewRecordedOption' is set
             if (createNewRecordedOption == null)
@@ -1146,6 +1219,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = createNewRecordedOption;
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1168,8 +1244,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RecordedRecordedIdDelete(int recordedId)
+        public void RecordedRecordedIdDelete(int recordedId, int operationIndex = 0)
         {
             RecordedRecordedIdDeleteWithHttpInfo(recordedId);
         }
@@ -1179,8 +1256,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedRecordedIdDeleteWithHttpInfo(int recordedId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedRecordedIdDeleteWithHttpInfo(int recordedId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1205,6 +1283,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1226,11 +1307,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RecordedRecordedIdDeleteAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RecordedRecordedIdDeleteAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RecordedRecordedIdDeleteWithHttpInfoAsync(recordedId, cancellationToken).ConfigureAwait(false);
+            await RecordedRecordedIdDeleteWithHttpInfoAsync(recordedId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1238,9 +1320,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedRecordedIdDeleteWithHttpInfoAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedRecordedIdDeleteWithHttpInfoAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1266,6 +1349,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1288,8 +1374,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RecordedRecordedIdEncodeDelete(int recordedId)
+        public void RecordedRecordedIdEncodeDelete(int recordedId, int operationIndex = 0)
         {
             RecordedRecordedIdEncodeDeleteWithHttpInfo(recordedId);
         }
@@ -1299,8 +1386,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedRecordedIdEncodeDeleteWithHttpInfo(int recordedId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedRecordedIdEncodeDeleteWithHttpInfo(int recordedId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1325,6 +1413,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdEncodeDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1346,11 +1437,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RecordedRecordedIdEncodeDeleteAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RecordedRecordedIdEncodeDeleteAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RecordedRecordedIdEncodeDeleteWithHttpInfoAsync(recordedId, cancellationToken).ConfigureAwait(false);
+            await RecordedRecordedIdEncodeDeleteWithHttpInfoAsync(recordedId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1358,9 +1450,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedRecordedIdEncodeDeleteWithHttpInfoAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedRecordedIdEncodeDeleteWithHttpInfoAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1386,6 +1479,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdEncodeDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1409,8 +1505,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RecordedItem</returns>
-        public RecordedItem RecordedRecordedIdGet(int recordedId, bool isHalfWidth)
+        public RecordedItem RecordedRecordedIdGet(int recordedId, bool isHalfWidth, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedItem> localVarResponse = RecordedRecordedIdGetWithHttpInfo(recordedId, isHalfWidth);
             return localVarResponse.Data;
@@ -1422,8 +1519,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RecordedItem</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedItem> RecordedRecordedIdGetWithHttpInfo(int recordedId, bool isHalfWidth)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedItem> RecordedRecordedIdGetWithHttpInfo(int recordedId, bool isHalfWidth, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1449,6 +1547,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1471,11 +1572,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordedItem</returns>
-        public async System.Threading.Tasks.Task<RecordedItem> RecordedRecordedIdGetAsync(int recordedId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RecordedItem> RecordedRecordedIdGetAsync(int recordedId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedItem> localVarResponse = await RecordedRecordedIdGetWithHttpInfoAsync(recordedId, isHalfWidth, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedItem> localVarResponse = await RecordedRecordedIdGetWithHttpInfoAsync(recordedId, isHalfWidth, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1485,9 +1587,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordedItem)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedItem>> RecordedRecordedIdGetWithHttpInfoAsync(int recordedId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedItem>> RecordedRecordedIdGetWithHttpInfoAsync(int recordedId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1515,6 +1618,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
 
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<RecordedItem>("/recorded/{recordedId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1536,8 +1642,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RecordedRecordedIdProtectPut(int recordedId)
+        public void RecordedRecordedIdProtectPut(int recordedId, int operationIndex = 0)
         {
             RecordedRecordedIdProtectPutWithHttpInfo(recordedId);
         }
@@ -1547,8 +1654,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedRecordedIdProtectPutWithHttpInfo(int recordedId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedRecordedIdProtectPutWithHttpInfo(int recordedId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1573,6 +1681,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdProtectPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1594,11 +1705,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RecordedRecordedIdProtectPutAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RecordedRecordedIdProtectPutAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RecordedRecordedIdProtectPutWithHttpInfoAsync(recordedId, cancellationToken).ConfigureAwait(false);
+            await RecordedRecordedIdProtectPutWithHttpInfoAsync(recordedId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1606,9 +1718,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedRecordedIdProtectPutWithHttpInfoAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedRecordedIdProtectPutWithHttpInfoAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1634,6 +1747,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdProtectPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1656,8 +1772,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RecordedRecordedIdUnprotectPut(int recordedId)
+        public void RecordedRecordedIdUnprotectPut(int recordedId, int operationIndex = 0)
         {
             RecordedRecordedIdUnprotectPutWithHttpInfo(recordedId);
         }
@@ -1667,8 +1784,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedRecordedIdUnprotectPutWithHttpInfo(int recordedId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordedRecordedIdUnprotectPutWithHttpInfo(int recordedId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1693,6 +1811,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdUnprotectPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1714,11 +1835,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RecordedRecordedIdUnprotectPutAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RecordedRecordedIdUnprotectPutAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RecordedRecordedIdUnprotectPutWithHttpInfoAsync(recordedId, cancellationToken).ConfigureAwait(false);
+            await RecordedRecordedIdUnprotectPutWithHttpInfoAsync(recordedId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1726,9 +1848,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="recordedId">recorded id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedRecordedIdUnprotectPutWithHttpInfoAsync(int recordedId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordedRecordedIdUnprotectPutWithHttpInfoAsync(int recordedId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1754,6 +1877,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("recordedId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(recordedId)); // path parameter
+
+            localVarRequestOptions.Operation = "RecordedApi.RecordedRecordedIdUnprotectPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

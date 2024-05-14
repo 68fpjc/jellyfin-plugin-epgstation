@@ -28,8 +28,8 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// <summary>
     /// バージョン情報
     /// </summary>
-    [DataContract(Name = "_Version")]
-    public partial class ModelVersion : IEquatable<ModelVersion>, IValidatableObject
+    [DataContract(Name = "varVersion")]
+    public partial class ModelVersion : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelVersion" /> class.
@@ -39,22 +39,22 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelVersion" /> class.
         /// </summary>
-        /// <param name="version">version (required).</param>
-        public ModelVersion(string version = default(string))
+        /// <param name="varVersion">varVersion (required).</param>
+        public ModelVersion(string varVersion = default(string))
         {
-            // to ensure "version" is required (not null)
-            if (version == null)
+            // to ensure "varVersion" is required (not null)
+            if (varVersion == null)
             {
-                throw new ArgumentNullException("version is a required property for ModelVersion and cannot be null");
+                throw new ArgumentNullException("varVersion is a required property for ModelVersion and cannot be null");
             }
-            this._Version = version;
+            this.VarVersion = varVersion;
         }
 
         /// <summary>
-        /// Gets or Sets _Version
+        /// Gets or Sets VarVersion
         /// </summary>
-        [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = false)]
-        public string _Version { get; set; }
+        [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = true)]
+        public string VarVersion { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,7 +64,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ModelVersion {\n");
-            sb.Append("  _Version: ").Append(_Version).Append("\n");
+            sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,57 +79,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ModelVersion);
-        }
-
-        /// <summary>
-        /// Returns true if ModelVersion instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ModelVersion to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ModelVersion input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this._Version == input._Version ||
-                    (this._Version != null &&
-                    this._Version.Equals(input._Version))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this._Version != null)
-                {
-                    hashCode = (hashCode * 59) + this._Version.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

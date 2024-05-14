@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 録画情報
     /// </summary>
     [DataContract(Name = "Records")]
-    public partial class Records : IEquatable<Records>, IValidatableObject
+    public partial class Records : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Records" /> class.
@@ -39,30 +39,30 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Records" /> class.
         /// </summary>
-        /// <param name="records">records (required).</param>
+        /// <param name="varRecords">varRecords (required).</param>
         /// <param name="total">録画総件数 (required).</param>
-        public Records(List<RecordedItem> records = default(List<RecordedItem>), int total = default(int))
+        public Records(List<RecordedItem> varRecords = default(List<RecordedItem>), int total = default(int))
         {
-            // to ensure "records" is required (not null)
-            if (records == null)
+            // to ensure "varRecords" is required (not null)
+            if (varRecords == null)
             {
-                throw new ArgumentNullException("records is a required property for Records and cannot be null");
+                throw new ArgumentNullException("varRecords is a required property for Records and cannot be null");
             }
-            this._Records = records;
+            this.VarRecords = varRecords;
             this.Total = total;
         }
 
         /// <summary>
-        /// Gets or Sets _Records
+        /// Gets or Sets VarRecords
         /// </summary>
-        [DataMember(Name = "records", IsRequired = true, EmitDefaultValue = false)]
-        public List<RecordedItem> _Records { get; set; }
+        [DataMember(Name = "records", IsRequired = true, EmitDefaultValue = true)]
+        public List<RecordedItem> VarRecords { get; set; }
 
         /// <summary>
         /// 録画総件数
         /// </summary>
         /// <value>録画総件数</value>
-        [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = true)]
         public int Total { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Records {\n");
-            sb.Append("  _Records: ").Append(_Records).Append("\n");
+            sb.Append("  VarRecords: ").Append(VarRecords).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -89,63 +89,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Records);
-        }
-
-        /// <summary>
-        /// Returns true if Records instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Records to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Records input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this._Records == input._Records ||
-                    this._Records != null &&
-                    input._Records != null &&
-                    this._Records.SequenceEqual(input._Records)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    this.Total.Equals(input.Total)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this._Records != null)
-                {
-                    hashCode = (hashCode * 59) + this._Records.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Total.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

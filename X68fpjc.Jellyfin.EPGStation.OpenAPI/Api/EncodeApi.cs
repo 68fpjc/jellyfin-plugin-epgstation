@@ -34,8 +34,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="encodeId">エンコード id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void EncodeEncodeIdDelete(int encodeId);
+        void EncodeEncodeIdDelete(int encodeId, int operationIndex = 0);
 
         /// <summary>
         /// エンコードをキャンセル
@@ -45,8 +46,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="encodeId">エンコード id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> EncodeEncodeIdDeleteWithHttpInfo(int encodeId);
+        ApiResponse<Object> EncodeEncodeIdDeleteWithHttpInfo(int encodeId, int operationIndex = 0);
         /// <summary>
         /// エンコード情報取得
         /// </summary>
@@ -55,8 +57,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>EncodeInfo</returns>
-        EncodeInfo EncodeGet(bool isHalfWidth);
+        EncodeInfo EncodeGet(bool isHalfWidth, int operationIndex = 0);
 
         /// <summary>
         /// エンコード情報取得
@@ -66,8 +69,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of EncodeInfo</returns>
-        ApiResponse<EncodeInfo> EncodeGetWithHttpInfo(bool isHalfWidth);
+        ApiResponse<EncodeInfo> EncodeGetWithHttpInfo(bool isHalfWidth, int operationIndex = 0);
         /// <summary>
         /// エンコード追加
         /// </summary>
@@ -76,8 +80,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addManualEncodeProgramOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddedEncode</returns>
-        AddedEncode EncodePost(AddManualEncodeProgramOption addManualEncodeProgramOption);
+        AddedEncode EncodePost(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0);
 
         /// <summary>
         /// エンコード追加
@@ -87,8 +92,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addManualEncodeProgramOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddedEncode</returns>
-        ApiResponse<AddedEncode> EncodePostWithHttpInfo(AddManualEncodeProgramOption addManualEncodeProgramOption);
+        ApiResponse<AddedEncode> EncodePostWithHttpInfo(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -106,9 +112,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="encodeId">エンコード id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task EncodeEncodeIdDeleteAsync(int encodeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task EncodeEncodeIdDeleteAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// エンコードをキャンセル
@@ -118,9 +125,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="encodeId">エンコード id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EncodeEncodeIdDeleteWithHttpInfoAsync(int encodeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> EncodeEncodeIdDeleteWithHttpInfoAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// エンコード情報取得
         /// </summary>
@@ -129,9 +137,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EncodeInfo</returns>
-        System.Threading.Tasks.Task<EncodeInfo> EncodeGetAsync(bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<EncodeInfo> EncodeGetAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// エンコード情報取得
@@ -141,9 +150,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EncodeInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EncodeInfo>> EncodeGetWithHttpInfoAsync(bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<EncodeInfo>> EncodeGetWithHttpInfoAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// エンコード追加
         /// </summary>
@@ -152,9 +162,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addManualEncodeProgramOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedEncode</returns>
-        System.Threading.Tasks.Task<AddedEncode> EncodePostAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AddedEncode> EncodePostAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// エンコード追加
@@ -164,9 +175,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addManualEncodeProgramOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedEncode)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddedEncode>> EncodePostWithHttpInfoAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AddedEncode>> EncodePostWithHttpInfoAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -292,8 +304,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="encodeId">エンコード id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void EncodeEncodeIdDelete(int encodeId)
+        public void EncodeEncodeIdDelete(int encodeId, int operationIndex = 0)
         {
             EncodeEncodeIdDeleteWithHttpInfo(encodeId);
         }
@@ -303,8 +316,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="encodeId">エンコード id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> EncodeEncodeIdDeleteWithHttpInfo(int encodeId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> EncodeEncodeIdDeleteWithHttpInfo(int encodeId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -329,6 +343,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("encodeId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(encodeId)); // path parameter
+
+            localVarRequestOptions.Operation = "EncodeApi.EncodeEncodeIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -350,11 +367,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="encodeId">エンコード id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task EncodeEncodeIdDeleteAsync(int encodeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task EncodeEncodeIdDeleteAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await EncodeEncodeIdDeleteWithHttpInfoAsync(encodeId, cancellationToken).ConfigureAwait(false);
+            await EncodeEncodeIdDeleteWithHttpInfoAsync(encodeId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -362,9 +380,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="encodeId">エンコード id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> EncodeEncodeIdDeleteWithHttpInfoAsync(int encodeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> EncodeEncodeIdDeleteWithHttpInfoAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -390,6 +409,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("encodeId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(encodeId)); // path parameter
+
+            localVarRequestOptions.Operation = "EncodeApi.EncodeEncodeIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -412,8 +434,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>EncodeInfo</returns>
-        public EncodeInfo EncodeGet(bool isHalfWidth)
+        public EncodeInfo EncodeGet(bool isHalfWidth, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo> localVarResponse = EncodeGetWithHttpInfo(isHalfWidth);
             return localVarResponse.Data;
@@ -424,8 +447,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of EncodeInfo</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo> EncodeGetWithHttpInfo(bool isHalfWidth)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo> EncodeGetWithHttpInfo(bool isHalfWidth, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -450,6 +474,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "EncodeApi.EncodeGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -471,11 +498,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EncodeInfo</returns>
-        public async System.Threading.Tasks.Task<EncodeInfo> EncodeGetAsync(bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<EncodeInfo> EncodeGetAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo> localVarResponse = await EncodeGetWithHttpInfoAsync(isHalfWidth, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo> localVarResponse = await EncodeGetWithHttpInfoAsync(isHalfWidth, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -484,9 +512,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EncodeInfo)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo>> EncodeGetWithHttpInfoAsync(bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo>> EncodeGetWithHttpInfoAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -512,6 +541,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "EncodeApi.EncodeGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -534,8 +566,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addManualEncodeProgramOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddedEncode</returns>
-        public AddedEncode EncodePost(AddManualEncodeProgramOption addManualEncodeProgramOption)
+        public AddedEncode EncodePost(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode> localVarResponse = EncodePostWithHttpInfo(addManualEncodeProgramOption);
             return localVarResponse.Data;
@@ -546,8 +579,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addManualEncodeProgramOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddedEncode</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode> EncodePostWithHttpInfo(AddManualEncodeProgramOption addManualEncodeProgramOption)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode> EncodePostWithHttpInfo(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0)
         {
             // verify the required parameter 'addManualEncodeProgramOption' is set
             if (addManualEncodeProgramOption == null)
@@ -579,6 +613,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = addManualEncodeProgramOption;
+
+            localVarRequestOptions.Operation = "EncodeApi.EncodePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -600,11 +637,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addManualEncodeProgramOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedEncode</returns>
-        public async System.Threading.Tasks.Task<AddedEncode> EncodePostAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AddedEncode> EncodePostAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode> localVarResponse = await EncodePostWithHttpInfoAsync(addManualEncodeProgramOption, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode> localVarResponse = await EncodePostWithHttpInfoAsync(addManualEncodeProgramOption, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -613,9 +651,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addManualEncodeProgramOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedEncode)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode>> EncodePostWithHttpInfoAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode>> EncodePostWithHttpInfoAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'addManualEncodeProgramOption' is set
             if (addManualEncodeProgramOption == null)
@@ -648,6 +687,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = addManualEncodeProgramOption;
+
+            localVarRequestOptions.Operation = "EncodeApi.EncodePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

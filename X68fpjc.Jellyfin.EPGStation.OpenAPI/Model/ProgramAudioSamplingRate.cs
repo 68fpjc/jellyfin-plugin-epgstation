@@ -60,7 +60,6 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// Enum NUMBER_48000 for value: 48000
         /// </summary>
         NUMBER_48000 = 48000
-
     }
 
 }

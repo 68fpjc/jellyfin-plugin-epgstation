@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 予約情報
     /// </summary>
     [DataContract(Name = "Reserves")]
-    public partial class Reserves : IEquatable<Reserves>, IValidatableObject
+    public partial class Reserves : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Reserves" /> class.
@@ -39,30 +39,30 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Reserves" /> class.
         /// </summary>
-        /// <param name="reserves">reserves (required).</param>
+        /// <param name="varReserves">varReserves (required).</param>
         /// <param name="total">予約総件数 (required).</param>
-        public Reserves(List<ReserveItem> reserves = default(List<ReserveItem>), int total = default(int))
+        public Reserves(List<ReserveItem> varReserves = default(List<ReserveItem>), int total = default(int))
         {
-            // to ensure "reserves" is required (not null)
-            if (reserves == null)
+            // to ensure "varReserves" is required (not null)
+            if (varReserves == null)
             {
-                throw new ArgumentNullException("reserves is a required property for Reserves and cannot be null");
+                throw new ArgumentNullException("varReserves is a required property for Reserves and cannot be null");
             }
-            this._Reserves = reserves;
+            this.VarReserves = varReserves;
             this.Total = total;
         }
 
         /// <summary>
-        /// Gets or Sets _Reserves
+        /// Gets or Sets VarReserves
         /// </summary>
-        [DataMember(Name = "reserves", IsRequired = true, EmitDefaultValue = false)]
-        public List<ReserveItem> _Reserves { get; set; }
+        [DataMember(Name = "reserves", IsRequired = true, EmitDefaultValue = true)]
+        public List<ReserveItem> VarReserves { get; set; }
 
         /// <summary>
         /// 予約総件数
         /// </summary>
         /// <value>予約総件数</value>
-        [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = true)]
         public int Total { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Reserves {\n");
-            sb.Append("  _Reserves: ").Append(_Reserves).Append("\n");
+            sb.Append("  VarReserves: ").Append(VarReserves).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -89,63 +89,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Reserves);
-        }
-
-        /// <summary>
-        /// Returns true if Reserves instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Reserves to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Reserves input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this._Reserves == input._Reserves ||
-                    this._Reserves != null &&
-                    input._Reserves != null &&
-                    this._Reserves.SequenceEqual(input._Reserves)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    this.Total.Equals(input.Total)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this._Reserves != null)
-                {
-                    hashCode = (hashCode * 59) + this._Reserves.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Total.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

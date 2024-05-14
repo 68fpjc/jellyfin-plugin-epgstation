@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 予約エンコードオプション
     /// </summary>
     [DataContract(Name = "ReserveEncodedOption")]
-    public partial class ReserveEncodedOption : IEquatable<ReserveEncodedOption>, IValidatableObject
+    public partial class ReserveEncodedOption : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReserveEncodedOption" /> class.
@@ -165,134 +165,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ReserveEncodedOption);
-        }
-
-        /// <summary>
-        /// Returns true if ReserveEncodedOption instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ReserveEncodedOption to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ReserveEncodedOption input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Mode1 == input.Mode1 ||
-                    (this.Mode1 != null &&
-                    this.Mode1.Equals(input.Mode1))
-                ) && 
-                (
-                    this.EncodeParentDirectoryName1 == input.EncodeParentDirectoryName1 ||
-                    (this.EncodeParentDirectoryName1 != null &&
-                    this.EncodeParentDirectoryName1.Equals(input.EncodeParentDirectoryName1))
-                ) && 
-                (
-                    this.Directory1 == input.Directory1 ||
-                    (this.Directory1 != null &&
-                    this.Directory1.Equals(input.Directory1))
-                ) && 
-                (
-                    this.Mode2 == input.Mode2 ||
-                    (this.Mode2 != null &&
-                    this.Mode2.Equals(input.Mode2))
-                ) && 
-                (
-                    this.EncodeParentDirectoryName2 == input.EncodeParentDirectoryName2 ||
-                    (this.EncodeParentDirectoryName2 != null &&
-                    this.EncodeParentDirectoryName2.Equals(input.EncodeParentDirectoryName2))
-                ) && 
-                (
-                    this.Directory2 == input.Directory2 ||
-                    (this.Directory2 != null &&
-                    this.Directory2.Equals(input.Directory2))
-                ) && 
-                (
-                    this.Mode3 == input.Mode3 ||
-                    (this.Mode3 != null &&
-                    this.Mode3.Equals(input.Mode3))
-                ) && 
-                (
-                    this.EncodeParentDirectoryName3 == input.EncodeParentDirectoryName3 ||
-                    (this.EncodeParentDirectoryName3 != null &&
-                    this.EncodeParentDirectoryName3.Equals(input.EncodeParentDirectoryName3))
-                ) && 
-                (
-                    this.Directory3 == input.Directory3 ||
-                    (this.Directory3 != null &&
-                    this.Directory3.Equals(input.Directory3))
-                ) && 
-                (
-                    this.IsDeleteOriginalAfterEncode == input.IsDeleteOriginalAfterEncode ||
-                    this.IsDeleteOriginalAfterEncode.Equals(input.IsDeleteOriginalAfterEncode)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Mode1 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mode1.GetHashCode();
-                }
-                if (this.EncodeParentDirectoryName1 != null)
-                {
-                    hashCode = (hashCode * 59) + this.EncodeParentDirectoryName1.GetHashCode();
-                }
-                if (this.Directory1 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Directory1.GetHashCode();
-                }
-                if (this.Mode2 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mode2.GetHashCode();
-                }
-                if (this.EncodeParentDirectoryName2 != null)
-                {
-                    hashCode = (hashCode * 59) + this.EncodeParentDirectoryName2.GetHashCode();
-                }
-                if (this.Directory2 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Directory2.GetHashCode();
-                }
-                if (this.Mode3 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mode3.GetHashCode();
-                }
-                if (this.EncodeParentDirectoryName3 != null)
-                {
-                    hashCode = (hashCode * 59) + this.EncodeParentDirectoryName3.GetHashCode();
-                }
-                if (this.Directory3 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Directory3.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleteOriginalAfterEncode.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

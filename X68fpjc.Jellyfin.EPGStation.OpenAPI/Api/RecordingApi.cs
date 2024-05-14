@@ -36,8 +36,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Records</returns>
-        Records RecordingGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?));
+        Records RecordingGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// 録画中情報取得
@@ -49,8 +50,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Records</returns>
-        ApiResponse<Records> RecordingGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<Records> RecordingGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), int operationIndex = 0);
         /// <summary>
         /// 予約タイマー再設定
         /// </summary>
@@ -58,8 +60,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約タイマーを再設定する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RecordingResettimerPost();
+        void RecordingResettimerPost(int operationIndex = 0);
 
         /// <summary>
         /// 予約タイマー再設定
@@ -68,8 +71,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約タイマーを再設定する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RecordingResettimerPostWithHttpInfo();
+        ApiResponse<Object> RecordingResettimerPostWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -89,9 +93,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Records</returns>
-        System.Threading.Tasks.Task<Records> RecordingGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Records> RecordingGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 録画中情報取得
@@ -103,9 +108,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Records)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Records>> RecordingGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Records>> RecordingGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 予約タイマー再設定
         /// </summary>
@@ -113,9 +119,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約タイマーを再設定する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RecordingResettimerPostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RecordingResettimerPostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約タイマー再設定
@@ -124,9 +131,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約タイマーを再設定する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RecordingResettimerPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RecordingResettimerPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -254,8 +262,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Records</returns>
-        public Records RecordingGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?))
+        public Records RecordingGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> localVarResponse = RecordingGetWithHttpInfo(isHalfWidth, offset, limit);
             return localVarResponse.Data;
@@ -268,8 +277,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Records</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> RecordingGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?))
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> RecordingGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -302,6 +312,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "RecordingApi.RecordingGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -325,11 +338,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Records</returns>
-        public async System.Threading.Tasks.Task<Records> RecordingGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Records> RecordingGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> localVarResponse = await RecordingGetWithHttpInfoAsync(isHalfWidth, offset, limit, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records> localVarResponse = await RecordingGetWithHttpInfoAsync(isHalfWidth, offset, limit, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -340,9 +354,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Records)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records>> RecordingGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Records>> RecordingGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -377,6 +392,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
 
+            localVarRequestOptions.Operation = "RecordingApi.RecordingGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Records>("/recording", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -397,8 +415,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約タイマー再設定 予約タイマーを再設定する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RecordingResettimerPost()
+        public void RecordingResettimerPost(int operationIndex = 0)
         {
             RecordingResettimerPostWithHttpInfo();
         }
@@ -407,8 +426,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約タイマー再設定 予約タイマーを再設定する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordingResettimerPostWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RecordingResettimerPostWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -432,6 +452,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "RecordingApi.RecordingResettimerPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -452,20 +475,22 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約タイマー再設定 予約タイマーを再設定する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RecordingResettimerPostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RecordingResettimerPostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RecordingResettimerPostWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            await RecordingResettimerPostWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// 予約タイマー再設定 予約タイマーを再設定する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordingResettimerPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RecordingResettimerPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -490,6 +515,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "RecordingApi.RecordingResettimerPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

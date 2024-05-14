@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 予約, 除外, 重複, 競合の reserveId のリスト
     /// </summary>
     [DataContract(Name = "ReserveLists")]
-    public partial class ReserveLists : IEquatable<ReserveLists>, IValidatableObject
+    public partial class ReserveLists : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReserveLists" /> class.
@@ -74,25 +74,25 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Gets or Sets Normal
         /// </summary>
-        [DataMember(Name = "normal", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "normal", IsRequired = true, EmitDefaultValue = true)]
         public ReserveListItem Normal { get; set; }
 
         /// <summary>
         /// Gets or Sets Conflicts
         /// </summary>
-        [DataMember(Name = "conflicts", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "conflicts", IsRequired = true, EmitDefaultValue = true)]
         public ReserveListItem Conflicts { get; set; }
 
         /// <summary>
         /// Gets or Sets Skips
         /// </summary>
-        [DataMember(Name = "skips", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "skips", IsRequired = true, EmitDefaultValue = true)]
         public ReserveListItem Skips { get; set; }
 
         /// <summary>
         /// Gets or Sets Overlaps
         /// </summary>
-        [DataMember(Name = "overlaps", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "overlaps", IsRequired = true, EmitDefaultValue = true)]
         public ReserveListItem Overlaps { get; set; }
 
         /// <summary>
@@ -121,84 +121,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ReserveLists);
-        }
-
-        /// <summary>
-        /// Returns true if ReserveLists instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ReserveLists to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ReserveLists input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Normal == input.Normal ||
-                    (this.Normal != null &&
-                    this.Normal.Equals(input.Normal))
-                ) && 
-                (
-                    this.Conflicts == input.Conflicts ||
-                    (this.Conflicts != null &&
-                    this.Conflicts.Equals(input.Conflicts))
-                ) && 
-                (
-                    this.Skips == input.Skips ||
-                    (this.Skips != null &&
-                    this.Skips.Equals(input.Skips))
-                ) && 
-                (
-                    this.Overlaps == input.Overlaps ||
-                    (this.Overlaps != null &&
-                    this.Overlaps.Equals(input.Overlaps))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Normal != null)
-                {
-                    hashCode = (hashCode * 59) + this.Normal.GetHashCode();
-                }
-                if (this.Conflicts != null)
-                {
-                    hashCode = (hashCode * 59) + this.Conflicts.GetHashCode();
-                }
-                if (this.Skips != null)
-                {
-                    hashCode = (hashCode * 59) + this.Skips.GetHashCode();
-                }
-                if (this.Overlaps != null)
-                {
-                    hashCode = (hashCode * 59) + this.Overlaps.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 時刻範囲指定オプション
     /// </summary>
     [DataContract(Name = "SearchTime")]
-    public partial class SearchTime : IEquatable<SearchTime>, IValidatableObject
+    public partial class SearchTime : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchTime" /> class.
@@ -67,7 +67,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 曜日指定 0x01, 0x02, 0x04, 0x08, 0x10, 0x20 ,0x40 が日〜土に対応するので and 演算で曜日を指定する
         /// </summary>
         /// <value>曜日指定 0x01, 0x02, 0x04, 0x08, 0x10, 0x20 ,0x40 が日〜土に対応するので and 演算で曜日を指定する</value>
-        [DataMember(Name = "week", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "week", IsRequired = true, EmitDefaultValue = true)]
         public int Week { get; set; }
 
         /// <summary>
@@ -95,63 +95,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SearchTime);
-        }
-
-        /// <summary>
-        /// Returns true if SearchTime instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SearchTime to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SearchTime input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Start == input.Start ||
-                    this.Start.Equals(input.Start)
-                ) && 
-                (
-                    this.Range == input.Range ||
-                    this.Range.Equals(input.Range)
-                ) && 
-                (
-                    this.Week == input.Week ||
-                    this.Week.Equals(input.Week)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Start.GetHashCode();
-                hashCode = (hashCode * 59) + this.Range.GetHashCode();
-                hashCode = (hashCode * 59) + this.Week.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

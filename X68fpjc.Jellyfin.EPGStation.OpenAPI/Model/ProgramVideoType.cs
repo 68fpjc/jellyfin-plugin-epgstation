@@ -49,7 +49,6 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         [EnumMember(Value = "h.265")]
         H265 = 3
-
     }
 
 }

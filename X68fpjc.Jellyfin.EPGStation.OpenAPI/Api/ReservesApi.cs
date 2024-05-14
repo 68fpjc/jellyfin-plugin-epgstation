@@ -33,8 +33,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約数を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ReserveCnts</returns>
-        ReserveCnts ReservesCntsGet();
+        ReserveCnts ReservesCntsGet(int operationIndex = 0);
 
         /// <summary>
         /// 予約数取得
@@ -43,8 +44,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約数を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ReserveCnts</returns>
-        ApiResponse<ReserveCnts> ReservesCntsGetWithHttpInfo();
+        ApiResponse<ReserveCnts> ReservesCntsGetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 予約情報取得
         /// </summary>
@@ -57,8 +59,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="ruleId">ルールid (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Reserves</returns>
-        Reserves ReservesGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string type = default(string), int? ruleId = default(int?));
+        Reserves ReservesGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string? type = default(string?), int? ruleId = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// 予約情報取得
@@ -72,8 +75,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="ruleId">ルールid (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Reserves</returns>
-        ApiResponse<Reserves> ReservesGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string type = default(string), int? ruleId = default(int?));
+        ApiResponse<Reserves> ReservesGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string? type = default(string?), int? ruleId = default(int?), int operationIndex = 0);
         /// <summary>
         /// 予約リスト情報取得
         /// </summary>
@@ -83,8 +87,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startAt">開始時刻</param>
         /// <param name="endAt">終了時刻</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ReserveLists</returns>
-        ReserveLists ReservesListsGet(long startAt, long endAt);
+        ReserveLists ReservesListsGet(long startAt, long endAt, int operationIndex = 0);
 
         /// <summary>
         /// 予約リスト情報取得
@@ -95,8 +100,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startAt">開始時刻</param>
         /// <param name="endAt">終了時刻</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ReserveLists</returns>
-        ApiResponse<ReserveLists> ReservesListsGetWithHttpInfo(long startAt, long endAt);
+        ApiResponse<ReserveLists> ReservesListsGetWithHttpInfo(long startAt, long endAt, int operationIndex = 0);
         /// <summary>
         /// 予約追加
         /// </summary>
@@ -105,8 +111,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="manualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddedReserve</returns>
-        AddedReserve ReservesPost(ManualReserveOption manualReserveOption);
+        AddedReserve ReservesPost(ManualReserveOption manualReserveOption, int operationIndex = 0);
 
         /// <summary>
         /// 予約追加
@@ -116,8 +123,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="manualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddedReserve</returns>
-        ApiResponse<AddedReserve> ReservesPostWithHttpInfo(ManualReserveOption manualReserveOption);
+        ApiResponse<AddedReserve> ReservesPostWithHttpInfo(ManualReserveOption manualReserveOption, int operationIndex = 0);
         /// <summary>
         /// 予約削除
         /// </summary>
@@ -126,8 +134,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ReservesReserveIdDelete(int reserveId);
+        void ReservesReserveIdDelete(int reserveId, int operationIndex = 0);
 
         /// <summary>
         /// 予約削除
@@ -137,8 +146,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ReservesReserveIdDeleteWithHttpInfo(int reserveId);
+        ApiResponse<Object> ReservesReserveIdDeleteWithHttpInfo(int reserveId, int operationIndex = 0);
         /// <summary>
         /// 指定された予約情報の取得
         /// </summary>
@@ -148,8 +158,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ReserveItem</returns>
-        ReserveItem ReservesReserveIdGet(int reserveId, bool isHalfWidth);
+        ReserveItem ReservesReserveIdGet(int reserveId, bool isHalfWidth, int operationIndex = 0);
 
         /// <summary>
         /// 指定された予約情報の取得
@@ -160,8 +171,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ReserveItem</returns>
-        ApiResponse<ReserveItem> ReservesReserveIdGetWithHttpInfo(int reserveId, bool isHalfWidth);
+        ApiResponse<ReserveItem> ReservesReserveIdGetWithHttpInfo(int reserveId, bool isHalfWidth, int operationIndex = 0);
         /// <summary>
         /// 予約の重複状態を解除
         /// </summary>
@@ -170,8 +182,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ReservesReserveIdOverlapDelete(int reserveId);
+        void ReservesReserveIdOverlapDelete(int reserveId, int operationIndex = 0);
 
         /// <summary>
         /// 予約の重複状態を解除
@@ -181,8 +194,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ReservesReserveIdOverlapDeleteWithHttpInfo(int reserveId);
+        ApiResponse<Object> ReservesReserveIdOverlapDeleteWithHttpInfo(int reserveId, int operationIndex = 0);
         /// <summary>
         /// 手動予約更新
         /// </summary>
@@ -192,8 +206,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="editManualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ReservesReserveIdPut(int reserveId, EditManualReserveOption editManualReserveOption);
+        void ReservesReserveIdPut(int reserveId, EditManualReserveOption editManualReserveOption, int operationIndex = 0);
 
         /// <summary>
         /// 手動予約更新
@@ -204,8 +219,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="editManualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ReservesReserveIdPutWithHttpInfo(int reserveId, EditManualReserveOption editManualReserveOption);
+        ApiResponse<Object> ReservesReserveIdPutWithHttpInfo(int reserveId, EditManualReserveOption editManualReserveOption, int operationIndex = 0);
         /// <summary>
         /// 予約の除外状態を解除
         /// </summary>
@@ -214,8 +230,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ReservesReserveIdSkipDelete(int reserveId);
+        void ReservesReserveIdSkipDelete(int reserveId, int operationIndex = 0);
 
         /// <summary>
         /// 予約の除外状態を解除
@@ -225,8 +242,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ReservesReserveIdSkipDeleteWithHttpInfo(int reserveId);
+        ApiResponse<Object> ReservesReserveIdSkipDeleteWithHttpInfo(int reserveId, int operationIndex = 0);
         /// <summary>
         /// 予約情報の更新開始
         /// </summary>
@@ -234,8 +252,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約情報の更新を開始する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ReservesUpdatePost();
+        void ReservesUpdatePost(int operationIndex = 0);
 
         /// <summary>
         /// 予約情報の更新開始
@@ -244,8 +263,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約情報の更新を開始する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ReservesUpdatePostWithHttpInfo();
+        ApiResponse<Object> ReservesUpdatePostWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -262,9 +282,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約数を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReserveCnts</returns>
-        System.Threading.Tasks.Task<ReserveCnts> ReservesCntsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ReserveCnts> ReservesCntsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約数取得
@@ -273,9 +294,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約数を取得する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReserveCnts)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReserveCnts>> ReservesCntsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ReserveCnts>> ReservesCntsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 予約情報取得
         /// </summary>
@@ -288,9 +310,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="ruleId">ルールid (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Reserves</returns>
-        System.Threading.Tasks.Task<Reserves> ReservesGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string type = default(string), int? ruleId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Reserves> ReservesGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string? type = default(string?), int? ruleId = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約情報取得
@@ -304,9 +327,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="ruleId">ルールid (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Reserves)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Reserves>> ReservesGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string type = default(string), int? ruleId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Reserves>> ReservesGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string? type = default(string?), int? ruleId = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 予約リスト情報取得
         /// </summary>
@@ -316,9 +340,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startAt">開始時刻</param>
         /// <param name="endAt">終了時刻</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReserveLists</returns>
-        System.Threading.Tasks.Task<ReserveLists> ReservesListsGetAsync(long startAt, long endAt, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ReserveLists> ReservesListsGetAsync(long startAt, long endAt, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約リスト情報取得
@@ -329,9 +354,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startAt">開始時刻</param>
         /// <param name="endAt">終了時刻</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReserveLists)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReserveLists>> ReservesListsGetWithHttpInfoAsync(long startAt, long endAt, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ReserveLists>> ReservesListsGetWithHttpInfoAsync(long startAt, long endAt, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 予約追加
         /// </summary>
@@ -340,9 +366,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="manualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedReserve</returns>
-        System.Threading.Tasks.Task<AddedReserve> ReservesPostAsync(ManualReserveOption manualReserveOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AddedReserve> ReservesPostAsync(ManualReserveOption manualReserveOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約追加
@@ -352,9 +379,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="manualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedReserve)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddedReserve>> ReservesPostWithHttpInfoAsync(ManualReserveOption manualReserveOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AddedReserve>> ReservesPostWithHttpInfoAsync(ManualReserveOption manualReserveOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 予約削除
         /// </summary>
@@ -363,9 +391,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ReservesReserveIdDeleteAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ReservesReserveIdDeleteAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約削除
@@ -375,9 +404,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesReserveIdDeleteWithHttpInfoAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesReserveIdDeleteWithHttpInfoAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 指定された予約情報の取得
         /// </summary>
@@ -387,9 +417,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReserveItem</returns>
-        System.Threading.Tasks.Task<ReserveItem> ReservesReserveIdGetAsync(int reserveId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ReserveItem> ReservesReserveIdGetAsync(int reserveId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 指定された予約情報の取得
@@ -400,9 +431,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReserveItem)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReserveItem>> ReservesReserveIdGetWithHttpInfoAsync(int reserveId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ReserveItem>> ReservesReserveIdGetWithHttpInfoAsync(int reserveId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 予約の重複状態を解除
         /// </summary>
@@ -411,9 +443,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ReservesReserveIdOverlapDeleteAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ReservesReserveIdOverlapDeleteAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約の重複状態を解除
@@ -423,9 +456,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesReserveIdOverlapDeleteWithHttpInfoAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesReserveIdOverlapDeleteWithHttpInfoAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 手動予約更新
         /// </summary>
@@ -435,9 +469,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="editManualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ReservesReserveIdPutAsync(int reserveId, EditManualReserveOption editManualReserveOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ReservesReserveIdPutAsync(int reserveId, EditManualReserveOption editManualReserveOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 手動予約更新
@@ -448,9 +483,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="editManualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesReserveIdPutWithHttpInfoAsync(int reserveId, EditManualReserveOption editManualReserveOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesReserveIdPutWithHttpInfoAsync(int reserveId, EditManualReserveOption editManualReserveOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 予約の除外状態を解除
         /// </summary>
@@ -459,9 +495,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ReservesReserveIdSkipDeleteAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ReservesReserveIdSkipDeleteAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約の除外状態を解除
@@ -471,9 +508,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesReserveIdSkipDeleteWithHttpInfoAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesReserveIdSkipDeleteWithHttpInfoAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 予約情報の更新開始
         /// </summary>
@@ -481,9 +519,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約情報の更新を開始する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ReservesUpdatePostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ReservesUpdatePostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 予約情報の更新開始
@@ -492,9 +531,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約情報の更新を開始する
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesUpdatePostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ReservesUpdatePostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -619,8 +659,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約数取得 予約数を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ReserveCnts</returns>
-        public ReserveCnts ReservesCntsGet()
+        public ReserveCnts ReservesCntsGet(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveCnts> localVarResponse = ReservesCntsGetWithHttpInfo();
             return localVarResponse.Data;
@@ -630,8 +671,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約数取得 予約数を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ReserveCnts</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveCnts> ReservesCntsGetWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveCnts> ReservesCntsGetWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -655,6 +697,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesCntsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -675,11 +720,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約数取得 予約数を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReserveCnts</returns>
-        public async System.Threading.Tasks.Task<ReserveCnts> ReservesCntsGetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ReserveCnts> ReservesCntsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveCnts> localVarResponse = await ReservesCntsGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveCnts> localVarResponse = await ReservesCntsGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -687,9 +733,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約数取得 予約数を取得する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReserveCnts)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveCnts>> ReservesCntsGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveCnts>> ReservesCntsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -714,6 +761,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesCntsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -740,8 +790,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="ruleId">ルールid (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Reserves</returns>
-        public Reserves ReservesGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string type = default(string), int? ruleId = default(int?))
+        public Reserves ReservesGet(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string? type = default(string?), int? ruleId = default(int?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Reserves> localVarResponse = ReservesGetWithHttpInfo(isHalfWidth, offset, limit, type, ruleId);
             return localVarResponse.Data;
@@ -756,8 +807,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="ruleId">ルールid (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Reserves</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Reserves> ReservesGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string type = default(string), int? ruleId = default(int?))
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Reserves> ReservesGetWithHttpInfo(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string? type = default(string?), int? ruleId = default(int?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -798,6 +850,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             {
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "ruleId", ruleId));
             }
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -823,11 +878,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="ruleId">ルールid (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Reserves</returns>
-        public async System.Threading.Tasks.Task<Reserves> ReservesGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string type = default(string), int? ruleId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Reserves> ReservesGetAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string? type = default(string?), int? ruleId = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Reserves> localVarResponse = await ReservesGetWithHttpInfoAsync(isHalfWidth, offset, limit, type, ruleId, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Reserves> localVarResponse = await ReservesGetWithHttpInfoAsync(isHalfWidth, offset, limit, type, ruleId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -840,9 +896,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="ruleId">ルールid (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Reserves)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Reserves>> ReservesGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string type = default(string), int? ruleId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Reserves>> ReservesGetWithHttpInfoAsync(bool isHalfWidth, int? offset = default(int?), int? limit = default(int?), string? type = default(string?), int? ruleId = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -885,6 +942,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "ruleId", ruleId));
             }
 
+            localVarRequestOptions.Operation = "ReservesApi.ReservesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Reserves>("/reserves", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -907,8 +967,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startAt">開始時刻</param>
         /// <param name="endAt">終了時刻</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ReserveLists</returns>
-        public ReserveLists ReservesListsGet(long startAt, long endAt)
+        public ReserveLists ReservesListsGet(long startAt, long endAt, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveLists> localVarResponse = ReservesListsGetWithHttpInfo(startAt, endAt);
             return localVarResponse.Data;
@@ -920,8 +981,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startAt">開始時刻</param>
         /// <param name="endAt">終了時刻</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ReserveLists</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveLists> ReservesListsGetWithHttpInfo(long startAt, long endAt)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveLists> ReservesListsGetWithHttpInfo(long startAt, long endAt, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -947,6 +1009,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "startAt", startAt));
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "endAt", endAt));
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesListsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -969,11 +1034,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startAt">開始時刻</param>
         /// <param name="endAt">終了時刻</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReserveLists</returns>
-        public async System.Threading.Tasks.Task<ReserveLists> ReservesListsGetAsync(long startAt, long endAt, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ReserveLists> ReservesListsGetAsync(long startAt, long endAt, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveLists> localVarResponse = await ReservesListsGetWithHttpInfoAsync(startAt, endAt, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveLists> localVarResponse = await ReservesListsGetWithHttpInfoAsync(startAt, endAt, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -983,9 +1049,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startAt">開始時刻</param>
         /// <param name="endAt">終了時刻</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReserveLists)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveLists>> ReservesListsGetWithHttpInfoAsync(long startAt, long endAt, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveLists>> ReservesListsGetWithHttpInfoAsync(long startAt, long endAt, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1013,6 +1080,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "startAt", startAt));
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "endAt", endAt));
 
+            localVarRequestOptions.Operation = "ReservesApi.ReservesListsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<ReserveLists>("/reserves/lists", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1034,8 +1104,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="manualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddedReserve</returns>
-        public AddedReserve ReservesPost(ManualReserveOption manualReserveOption)
+        public AddedReserve ReservesPost(ManualReserveOption manualReserveOption, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedReserve> localVarResponse = ReservesPostWithHttpInfo(manualReserveOption);
             return localVarResponse.Data;
@@ -1046,8 +1117,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="manualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddedReserve</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedReserve> ReservesPostWithHttpInfo(ManualReserveOption manualReserveOption)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedReserve> ReservesPostWithHttpInfo(ManualReserveOption manualReserveOption, int operationIndex = 0)
         {
             // verify the required parameter 'manualReserveOption' is set
             if (manualReserveOption == null)
@@ -1079,6 +1151,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = manualReserveOption;
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1100,11 +1175,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="manualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedReserve</returns>
-        public async System.Threading.Tasks.Task<AddedReserve> ReservesPostAsync(ManualReserveOption manualReserveOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AddedReserve> ReservesPostAsync(ManualReserveOption manualReserveOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedReserve> localVarResponse = await ReservesPostWithHttpInfoAsync(manualReserveOption, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedReserve> localVarResponse = await ReservesPostWithHttpInfoAsync(manualReserveOption, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1113,9 +1189,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="manualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedReserve)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedReserve>> ReservesPostWithHttpInfoAsync(ManualReserveOption manualReserveOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedReserve>> ReservesPostWithHttpInfoAsync(ManualReserveOption manualReserveOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'manualReserveOption' is set
             if (manualReserveOption == null)
@@ -1148,6 +1225,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = manualReserveOption;
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1170,8 +1250,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ReservesReserveIdDelete(int reserveId)
+        public void ReservesReserveIdDelete(int reserveId, int operationIndex = 0)
         {
             ReservesReserveIdDeleteWithHttpInfo(reserveId);
         }
@@ -1181,8 +1262,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesReserveIdDeleteWithHttpInfo(int reserveId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesReserveIdDeleteWithHttpInfo(int reserveId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1207,6 +1289,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1228,11 +1313,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ReservesReserveIdDeleteAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ReservesReserveIdDeleteAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ReservesReserveIdDeleteWithHttpInfoAsync(reserveId, cancellationToken).ConfigureAwait(false);
+            await ReservesReserveIdDeleteWithHttpInfoAsync(reserveId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1240,9 +1326,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesReserveIdDeleteWithHttpInfoAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesReserveIdDeleteWithHttpInfoAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1268,6 +1355,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1291,8 +1381,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ReserveItem</returns>
-        public ReserveItem ReservesReserveIdGet(int reserveId, bool isHalfWidth)
+        public ReserveItem ReservesReserveIdGet(int reserveId, bool isHalfWidth, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveItem> localVarResponse = ReservesReserveIdGetWithHttpInfo(reserveId, isHalfWidth);
             return localVarResponse.Data;
@@ -1304,8 +1395,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ReserveItem</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveItem> ReservesReserveIdGetWithHttpInfo(int reserveId, bool isHalfWidth)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveItem> ReservesReserveIdGetWithHttpInfo(int reserveId, bool isHalfWidth, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1331,6 +1423,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1353,11 +1448,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReserveItem</returns>
-        public async System.Threading.Tasks.Task<ReserveItem> ReservesReserveIdGetAsync(int reserveId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ReserveItem> ReservesReserveIdGetAsync(int reserveId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveItem> localVarResponse = await ReservesReserveIdGetWithHttpInfoAsync(reserveId, isHalfWidth, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveItem> localVarResponse = await ReservesReserveIdGetWithHttpInfoAsync(reserveId, isHalfWidth, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1367,9 +1463,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReserveItem)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveItem>> ReservesReserveIdGetWithHttpInfoAsync(int reserveId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ReserveItem>> ReservesReserveIdGetWithHttpInfoAsync(int reserveId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1397,6 +1494,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
 
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<ReserveItem>("/reserves/{reserveId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1418,8 +1518,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ReservesReserveIdOverlapDelete(int reserveId)
+        public void ReservesReserveIdOverlapDelete(int reserveId, int operationIndex = 0)
         {
             ReservesReserveIdOverlapDeleteWithHttpInfo(reserveId);
         }
@@ -1429,8 +1530,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesReserveIdOverlapDeleteWithHttpInfo(int reserveId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesReserveIdOverlapDeleteWithHttpInfo(int reserveId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1455,6 +1557,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdOverlapDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1476,11 +1581,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ReservesReserveIdOverlapDeleteAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ReservesReserveIdOverlapDeleteAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ReservesReserveIdOverlapDeleteWithHttpInfoAsync(reserveId, cancellationToken).ConfigureAwait(false);
+            await ReservesReserveIdOverlapDeleteWithHttpInfoAsync(reserveId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1488,9 +1594,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesReserveIdOverlapDeleteWithHttpInfoAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesReserveIdOverlapDeleteWithHttpInfoAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1516,6 +1623,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdOverlapDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1539,8 +1649,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="editManualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ReservesReserveIdPut(int reserveId, EditManualReserveOption editManualReserveOption)
+        public void ReservesReserveIdPut(int reserveId, EditManualReserveOption editManualReserveOption, int operationIndex = 0)
         {
             ReservesReserveIdPutWithHttpInfo(reserveId, editManualReserveOption);
         }
@@ -1551,8 +1662,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="editManualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesReserveIdPutWithHttpInfo(int reserveId, EditManualReserveOption editManualReserveOption)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesReserveIdPutWithHttpInfo(int reserveId, EditManualReserveOption editManualReserveOption, int operationIndex = 0)
         {
             // verify the required parameter 'editManualReserveOption' is set
             if (editManualReserveOption == null)
@@ -1585,6 +1697,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
             localVarRequestOptions.Data = editManualReserveOption;
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1607,11 +1722,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="editManualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ReservesReserveIdPutAsync(int reserveId, EditManualReserveOption editManualReserveOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ReservesReserveIdPutAsync(int reserveId, EditManualReserveOption editManualReserveOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ReservesReserveIdPutWithHttpInfoAsync(reserveId, editManualReserveOption, cancellationToken).ConfigureAwait(false);
+            await ReservesReserveIdPutWithHttpInfoAsync(reserveId, editManualReserveOption, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1620,9 +1736,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
         /// <param name="editManualReserveOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesReserveIdPutWithHttpInfoAsync(int reserveId, EditManualReserveOption editManualReserveOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesReserveIdPutWithHttpInfoAsync(int reserveId, EditManualReserveOption editManualReserveOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'editManualReserveOption' is set
             if (editManualReserveOption == null)
@@ -1657,6 +1774,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
             localVarRequestOptions.Data = editManualReserveOption;
 
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/reserves/{reserveId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1678,8 +1798,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ReservesReserveIdSkipDelete(int reserveId)
+        public void ReservesReserveIdSkipDelete(int reserveId, int operationIndex = 0)
         {
             ReservesReserveIdSkipDeleteWithHttpInfo(reserveId);
         }
@@ -1689,8 +1810,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesReserveIdSkipDeleteWithHttpInfo(int reserveId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesReserveIdSkipDeleteWithHttpInfo(int reserveId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1715,6 +1837,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdSkipDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1736,11 +1861,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ReservesReserveIdSkipDeleteAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ReservesReserveIdSkipDeleteAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ReservesReserveIdSkipDeleteWithHttpInfoAsync(reserveId, cancellationToken).ConfigureAwait(false);
+            await ReservesReserveIdSkipDeleteWithHttpInfoAsync(reserveId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1748,9 +1874,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reserveId">予約id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesReserveIdSkipDeleteWithHttpInfoAsync(int reserveId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesReserveIdSkipDeleteWithHttpInfoAsync(int reserveId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1777,6 +1904,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("reserveId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(reserveId)); // path parameter
 
+            localVarRequestOptions.Operation = "ReservesApi.ReservesReserveIdSkipDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/reserves/{reserveId}/skip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1797,8 +1927,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約情報の更新開始 予約情報の更新を開始する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ReservesUpdatePost()
+        public void ReservesUpdatePost(int operationIndex = 0)
         {
             ReservesUpdatePostWithHttpInfo();
         }
@@ -1807,8 +1938,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約情報の更新開始 予約情報の更新を開始する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesUpdatePostWithHttpInfo()
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> ReservesUpdatePostWithHttpInfo(int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1832,6 +1964,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesUpdatePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1852,20 +1987,22 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// 予約情報の更新開始 予約情報の更新を開始する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ReservesUpdatePostAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ReservesUpdatePostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ReservesUpdatePostWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            await ReservesUpdatePostWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// 予約情報の更新開始 予約情報の更新を開始する
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesUpdatePostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> ReservesUpdatePostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1890,6 +2027,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+
+            localVarRequestOptions.Operation = "ReservesApi.ReservesUpdatePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

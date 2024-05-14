@@ -55,7 +55,6 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         [EnumMember(Value = "SKY")]
         SKY = 4
-
     }
 
 }

@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// ジャンル設定
     /// </summary>
     [DataContract(Name = "Genre")]
-    public partial class Genre : IEquatable<Genre>, IValidatableObject
+    public partial class Genre : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Genre" /> class.
@@ -39,11 +39,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Genre" /> class.
         /// </summary>
-        /// <param name="genre">ジャンル (required).</param>
+        /// <param name="varGenre">ジャンル (required).</param>
         /// <param name="subGenre">サブジャンル.</param>
-        public Genre(int genre = default(int), int subGenre = default(int))
+        public Genre(int varGenre = default(int), int subGenre = default(int))
         {
-            this._Genre = genre;
+            this.VarGenre = varGenre;
             this.SubGenre = subGenre;
         }
 
@@ -51,8 +51,8 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// ジャンル
         /// </summary>
         /// <value>ジャンル</value>
-        [DataMember(Name = "genre", IsRequired = true, EmitDefaultValue = false)]
-        public int _Genre { get; set; }
+        [DataMember(Name = "genre", IsRequired = true, EmitDefaultValue = true)]
+        public int VarGenre { get; set; }
 
         /// <summary>
         /// サブジャンル
@@ -69,7 +69,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Genre {\n");
-            sb.Append("  _Genre: ").Append(_Genre).Append("\n");
+            sb.Append("  VarGenre: ").Append(VarGenre).Append("\n");
             sb.Append("  SubGenre: ").Append(SubGenre).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -85,58 +85,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Genre);
-        }
-
-        /// <summary>
-        /// Returns true if Genre instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Genre to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Genre input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this._Genre == input._Genre ||
-                    this._Genre.Equals(input._Genre)
-                ) && 
-                (
-                    this.SubGenre == input.SubGenre ||
-                    this.SubGenre.Equals(input.SubGenre)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this._Genre.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

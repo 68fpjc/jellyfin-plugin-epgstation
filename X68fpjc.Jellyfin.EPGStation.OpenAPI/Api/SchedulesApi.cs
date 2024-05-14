@@ -35,8 +35,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="time">追加時間 (ms) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Schedule&gt;</returns>
-        List<Schedule> SchedulesBroadcastingGet(bool isHalfWidth, long? time = default(long?));
+        List<Schedule> SchedulesBroadcastingGet(bool isHalfWidth, long? time = default(long?), int operationIndex = 0);
 
         /// <summary>
         /// 放映中の番組情報取得
@@ -47,8 +48,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="time">追加時間 (ms) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Schedule&gt;</returns>
-        ApiResponse<List<Schedule>> SchedulesBroadcastingGetWithHttpInfo(bool isHalfWidth, long? time = default(long?));
+        ApiResponse<List<Schedule>> SchedulesBroadcastingGetWithHttpInfo(bool isHalfWidth, long? time = default(long?), int operationIndex = 0);
         /// <summary>
         /// 指定された放送局の番組表情報取得
         /// </summary>
@@ -62,8 +64,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Schedule&gt;</returns>
-        List<Schedule> SchedulesChannelIdGet(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?));
+        List<Schedule> SchedulesChannelIdGet(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 指定された放送局の番組表情報取得
@@ -78,8 +81,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Schedule&gt;</returns>
-        ApiResponse<List<Schedule>> SchedulesChannelIdGetWithHttpInfo(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?));
+        ApiResponse<List<Schedule>> SchedulesChannelIdGetWithHttpInfo(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 指定された番組表情報取得
         /// </summary>
@@ -89,8 +93,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="programId">program id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScheduleProgramItem</returns>
-        ScheduleProgramItem SchedulesDetailProgramIdGet(long programId, bool isHalfWidth);
+        ScheduleProgramItem SchedulesDetailProgramIdGet(long programId, bool isHalfWidth, int operationIndex = 0);
 
         /// <summary>
         /// 指定された番組表情報取得
@@ -101,8 +106,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="programId">program id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScheduleProgramItem</returns>
-        ApiResponse<ScheduleProgramItem> SchedulesDetailProgramIdGetWithHttpInfo(long programId, bool isHalfWidth);
+        ApiResponse<ScheduleProgramItem> SchedulesDetailProgramIdGetWithHttpInfo(long programId, bool isHalfWidth, int operationIndex = 0);
         /// <summary>
         /// 番組表情報取得
         /// </summary>
@@ -119,8 +125,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="SKY">SKY</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Schedule&gt;</returns>
-        List<Schedule> SchedulesGet(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?));
+        List<Schedule> SchedulesGet(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 番組表情報取得
@@ -138,8 +145,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="SKY">SKY</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Schedule&gt;</returns>
-        ApiResponse<List<Schedule>> SchedulesGetWithHttpInfo(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?));
+        ApiResponse<List<Schedule>> SchedulesGetWithHttpInfo(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 番組検索結果を取得
         /// </summary>
@@ -148,8 +156,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="scheduleSearchOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ScheduleProgramItem&gt;</returns>
-        List<ScheduleProgramItem> SchedulesSearchPost(ScheduleSearchOption scheduleSearchOption);
+        List<ScheduleProgramItem> SchedulesSearchPost(ScheduleSearchOption scheduleSearchOption, int operationIndex = 0);
 
         /// <summary>
         /// 番組検索結果を取得
@@ -159,8 +168,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="scheduleSearchOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ScheduleProgramItem&gt;</returns>
-        ApiResponse<List<ScheduleProgramItem>> SchedulesSearchPostWithHttpInfo(ScheduleSearchOption scheduleSearchOption);
+        ApiResponse<List<ScheduleProgramItem>> SchedulesSearchPostWithHttpInfo(ScheduleSearchOption scheduleSearchOption, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -179,9 +189,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="time">追加時間 (ms) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Schedule&gt;</returns>
-        System.Threading.Tasks.Task<List<Schedule>> SchedulesBroadcastingGetAsync(bool isHalfWidth, long? time = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Schedule>> SchedulesBroadcastingGetAsync(bool isHalfWidth, long? time = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 放映中の番組情報取得
@@ -192,9 +203,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="time">追加時間 (ms) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Schedule&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Schedule>>> SchedulesBroadcastingGetWithHttpInfoAsync(bool isHalfWidth, long? time = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Schedule>>> SchedulesBroadcastingGetWithHttpInfoAsync(bool isHalfWidth, long? time = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 指定された放送局の番組表情報取得
         /// </summary>
@@ -208,9 +220,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Schedule&gt;</returns>
-        System.Threading.Tasks.Task<List<Schedule>> SchedulesChannelIdGetAsync(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Schedule>> SchedulesChannelIdGetAsync(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 指定された放送局の番組表情報取得
@@ -225,9 +238,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Schedule&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Schedule>>> SchedulesChannelIdGetWithHttpInfoAsync(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Schedule>>> SchedulesChannelIdGetWithHttpInfoAsync(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 指定された番組表情報取得
         /// </summary>
@@ -237,9 +251,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="programId">program id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScheduleProgramItem</returns>
-        System.Threading.Tasks.Task<ScheduleProgramItem> SchedulesDetailProgramIdGetAsync(long programId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ScheduleProgramItem> SchedulesDetailProgramIdGetAsync(long programId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 指定された番組表情報取得
@@ -250,9 +265,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="programId">program id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScheduleProgramItem)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ScheduleProgramItem>> SchedulesDetailProgramIdGetWithHttpInfoAsync(long programId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ScheduleProgramItem>> SchedulesDetailProgramIdGetWithHttpInfoAsync(long programId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 番組表情報取得
         /// </summary>
@@ -269,9 +285,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="SKY">SKY</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Schedule&gt;</returns>
-        System.Threading.Tasks.Task<List<Schedule>> SchedulesGetAsync(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Schedule>> SchedulesGetAsync(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 番組表情報取得
@@ -289,9 +306,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="SKY">SKY</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Schedule&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Schedule>>> SchedulesGetWithHttpInfoAsync(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Schedule>>> SchedulesGetWithHttpInfoAsync(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 番組検索結果を取得
         /// </summary>
@@ -300,9 +318,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="scheduleSearchOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ScheduleProgramItem&gt;</returns>
-        System.Threading.Tasks.Task<List<ScheduleProgramItem>> SchedulesSearchPostAsync(ScheduleSearchOption scheduleSearchOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ScheduleProgramItem>> SchedulesSearchPostAsync(ScheduleSearchOption scheduleSearchOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 番組検索結果を取得
@@ -312,9 +331,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="scheduleSearchOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ScheduleProgramItem&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ScheduleProgramItem>>> SchedulesSearchPostWithHttpInfoAsync(ScheduleSearchOption scheduleSearchOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ScheduleProgramItem>>> SchedulesSearchPostWithHttpInfoAsync(ScheduleSearchOption scheduleSearchOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -441,8 +461,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="time">追加時間 (ms) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Schedule&gt;</returns>
-        public List<Schedule> SchedulesBroadcastingGet(bool isHalfWidth, long? time = default(long?))
+        public List<Schedule> SchedulesBroadcastingGet(bool isHalfWidth, long? time = default(long?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = SchedulesBroadcastingGetWithHttpInfo(isHalfWidth, time);
             return localVarResponse.Data;
@@ -454,8 +475,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="time">追加時間 (ms) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Schedule&gt;</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> SchedulesBroadcastingGetWithHttpInfo(bool isHalfWidth, long? time = default(long?))
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> SchedulesBroadcastingGetWithHttpInfo(bool isHalfWidth, long? time = default(long?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -484,6 +506,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "time", time));
             }
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesBroadcastingGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -506,11 +531,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="time">追加時間 (ms) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Schedule&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Schedule>> SchedulesBroadcastingGetAsync(bool isHalfWidth, long? time = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Schedule>> SchedulesBroadcastingGetAsync(bool isHalfWidth, long? time = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = await SchedulesBroadcastingGetWithHttpInfoAsync(isHalfWidth, time, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = await SchedulesBroadcastingGetWithHttpInfoAsync(isHalfWidth, time, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -520,9 +546,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="time">追加時間 (ms) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Schedule&gt;)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>>> SchedulesBroadcastingGetWithHttpInfoAsync(bool isHalfWidth, long? time = default(long?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>>> SchedulesBroadcastingGetWithHttpInfoAsync(bool isHalfWidth, long? time = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -552,6 +579,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "time", time));
             }
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesBroadcastingGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -579,8 +609,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Schedule&gt;</returns>
-        public List<Schedule> SchedulesChannelIdGet(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?))
+        public List<Schedule> SchedulesChannelIdGet(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = SchedulesChannelIdGetWithHttpInfo(channelId, startAt, days, isHalfWidth, needsRawExtended, isFree);
             return localVarResponse.Data;
@@ -596,8 +627,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Schedule&gt;</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> SchedulesChannelIdGetWithHttpInfo(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?))
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> SchedulesChannelIdGetWithHttpInfo(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -633,6 +665,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             {
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isFree", isFree));
             }
+
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesChannelIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -659,11 +694,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Schedule&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Schedule>> SchedulesChannelIdGetAsync(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Schedule>> SchedulesChannelIdGetAsync(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = await SchedulesChannelIdGetWithHttpInfoAsync(channelId, startAt, days, isHalfWidth, needsRawExtended, isFree, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = await SchedulesChannelIdGetWithHttpInfoAsync(channelId, startAt, days, isHalfWidth, needsRawExtended, isFree, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -677,9 +713,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Schedule&gt;)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>>> SchedulesChannelIdGetWithHttpInfoAsync(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>>> SchedulesChannelIdGetWithHttpInfoAsync(long channelId, long startAt, int days, bool isHalfWidth, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -717,6 +754,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isFree", isFree));
             }
 
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesChannelIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<Schedule>>("/schedules/{channelId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -739,8 +779,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="programId">program id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScheduleProgramItem</returns>
-        public ScheduleProgramItem SchedulesDetailProgramIdGet(long programId, bool isHalfWidth)
+        public ScheduleProgramItem SchedulesDetailProgramIdGet(long programId, bool isHalfWidth, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ScheduleProgramItem> localVarResponse = SchedulesDetailProgramIdGetWithHttpInfo(programId, isHalfWidth);
             return localVarResponse.Data;
@@ -752,8 +793,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="programId">program id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScheduleProgramItem</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ScheduleProgramItem> SchedulesDetailProgramIdGetWithHttpInfo(long programId, bool isHalfWidth)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ScheduleProgramItem> SchedulesDetailProgramIdGetWithHttpInfo(long programId, bool isHalfWidth, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -779,6 +821,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("programId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(programId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesDetailProgramIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -801,11 +846,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="programId">program id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScheduleProgramItem</returns>
-        public async System.Threading.Tasks.Task<ScheduleProgramItem> SchedulesDetailProgramIdGetAsync(long programId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ScheduleProgramItem> SchedulesDetailProgramIdGetAsync(long programId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ScheduleProgramItem> localVarResponse = await SchedulesDetailProgramIdGetWithHttpInfoAsync(programId, isHalfWidth, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ScheduleProgramItem> localVarResponse = await SchedulesDetailProgramIdGetWithHttpInfoAsync(programId, isHalfWidth, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -815,9 +861,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="programId">program id</param>
         /// <param name="isHalfWidth">半角文字で取得するか</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScheduleProgramItem)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ScheduleProgramItem>> SchedulesDetailProgramIdGetWithHttpInfoAsync(long programId, bool isHalfWidth, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<ScheduleProgramItem>> SchedulesDetailProgramIdGetWithHttpInfoAsync(long programId, bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -844,6 +891,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("programId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(programId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "isHalfWidth", isHalfWidth));
+
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesDetailProgramIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -874,8 +924,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="SKY">SKY</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Schedule&gt;</returns>
-        public List<Schedule> SchedulesGet(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?))
+        public List<Schedule> SchedulesGet(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = SchedulesGetWithHttpInfo(startAt, endAt, isHalfWidth, GR, BS, CS, SKY, needsRawExtended, isFree);
             return localVarResponse.Data;
@@ -894,8 +945,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="SKY">SKY</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Schedule&gt;</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> SchedulesGetWithHttpInfo(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?))
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> SchedulesGetWithHttpInfo(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -934,6 +986,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "BS", BS));
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "CS", CS));
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "SKY", SKY));
+
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -963,11 +1018,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="SKY">SKY</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Schedule&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Schedule>> SchedulesGetAsync(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Schedule>> SchedulesGetAsync(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = await SchedulesGetWithHttpInfoAsync(startAt, endAt, isHalfWidth, GR, BS, CS, SKY, needsRawExtended, isFree, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>> localVarResponse = await SchedulesGetWithHttpInfoAsync(startAt, endAt, isHalfWidth, GR, BS, CS, SKY, needsRawExtended, isFree, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -984,9 +1040,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="SKY">SKY</param>
         /// <param name="needsRawExtended">rawExtended が必要か (optional)</param>
         /// <param name="isFree">無料放送のみ取得するか (true: 無料放送, false: 有料放送, 無指定: 全て) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Schedule&gt;)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>>> SchedulesGetWithHttpInfoAsync(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<Schedule>>> SchedulesGetWithHttpInfoAsync(long startAt, long endAt, bool isHalfWidth, bool GR, bool BS, bool CS, bool SKY, bool? needsRawExtended = default(bool?), bool? isFree = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1027,6 +1084,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "CS", CS));
             localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "SKY", SKY));
 
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<Schedule>>("/schedules", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1048,8 +1108,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="scheduleSearchOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ScheduleProgramItem&gt;</returns>
-        public List<ScheduleProgramItem> SchedulesSearchPost(ScheduleSearchOption scheduleSearchOption)
+        public List<ScheduleProgramItem> SchedulesSearchPost(ScheduleSearchOption scheduleSearchOption, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ScheduleProgramItem>> localVarResponse = SchedulesSearchPostWithHttpInfo(scheduleSearchOption);
             return localVarResponse.Data;
@@ -1060,8 +1121,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="scheduleSearchOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ScheduleProgramItem&gt;</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ScheduleProgramItem>> SchedulesSearchPostWithHttpInfo(ScheduleSearchOption scheduleSearchOption)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ScheduleProgramItem>> SchedulesSearchPostWithHttpInfo(ScheduleSearchOption scheduleSearchOption, int operationIndex = 0)
         {
             // verify the required parameter 'scheduleSearchOption' is set
             if (scheduleSearchOption == null)
@@ -1093,6 +1155,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = scheduleSearchOption;
+
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesSearchPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1114,11 +1179,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="scheduleSearchOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ScheduleProgramItem&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ScheduleProgramItem>> SchedulesSearchPostAsync(ScheduleSearchOption scheduleSearchOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ScheduleProgramItem>> SchedulesSearchPostAsync(ScheduleSearchOption scheduleSearchOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ScheduleProgramItem>> localVarResponse = await SchedulesSearchPostWithHttpInfoAsync(scheduleSearchOption, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ScheduleProgramItem>> localVarResponse = await SchedulesSearchPostWithHttpInfoAsync(scheduleSearchOption, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1127,9 +1193,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="scheduleSearchOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ScheduleProgramItem&gt;)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ScheduleProgramItem>>> SchedulesSearchPostWithHttpInfoAsync(ScheduleSearchOption scheduleSearchOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<List<ScheduleProgramItem>>> SchedulesSearchPostWithHttpInfoAsync(ScheduleSearchOption scheduleSearchOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'scheduleSearchOption' is set
             if (scheduleSearchOption == null)
@@ -1162,6 +1229,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = scheduleSearchOption;
+
+            localVarRequestOptions.Operation = "SchedulesApi.SchedulesSearchPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

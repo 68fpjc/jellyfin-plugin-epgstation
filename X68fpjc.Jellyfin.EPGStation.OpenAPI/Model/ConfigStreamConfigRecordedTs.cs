@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 録画済み TS ファイルのストリーミング設定
     /// </summary>
     [DataContract(Name = "Config_streamConfig_recorded_ts")]
-    public partial class ConfigStreamConfigRecordedTs : IEquatable<ConfigStreamConfigRecordedTs>, IValidatableObject
+    public partial class ConfigStreamConfigRecordedTs : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigStreamConfigRecordedTs" /> class.
@@ -90,78 +90,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ConfigStreamConfigRecordedTs);
-        }
-
-        /// <summary>
-        /// Returns true if ConfigStreamConfigRecordedTs instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ConfigStreamConfigRecordedTs to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ConfigStreamConfigRecordedTs input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Webm == input.Webm ||
-                    this.Webm != null &&
-                    input.Webm != null &&
-                    this.Webm.SequenceEqual(input.Webm)
-                ) && 
-                (
-                    this.Mp4 == input.Mp4 ||
-                    this.Mp4 != null &&
-                    input.Mp4 != null &&
-                    this.Mp4.SequenceEqual(input.Mp4)
-                ) && 
-                (
-                    this.Hls == input.Hls ||
-                    this.Hls != null &&
-                    input.Hls != null &&
-                    this.Hls.SequenceEqual(input.Hls)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Webm != null)
-                {
-                    hashCode = (hashCode * 59) + this.Webm.GetHashCode();
-                }
-                if (this.Mp4 != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mp4.GetHashCode();
-                }
-                if (this.Hls != null)
-                {
-                    hashCode = (hashCode * 59) + this.Hls.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

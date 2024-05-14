@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// エンコード手動追加時のオプション
     /// </summary>
     [DataContract(Name = "AddManualEncodeProgramOption")]
-    public partial class AddManualEncodeProgramOption : IEquatable<AddManualEncodeProgramOption>, IValidatableObject
+    public partial class AddManualEncodeProgramOption : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AddManualEncodeProgramOption" /> class.
@@ -66,14 +66,14 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 録画済み番組 id
         /// </summary>
         /// <value>録画済み番組 id</value>
-        [DataMember(Name = "recordedId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "recordedId", IsRequired = true, EmitDefaultValue = true)]
         public int RecordedId { get; set; }
 
         /// <summary>
         /// ビデオファイル id
         /// </summary>
         /// <value>ビデオファイル id</value>
-        [DataMember(Name = "sourceVideoFileId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "sourceVideoFileId", IsRequired = true, EmitDefaultValue = true)]
         public int SourceVideoFileId { get; set; }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// エンコードプリセット名 config encode の name
         /// </summary>
         /// <value>エンコードプリセット名 config encode の name</value>
-        [DataMember(Name = "mode", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "mode", IsRequired = true, EmitDefaultValue = true)]
         public string Mode { get; set; }
 
         /// <summary>
@@ -140,95 +140,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AddManualEncodeProgramOption);
-        }
-
-        /// <summary>
-        /// Returns true if AddManualEncodeProgramOption instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AddManualEncodeProgramOption to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AddManualEncodeProgramOption input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.RecordedId == input.RecordedId ||
-                    this.RecordedId.Equals(input.RecordedId)
-                ) && 
-                (
-                    this.SourceVideoFileId == input.SourceVideoFileId ||
-                    this.SourceVideoFileId.Equals(input.SourceVideoFileId)
-                ) && 
-                (
-                    this.ParentDir == input.ParentDir ||
-                    (this.ParentDir != null &&
-                    this.ParentDir.Equals(input.ParentDir))
-                ) && 
-                (
-                    this.Directory == input.Directory ||
-                    (this.Directory != null &&
-                    this.Directory.Equals(input.Directory))
-                ) && 
-                (
-                    this.IsSaveSameDirectory == input.IsSaveSameDirectory ||
-                    this.IsSaveSameDirectory.Equals(input.IsSaveSameDirectory)
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.RemoveOriginal == input.RemoveOriginal ||
-                    this.RemoveOriginal.Equals(input.RemoveOriginal)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.RecordedId.GetHashCode();
-                hashCode = (hashCode * 59) + this.SourceVideoFileId.GetHashCode();
-                if (this.ParentDir != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentDir.GetHashCode();
-                }
-                if (this.Directory != null)
-                {
-                    hashCode = (hashCode * 59) + this.Directory.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsSaveSameDirectory.GetHashCode();
-                if (this.Mode != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mode.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.RemoveOriginal.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

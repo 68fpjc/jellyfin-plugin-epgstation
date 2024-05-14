@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// エンコード情報
     /// </summary>
     [DataContract(Name = "EncodeInfo")]
-    public partial class EncodeInfo : IEquatable<EncodeInfo>, IValidatableObject
+    public partial class EncodeInfo : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EncodeInfo" /> class.
@@ -60,13 +60,13 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Gets or Sets RunningItems
         /// </summary>
-        [DataMember(Name = "runningItems", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "runningItems", IsRequired = true, EmitDefaultValue = true)]
         public List<EncodeProgramItem> RunningItems { get; set; }
 
         /// <summary>
         /// Gets or Sets WaitItems
         /// </summary>
-        [DataMember(Name = "waitItems", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "waitItems", IsRequired = true, EmitDefaultValue = true)]
         public List<EncodeProgramItem> WaitItems { get; set; }
 
         /// <summary>
@@ -93,68 +93,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as EncodeInfo);
-        }
-
-        /// <summary>
-        /// Returns true if EncodeInfo instances are equal
-        /// </summary>
-        /// <param name="input">Instance of EncodeInfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(EncodeInfo input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.RunningItems == input.RunningItems ||
-                    this.RunningItems != null &&
-                    input.RunningItems != null &&
-                    this.RunningItems.SequenceEqual(input.RunningItems)
-                ) && 
-                (
-                    this.WaitItems == input.WaitItems ||
-                    this.WaitItems != null &&
-                    input.WaitItems != null &&
-                    this.WaitItems.SequenceEqual(input.WaitItems)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.RunningItems != null)
-                {
-                    hashCode = (hashCode * 59) + this.RunningItems.GetHashCode();
-                }
-                if (this.WaitItems != null)
-                {
-                    hashCode = (hashCode * 59) + this.WaitItems.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

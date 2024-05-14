@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 予約保存オプション
     /// </summary>
     [DataContract(Name = "ReserveSaveOption")]
-    public partial class ReserveSaveOption : IEquatable<ReserveSaveOption>, IValidatableObject
+    public partial class ReserveSaveOption : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReserveSaveOption" /> class.
@@ -90,75 +90,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ReserveSaveOption);
-        }
-
-        /// <summary>
-        /// Returns true if ReserveSaveOption instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ReserveSaveOption to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ReserveSaveOption input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ParentDirectoryName == input.ParentDirectoryName ||
-                    (this.ParentDirectoryName != null &&
-                    this.ParentDirectoryName.Equals(input.ParentDirectoryName))
-                ) && 
-                (
-                    this.Directory == input.Directory ||
-                    (this.Directory != null &&
-                    this.Directory.Equals(input.Directory))
-                ) && 
-                (
-                    this.RecordedFormat == input.RecordedFormat ||
-                    (this.RecordedFormat != null &&
-                    this.RecordedFormat.Equals(input.RecordedFormat))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ParentDirectoryName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentDirectoryName.GetHashCode();
-                }
-                if (this.Directory != null)
-                {
-                    hashCode = (hashCode * 59) + this.Directory.GetHashCode();
-                }
-                if (this.RecordedFormat != null)
-                {
-                    hashCode = (hashCode * 59) + this.RecordedFormat.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

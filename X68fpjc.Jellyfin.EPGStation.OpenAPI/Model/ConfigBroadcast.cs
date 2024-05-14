@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 有効な放送波情報
     /// </summary>
     [DataContract(Name = "Config_broadcast")]
-    public partial class ConfigBroadcast : IEquatable<ConfigBroadcast>, IValidatableObject
+    public partial class ConfigBroadcast : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigBroadcast" /> class.
@@ -101,68 +101,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ConfigBroadcast);
-        }
-
-        /// <summary>
-        /// Returns true if ConfigBroadcast instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ConfigBroadcast to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ConfigBroadcast input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.GR == input.GR ||
-                    this.GR.Equals(input.GR)
-                ) && 
-                (
-                    this.BS == input.BS ||
-                    this.BS.Equals(input.BS)
-                ) && 
-                (
-                    this.CS == input.CS ||
-                    this.CS.Equals(input.CS)
-                ) && 
-                (
-                    this.SKY == input.SKY ||
-                    this.SKY.Equals(input.SKY)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.GR.GetHashCode();
-                hashCode = (hashCode * 59) + this.BS.GetHashCode();
-                hashCode = (hashCode * 59) + this.CS.GetHashCode();
-                hashCode = (hashCode * 59) + this.SKY.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

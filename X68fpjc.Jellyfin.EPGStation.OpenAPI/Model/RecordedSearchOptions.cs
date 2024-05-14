@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// recorded が持つ検索オプション情報
     /// </summary>
     [DataContract(Name = "RecordedSearchOptions")]
-    public partial class RecordedSearchOptions : IEquatable<RecordedSearchOptions>, IValidatableObject
+    public partial class RecordedSearchOptions : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordedSearchOptions" /> class.
@@ -60,13 +60,13 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Gets or Sets Channels
         /// </summary>
-        [DataMember(Name = "channels", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "channels", IsRequired = true, EmitDefaultValue = true)]
         public List<RecordedChannelListItem> Channels { get; set; }
 
         /// <summary>
         /// Gets or Sets Genres
         /// </summary>
-        [DataMember(Name = "genres", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "genres", IsRequired = true, EmitDefaultValue = true)]
         public List<RecordedGenreListItem> Genres { get; set; }
 
         /// <summary>
@@ -93,68 +93,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RecordedSearchOptions);
-        }
-
-        /// <summary>
-        /// Returns true if RecordedSearchOptions instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RecordedSearchOptions to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RecordedSearchOptions input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Channels == input.Channels ||
-                    this.Channels != null &&
-                    input.Channels != null &&
-                    this.Channels.SequenceEqual(input.Channels)
-                ) && 
-                (
-                    this.Genres == input.Genres ||
-                    this.Genres != null &&
-                    input.Genres != null &&
-                    this.Genres.SequenceEqual(input.Genres)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Channels != null)
-                {
-                    hashCode = (hashCode * 59) + this.Channels.GetHashCode();
-                }
-                if (this.Genres != null)
-                {
-                    hashCode = (hashCode * 59) + this.Genres.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// M2TS形式ストリーミングパラメータ
     /// </summary>
     [DataContract(Name = "M2TSStreamParam")]
-    public partial class M2TSStreamParam : IEquatable<M2TSStreamParam>, IValidatableObject
+    public partial class M2TSStreamParam : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="M2TSStreamParam" /> class.
@@ -56,7 +56,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 表示名
         /// </summary>
         /// <value>表示名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -90,62 +90,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as M2TSStreamParam);
-        }
-
-        /// <summary>
-        /// Returns true if M2TSStreamParam instances are equal
-        /// </summary>
-        /// <param name="input">Instance of M2TSStreamParam to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(M2TSStreamParam input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsUnconverted == input.IsUnconverted ||
-                    this.IsUnconverted.Equals(input.IsUnconverted)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsUnconverted.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

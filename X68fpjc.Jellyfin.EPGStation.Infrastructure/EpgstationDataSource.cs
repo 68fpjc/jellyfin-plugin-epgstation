@@ -43,7 +43,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
                 limit: limit,
                 cancellationToken: cancellationToken)
                 .ConfigureAwait(false);
-            return records._Records
+            return records.VarRecords
                     .Where(a => a.VideoFiles
                         .Any(b => b.Filename.Equals(filename)))
                     .Select(a => new Recorded(
@@ -64,7 +64,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
                 limit: limit,
                 cancellationToken: cancellationToken)
                 .ConfigureAwait(false);
-            return records._Records
+            return records.VarRecords
                 .Where(a =>
                     a.Name.Contains(keyword)
                     || (a.Description != null && a.Description.Contains(keyword))
@@ -94,7 +94,7 @@ namespace X68fpjc.Jellyfin.EPGStation.Infrastructure
                     .FirstOrDefault();
                 if (videoFile != null)
                 {
-                    _ = CreateVideosApi(url).VideosVideoFileIdDeleteAsync(videoFile.Id, cancellationToken)
+                    _ = CreateVideosApi(url).VideosVideoFileIdDeleteAsync(videoFile.Id, cancellationToken: cancellationToken)
                         .ConfigureAwait(false);
                 }
             }

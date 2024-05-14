@@ -37,8 +37,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Rules</returns>
-        Rules RulesGet(int? offset = default(int?), int? limit = default(int?), string type = default(string), string keyword = default(string));
+        Rules RulesGet(int? offset = default(int?), int? limit = default(int?), string? type = default(string?), string? keyword = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// ルール情報取得
@@ -51,8 +52,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Rules</returns>
-        ApiResponse<Rules> RulesGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string type = default(string), string keyword = default(string));
+        ApiResponse<Rules> RulesGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string? type = default(string?), string? keyword = default(string?), int operationIndex = 0);
         /// <summary>
         /// ルールをキーワード検索
         /// </summary>
@@ -63,8 +65,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RuleKeywordInfo</returns>
-        RuleKeywordInfo RulesKeywordGet(int? offset = default(int?), int? limit = default(int?), string keyword = default(string));
+        RuleKeywordInfo RulesKeywordGet(int? offset = default(int?), int? limit = default(int?), string? keyword = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// ルールをキーワード検索
@@ -76,8 +79,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RuleKeywordInfo</returns>
-        ApiResponse<RuleKeywordInfo> RulesKeywordGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string keyword = default(string));
+        ApiResponse<RuleKeywordInfo> RulesKeywordGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string? keyword = default(string?), int operationIndex = 0);
         /// <summary>
         /// ルール追加
         /// </summary>
@@ -86,8 +90,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddedRule</returns>
-        AddedRule RulesKeywordPost(AddRuleOption addRuleOption);
+        AddedRule RulesKeywordPost(AddRuleOption addRuleOption, int operationIndex = 0);
 
         /// <summary>
         /// ルール追加
@@ -97,8 +102,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddedRule</returns>
-        ApiResponse<AddedRule> RulesKeywordPostWithHttpInfo(AddRuleOption addRuleOption);
+        ApiResponse<AddedRule> RulesKeywordPostWithHttpInfo(AddRuleOption addRuleOption, int operationIndex = 0);
         /// <summary>
         /// ルール追加
         /// </summary>
@@ -107,8 +113,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddedRule</returns>
-        AddedRule RulesPost(AddRuleOption addRuleOption);
+        AddedRule RulesPost(AddRuleOption addRuleOption, int operationIndex = 0);
 
         /// <summary>
         /// ルール追加
@@ -118,8 +125,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddedRule</returns>
-        ApiResponse<AddedRule> RulesPostWithHttpInfo(AddRuleOption addRuleOption);
+        ApiResponse<AddedRule> RulesPostWithHttpInfo(AddRuleOption addRuleOption, int operationIndex = 0);
         /// <summary>
         /// ルール削除
         /// </summary>
@@ -128,8 +136,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RulesRuleIdDelete(int ruleId);
+        void RulesRuleIdDelete(int ruleId, int operationIndex = 0);
 
         /// <summary>
         /// ルール削除
@@ -139,8 +148,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RulesRuleIdDeleteWithHttpInfo(int ruleId);
+        ApiResponse<Object> RulesRuleIdDeleteWithHttpInfo(int ruleId, int operationIndex = 0);
         /// <summary>
         /// ルール無効化
         /// </summary>
@@ -149,8 +159,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RulesRuleIdDisablePut(int ruleId);
+        void RulesRuleIdDisablePut(int ruleId, int operationIndex = 0);
 
         /// <summary>
         /// ルール無効化
@@ -160,8 +171,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RulesRuleIdDisablePutWithHttpInfo(int ruleId);
+        ApiResponse<Object> RulesRuleIdDisablePutWithHttpInfo(int ruleId, int operationIndex = 0);
         /// <summary>
         /// ルール有効化
         /// </summary>
@@ -170,8 +182,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RulesRuleIdEnablePut(int ruleId);
+        void RulesRuleIdEnablePut(int ruleId, int operationIndex = 0);
 
         /// <summary>
         /// ルール有効化
@@ -181,8 +194,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RulesRuleIdEnablePutWithHttpInfo(int ruleId);
+        ApiResponse<Object> RulesRuleIdEnablePutWithHttpInfo(int ruleId, int operationIndex = 0);
         /// <summary>
         /// ルール取得
         /// </summary>
@@ -191,8 +205,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Rule</returns>
-        Rule RulesRuleIdGet(int ruleId);
+        Rule RulesRuleIdGet(int ruleId, int operationIndex = 0);
 
         /// <summary>
         /// ルール取得
@@ -202,8 +217,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Rule</returns>
-        ApiResponse<Rule> RulesRuleIdGetWithHttpInfo(int ruleId);
+        ApiResponse<Rule> RulesRuleIdGetWithHttpInfo(int ruleId, int operationIndex = 0);
         /// <summary>
         /// ルール更新
         /// </summary>
@@ -213,8 +229,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RulesRuleIdPut(int ruleId, AddRuleOption addRuleOption);
+        void RulesRuleIdPut(int ruleId, AddRuleOption addRuleOption, int operationIndex = 0);
 
         /// <summary>
         /// ルール更新
@@ -225,8 +242,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RulesRuleIdPutWithHttpInfo(int ruleId, AddRuleOption addRuleOption);
+        ApiResponse<Object> RulesRuleIdPutWithHttpInfo(int ruleId, AddRuleOption addRuleOption, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -247,9 +265,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Rules</returns>
-        System.Threading.Tasks.Task<Rules> RulesGetAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Rules> RulesGetAsync(int? offset = default(int?), int? limit = default(int?), string? type = default(string?), string? keyword = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルール情報取得
@@ -262,9 +281,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Rules)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Rules>> RulesGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Rules>> RulesGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string? type = default(string?), string? keyword = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ルールをキーワード検索
         /// </summary>
@@ -275,9 +295,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RuleKeywordInfo</returns>
-        System.Threading.Tasks.Task<RuleKeywordInfo> RulesKeywordGetAsync(int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RuleKeywordInfo> RulesKeywordGetAsync(int? offset = default(int?), int? limit = default(int?), string? keyword = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルールをキーワード検索
@@ -289,9 +310,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RuleKeywordInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RuleKeywordInfo>> RulesKeywordGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RuleKeywordInfo>> RulesKeywordGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string? keyword = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ルール追加
         /// </summary>
@@ -300,9 +322,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedRule</returns>
-        System.Threading.Tasks.Task<AddedRule> RulesKeywordPostAsync(AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AddedRule> RulesKeywordPostAsync(AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルール追加
@@ -312,9 +335,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedRule)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddedRule>> RulesKeywordPostWithHttpInfoAsync(AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AddedRule>> RulesKeywordPostWithHttpInfoAsync(AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ルール追加
         /// </summary>
@@ -323,9 +347,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedRule</returns>
-        System.Threading.Tasks.Task<AddedRule> RulesPostAsync(AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AddedRule> RulesPostAsync(AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルール追加
@@ -335,9 +360,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedRule)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddedRule>> RulesPostWithHttpInfoAsync(AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AddedRule>> RulesPostWithHttpInfoAsync(AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ルール削除
         /// </summary>
@@ -346,9 +372,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RulesRuleIdDeleteAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RulesRuleIdDeleteAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルール削除
@@ -358,9 +385,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RulesRuleIdDeleteWithHttpInfoAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RulesRuleIdDeleteWithHttpInfoAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ルール無効化
         /// </summary>
@@ -369,9 +397,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RulesRuleIdDisablePutAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RulesRuleIdDisablePutAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルール無効化
@@ -381,9 +410,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RulesRuleIdDisablePutWithHttpInfoAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RulesRuleIdDisablePutWithHttpInfoAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ルール有効化
         /// </summary>
@@ -392,9 +422,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RulesRuleIdEnablePutAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RulesRuleIdEnablePutAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルール有効化
@@ -404,9 +435,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RulesRuleIdEnablePutWithHttpInfoAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RulesRuleIdEnablePutWithHttpInfoAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ルール取得
         /// </summary>
@@ -415,9 +447,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Rule</returns>
-        System.Threading.Tasks.Task<Rule> RulesRuleIdGetAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Rule> RulesRuleIdGetAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルール取得
@@ -427,9 +460,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </remarks>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Rule)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Rule>> RulesRuleIdGetWithHttpInfoAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Rule>> RulesRuleIdGetWithHttpInfoAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ルール更新
         /// </summary>
@@ -439,9 +473,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RulesRuleIdPutAsync(int ruleId, AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RulesRuleIdPutAsync(int ruleId, AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ルール更新
@@ -452,9 +487,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RulesRuleIdPutWithHttpInfoAsync(int ruleId, AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RulesRuleIdPutWithHttpInfoAsync(int ruleId, AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -583,8 +619,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Rules</returns>
-        public Rules RulesGet(int? offset = default(int?), int? limit = default(int?), string type = default(string), string keyword = default(string))
+        public Rules RulesGet(int? offset = default(int?), int? limit = default(int?), string? type = default(string?), string? keyword = default(string?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rules> localVarResponse = RulesGetWithHttpInfo(offset, limit, type, keyword);
             return localVarResponse.Data;
@@ -598,8 +635,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Rules</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rules> RulesGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string type = default(string), string keyword = default(string))
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rules> RulesGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string? type = default(string?), string? keyword = default(string?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -639,6 +677,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             {
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "keyword", keyword));
             }
+
+            localVarRequestOptions.Operation = "RulesApi.RulesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -663,11 +704,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Rules</returns>
-        public async System.Threading.Tasks.Task<Rules> RulesGetAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Rules> RulesGetAsync(int? offset = default(int?), int? limit = default(int?), string? type = default(string?), string? keyword = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rules> localVarResponse = await RulesGetWithHttpInfoAsync(offset, limit, type, keyword, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rules> localVarResponse = await RulesGetWithHttpInfoAsync(offset, limit, type, keyword, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -679,9 +721,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="type">予約情報取得タイプ (optional)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Rules)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rules>> RulesGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rules>> RulesGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string? type = default(string?), string? keyword = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -723,6 +766,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "keyword", keyword));
             }
 
+            localVarRequestOptions.Operation = "RulesApi.RulesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Rules>("/rules", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -746,8 +792,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RuleKeywordInfo</returns>
-        public RuleKeywordInfo RulesKeywordGet(int? offset = default(int?), int? limit = default(int?), string keyword = default(string))
+        public RuleKeywordInfo RulesKeywordGet(int? offset = default(int?), int? limit = default(int?), string? keyword = default(string?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RuleKeywordInfo> localVarResponse = RulesKeywordGetWithHttpInfo(offset, limit, keyword);
             return localVarResponse.Data;
@@ -760,8 +807,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RuleKeywordInfo</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RuleKeywordInfo> RulesKeywordGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string keyword = default(string))
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RuleKeywordInfo> RulesKeywordGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string? keyword = default(string?), int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -797,6 +845,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             {
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "keyword", keyword));
             }
+
+            localVarRequestOptions.Operation = "RulesApi.RulesKeywordGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -820,11 +871,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RuleKeywordInfo</returns>
-        public async System.Threading.Tasks.Task<RuleKeywordInfo> RulesKeywordGetAsync(int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RuleKeywordInfo> RulesKeywordGetAsync(int? offset = default(int?), int? limit = default(int?), string? keyword = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RuleKeywordInfo> localVarResponse = await RulesKeywordGetWithHttpInfoAsync(offset, limit, keyword, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RuleKeywordInfo> localVarResponse = await RulesKeywordGetWithHttpInfoAsync(offset, limit, keyword, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -835,9 +887,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="offset">offset (optional, default to 0)</param>
         /// <param name="limit">limit (optional, default to 24)</param>
         /// <param name="keyword">キーワード (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RuleKeywordInfo)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RuleKeywordInfo>> RulesKeywordGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RuleKeywordInfo>> RulesKeywordGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string? keyword = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -875,6 +928,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
                 localVarRequestOptions.QueryParameters.Add(X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToMultiMap("", "keyword", keyword));
             }
 
+            localVarRequestOptions.Operation = "RulesApi.RulesKeywordGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<RuleKeywordInfo>("/rules/keyword", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -896,8 +952,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddedRule</returns>
-        public AddedRule RulesKeywordPost(AddRuleOption addRuleOption)
+        public AddedRule RulesKeywordPost(AddRuleOption addRuleOption, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> localVarResponse = RulesKeywordPostWithHttpInfo(addRuleOption);
             return localVarResponse.Data;
@@ -908,8 +965,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddedRule</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> RulesKeywordPostWithHttpInfo(AddRuleOption addRuleOption)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> RulesKeywordPostWithHttpInfo(AddRuleOption addRuleOption, int operationIndex = 0)
         {
             // verify the required parameter 'addRuleOption' is set
             if (addRuleOption == null)
@@ -941,6 +999,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = addRuleOption;
+
+            localVarRequestOptions.Operation = "RulesApi.RulesKeywordPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -962,11 +1023,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedRule</returns>
-        public async System.Threading.Tasks.Task<AddedRule> RulesKeywordPostAsync(AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AddedRule> RulesKeywordPostAsync(AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> localVarResponse = await RulesKeywordPostWithHttpInfoAsync(addRuleOption, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> localVarResponse = await RulesKeywordPostWithHttpInfoAsync(addRuleOption, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -975,9 +1037,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedRule)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule>> RulesKeywordPostWithHttpInfoAsync(AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule>> RulesKeywordPostWithHttpInfoAsync(AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'addRuleOption' is set
             if (addRuleOption == null)
@@ -1010,6 +1073,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = addRuleOption;
+
+            localVarRequestOptions.Operation = "RulesApi.RulesKeywordPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1032,8 +1098,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddedRule</returns>
-        public AddedRule RulesPost(AddRuleOption addRuleOption)
+        public AddedRule RulesPost(AddRuleOption addRuleOption, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> localVarResponse = RulesPostWithHttpInfo(addRuleOption);
             return localVarResponse.Data;
@@ -1044,8 +1111,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddedRule</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> RulesPostWithHttpInfo(AddRuleOption addRuleOption)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> RulesPostWithHttpInfo(AddRuleOption addRuleOption, int operationIndex = 0)
         {
             // verify the required parameter 'addRuleOption' is set
             if (addRuleOption == null)
@@ -1077,6 +1145,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = addRuleOption;
+
+            localVarRequestOptions.Operation = "RulesApi.RulesPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1098,11 +1169,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedRule</returns>
-        public async System.Threading.Tasks.Task<AddedRule> RulesPostAsync(AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AddedRule> RulesPostAsync(AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> localVarResponse = await RulesPostWithHttpInfoAsync(addRuleOption, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule> localVarResponse = await RulesPostWithHttpInfoAsync(addRuleOption, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1111,9 +1183,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedRule)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule>> RulesPostWithHttpInfoAsync(AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRule>> RulesPostWithHttpInfoAsync(AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'addRuleOption' is set
             if (addRuleOption == null)
@@ -1146,6 +1219,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.Data = addRuleOption;
+
+            localVarRequestOptions.Operation = "RulesApi.RulesPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1168,8 +1244,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RulesRuleIdDelete(int ruleId)
+        public void RulesRuleIdDelete(int ruleId, int operationIndex = 0)
         {
             RulesRuleIdDeleteWithHttpInfo(ruleId);
         }
@@ -1179,8 +1256,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RulesRuleIdDeleteWithHttpInfo(int ruleId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RulesRuleIdDeleteWithHttpInfo(int ruleId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1205,6 +1283,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1226,11 +1307,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RulesRuleIdDeleteAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RulesRuleIdDeleteAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RulesRuleIdDeleteWithHttpInfoAsync(ruleId, cancellationToken).ConfigureAwait(false);
+            await RulesRuleIdDeleteWithHttpInfoAsync(ruleId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1238,9 +1320,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RulesRuleIdDeleteWithHttpInfoAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RulesRuleIdDeleteWithHttpInfoAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1266,6 +1349,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1288,8 +1374,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RulesRuleIdDisablePut(int ruleId)
+        public void RulesRuleIdDisablePut(int ruleId, int operationIndex = 0)
         {
             RulesRuleIdDisablePutWithHttpInfo(ruleId);
         }
@@ -1299,8 +1386,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RulesRuleIdDisablePutWithHttpInfo(int ruleId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RulesRuleIdDisablePutWithHttpInfo(int ruleId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1325,6 +1413,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdDisablePut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1346,11 +1437,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RulesRuleIdDisablePutAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RulesRuleIdDisablePutAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RulesRuleIdDisablePutWithHttpInfoAsync(ruleId, cancellationToken).ConfigureAwait(false);
+            await RulesRuleIdDisablePutWithHttpInfoAsync(ruleId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1358,9 +1450,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RulesRuleIdDisablePutWithHttpInfoAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RulesRuleIdDisablePutWithHttpInfoAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1386,6 +1479,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdDisablePut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1408,8 +1504,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RulesRuleIdEnablePut(int ruleId)
+        public void RulesRuleIdEnablePut(int ruleId, int operationIndex = 0)
         {
             RulesRuleIdEnablePutWithHttpInfo(ruleId);
         }
@@ -1419,8 +1516,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RulesRuleIdEnablePutWithHttpInfo(int ruleId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RulesRuleIdEnablePutWithHttpInfo(int ruleId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1445,6 +1543,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdEnablePut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1466,11 +1567,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RulesRuleIdEnablePutAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RulesRuleIdEnablePutAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RulesRuleIdEnablePutWithHttpInfoAsync(ruleId, cancellationToken).ConfigureAwait(false);
+            await RulesRuleIdEnablePutWithHttpInfoAsync(ruleId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1478,9 +1580,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RulesRuleIdEnablePutWithHttpInfoAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RulesRuleIdEnablePutWithHttpInfoAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1506,6 +1609,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdEnablePut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1528,8 +1634,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Rule</returns>
-        public Rule RulesRuleIdGet(int ruleId)
+        public Rule RulesRuleIdGet(int ruleId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rule> localVarResponse = RulesRuleIdGetWithHttpInfo(ruleId);
             return localVarResponse.Data;
@@ -1540,8 +1647,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Rule</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rule> RulesRuleIdGetWithHttpInfo(int ruleId)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rule> RulesRuleIdGetWithHttpInfo(int ruleId, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1566,6 +1674,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1587,11 +1698,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Rule</returns>
-        public async System.Threading.Tasks.Task<Rule> RulesRuleIdGetAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Rule> RulesRuleIdGetAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rule> localVarResponse = await RulesRuleIdGetWithHttpInfoAsync(ruleId, cancellationToken).ConfigureAwait(false);
+            X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rule> localVarResponse = await RulesRuleIdGetWithHttpInfoAsync(ruleId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1600,9 +1712,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// </summary>
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Rule)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rule>> RulesRuleIdGetWithHttpInfoAsync(int ruleId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Rule>> RulesRuleIdGetWithHttpInfoAsync(int ruleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1628,6 +1741,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             }
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1651,8 +1767,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RulesRuleIdPut(int ruleId, AddRuleOption addRuleOption)
+        public void RulesRuleIdPut(int ruleId, AddRuleOption addRuleOption, int operationIndex = 0)
         {
             RulesRuleIdPutWithHttpInfo(ruleId, addRuleOption);
         }
@@ -1663,8 +1780,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RulesRuleIdPutWithHttpInfo(int ruleId, AddRuleOption addRuleOption)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> RulesRuleIdPutWithHttpInfo(int ruleId, AddRuleOption addRuleOption, int operationIndex = 0)
         {
             // verify the required parameter 'addRuleOption' is set
             if (addRuleOption == null)
@@ -1697,6 +1815,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
             localVarRequestOptions.Data = addRuleOption;
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -1719,11 +1840,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RulesRuleIdPutAsync(int ruleId, AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RulesRuleIdPutAsync(int ruleId, AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RulesRuleIdPutWithHttpInfoAsync(ruleId, addRuleOption, cancellationToken).ConfigureAwait(false);
+            await RulesRuleIdPutWithHttpInfoAsync(ruleId, addRuleOption, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1732,9 +1854,10 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <exception cref="X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">ルールid</param>
         /// <param name="addRuleOption"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RulesRuleIdPutWithHttpInfoAsync(int ruleId, AddRuleOption addRuleOption, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> RulesRuleIdPutWithHttpInfoAsync(int ruleId, AddRuleOption addRuleOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'addRuleOption' is set
             if (addRuleOption == null)
@@ -1768,6 +1891,9 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
 
             localVarRequestOptions.PathParameters.Add("ruleId", X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.ParameterToString(ruleId)); // path parameter
             localVarRequestOptions.Data = addRuleOption;
+
+            localVarRequestOptions.Operation = "RulesApi.RulesRuleIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

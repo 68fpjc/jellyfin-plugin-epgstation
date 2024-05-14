@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 新規追加する録画番組情報
     /// </summary>
     [DataContract(Name = "CreateNewRecordedOption")]
-    public partial class CreateNewRecordedOption : IEquatable<CreateNewRecordedOption>, IValidatableObject
+    public partial class CreateNewRecordedOption : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateNewRecordedOption" /> class.
@@ -85,28 +85,28 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 放送局 id
         /// </summary>
         /// <value>放送局 id</value>
-        [DataMember(Name = "channelId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "channelId", IsRequired = true, EmitDefaultValue = true)]
         public long ChannelId { get; set; }
 
         /// <summary>
         /// 時刻 (ms)
         /// </summary>
         /// <value>時刻 (ms)</value>
-        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = true)]
         public long StartAt { get; set; }
 
         /// <summary>
         /// 時刻 (ms)
         /// </summary>
         /// <value>時刻 (ms)</value>
-        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = true)]
         public long EndAt { get; set; }
 
         /// <summary>
         /// 番組名
         /// </summary>
         /// <value>番組名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -200,125 +200,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CreateNewRecordedOption);
-        }
-
-        /// <summary>
-        /// Returns true if CreateNewRecordedOption instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CreateNewRecordedOption to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CreateNewRecordedOption input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.RuleId == input.RuleId ||
-                    this.RuleId.Equals(input.RuleId)
-                ) && 
-                (
-                    this.ChannelId == input.ChannelId ||
-                    this.ChannelId.Equals(input.ChannelId)
-                ) && 
-                (
-                    this.StartAt == input.StartAt ||
-                    this.StartAt.Equals(input.StartAt)
-                ) && 
-                (
-                    this.EndAt == input.EndAt ||
-                    this.EndAt.Equals(input.EndAt)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Extended == input.Extended ||
-                    (this.Extended != null &&
-                    this.Extended.Equals(input.Extended))
-                ) && 
-                (
-                    this.Genre1 == input.Genre1 ||
-                    this.Genre1.Equals(input.Genre1)
-                ) && 
-                (
-                    this.SubGenre1 == input.SubGenre1 ||
-                    this.SubGenre1.Equals(input.SubGenre1)
-                ) && 
-                (
-                    this.Genre2 == input.Genre2 ||
-                    this.Genre2.Equals(input.Genre2)
-                ) && 
-                (
-                    this.SubGenre2 == input.SubGenre2 ||
-                    this.SubGenre2.Equals(input.SubGenre2)
-                ) && 
-                (
-                    this.Genre3 == input.Genre3 ||
-                    this.Genre3.Equals(input.Genre3)
-                ) && 
-                (
-                    this.SubGenre3 == input.SubGenre3 ||
-                    this.SubGenre3.Equals(input.SubGenre3)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.RuleId.GetHashCode();
-                hashCode = (hashCode * 59) + this.ChannelId.GetHashCode();
-                hashCode = (hashCode * 59) + this.StartAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.EndAt.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Extended != null)
-                {
-                    hashCode = (hashCode * 59) + this.Extended.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Genre1.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre1.GetHashCode();
-                hashCode = (hashCode * 59) + this.Genre2.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre2.GetHashCode();
-                hashCode = (hashCode * 59) + this.Genre3.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre3.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ChannelId (long) maximum
             if (this.ChannelId > (long)6553565535)

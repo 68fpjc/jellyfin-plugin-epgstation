@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 番組表の番組データ
     /// </summary>
     [DataContract(Name = "ScheduleProgramItem")]
-    public partial class ScheduleProgramItem : IEquatable<ScheduleProgramItem>, IValidatableObject
+    public partial class ScheduleProgramItem : IValidatableObject
     {
 
         /// <summary>
@@ -112,28 +112,28 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// program id
         /// </summary>
         /// <value>program id</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public long Id { get; set; }
 
         /// <summary>
         /// 放送局 id
         /// </summary>
         /// <value>放送局 id</value>
-        [DataMember(Name = "channelId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "channelId", IsRequired = true, EmitDefaultValue = true)]
         public long ChannelId { get; set; }
 
         /// <summary>
         /// 時刻 (ms)
         /// </summary>
         /// <value>時刻 (ms)</value>
-        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = true)]
         public long StartAt { get; set; }
 
         /// <summary>
         /// 時刻 (ms)
         /// </summary>
         /// <value>時刻 (ms)</value>
-        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = true)]
         public long EndAt { get; set; }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 番組名
         /// </summary>
         /// <value>番組名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -274,169 +274,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ScheduleProgramItem);
-        }
-
-        /// <summary>
-        /// Returns true if ScheduleProgramItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ScheduleProgramItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ScheduleProgramItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.ChannelId == input.ChannelId ||
-                    this.ChannelId.Equals(input.ChannelId)
-                ) && 
-                (
-                    this.StartAt == input.StartAt ||
-                    this.StartAt.Equals(input.StartAt)
-                ) && 
-                (
-                    this.EndAt == input.EndAt ||
-                    this.EndAt.Equals(input.EndAt)
-                ) && 
-                (
-                    this.IsFree == input.IsFree ||
-                    this.IsFree.Equals(input.IsFree)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Extended == input.Extended ||
-                    (this.Extended != null &&
-                    this.Extended.Equals(input.Extended))
-                ) && 
-                (
-                    this.RawExtended == input.RawExtended ||
-                    (this.RawExtended != null &&
-                    this.RawExtended.Equals(input.RawExtended))
-                ) && 
-                (
-                    this.Genre1 == input.Genre1 ||
-                    this.Genre1.Equals(input.Genre1)
-                ) && 
-                (
-                    this.SubGenre1 == input.SubGenre1 ||
-                    this.SubGenre1.Equals(input.SubGenre1)
-                ) && 
-                (
-                    this.Genre2 == input.Genre2 ||
-                    this.Genre2.Equals(input.Genre2)
-                ) && 
-                (
-                    this.SubGenre2 == input.SubGenre2 ||
-                    this.SubGenre2.Equals(input.SubGenre2)
-                ) && 
-                (
-                    this.Genre3 == input.Genre3 ||
-                    this.Genre3.Equals(input.Genre3)
-                ) && 
-                (
-                    this.SubGenre3 == input.SubGenre3 ||
-                    this.SubGenre3.Equals(input.SubGenre3)
-                ) && 
-                (
-                    this.VideoType == input.VideoType ||
-                    this.VideoType.Equals(input.VideoType)
-                ) && 
-                (
-                    this.VideoResolution == input.VideoResolution ||
-                    this.VideoResolution.Equals(input.VideoResolution)
-                ) && 
-                (
-                    this.VideoStreamContent == input.VideoStreamContent ||
-                    this.VideoStreamContent.Equals(input.VideoStreamContent)
-                ) && 
-                (
-                    this.VideoComponentType == input.VideoComponentType ||
-                    this.VideoComponentType.Equals(input.VideoComponentType)
-                ) && 
-                (
-                    this.AudioSamplingRate == input.AudioSamplingRate ||
-                    this.AudioSamplingRate.Equals(input.AudioSamplingRate)
-                ) && 
-                (
-                    this.AudioComponentType == input.AudioComponentType ||
-                    this.AudioComponentType.Equals(input.AudioComponentType)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                hashCode = (hashCode * 59) + this.ChannelId.GetHashCode();
-                hashCode = (hashCode * 59) + this.StartAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.EndAt.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsFree.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Extended != null)
-                {
-                    hashCode = (hashCode * 59) + this.Extended.GetHashCode();
-                }
-                if (this.RawExtended != null)
-                {
-                    hashCode = (hashCode * 59) + this.RawExtended.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Genre1.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre1.GetHashCode();
-                hashCode = (hashCode * 59) + this.Genre2.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre2.GetHashCode();
-                hashCode = (hashCode * 59) + this.Genre3.GetHashCode();
-                hashCode = (hashCode * 59) + this.SubGenre3.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoType.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoResolution.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoStreamContent.GetHashCode();
-                hashCode = (hashCode * 59) + this.VideoComponentType.GetHashCode();
-                hashCode = (hashCode * 59) + this.AudioSamplingRate.GetHashCode();
-                hashCode = (hashCode * 59) + this.AudioComponentType.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Id (long) maximum
             if (this.Id > (long)655356553565535)

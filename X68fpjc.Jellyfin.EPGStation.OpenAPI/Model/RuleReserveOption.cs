@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// ルール予約オプション
     /// </summary>
     [DataContract(Name = "RuleReserveOption")]
-    public partial class RuleReserveOption : IEquatable<RuleReserveOption>, IValidatableObject
+    public partial class RuleReserveOption : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RuleReserveOption" /> class.
@@ -114,78 +114,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RuleReserveOption);
-        }
-
-        /// <summary>
-        /// Returns true if RuleReserveOption instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RuleReserveOption to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RuleReserveOption input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    this.Enable.Equals(input.Enable)
-                ) && 
-                (
-                    this.AllowEndLack == input.AllowEndLack ||
-                    this.AllowEndLack.Equals(input.AllowEndLack)
-                ) && 
-                (
-                    this.AvoidDuplicate == input.AvoidDuplicate ||
-                    this.AvoidDuplicate.Equals(input.AvoidDuplicate)
-                ) && 
-                (
-                    this.PeriodToAvoidDuplicate == input.PeriodToAvoidDuplicate ||
-                    this.PeriodToAvoidDuplicate.Equals(input.PeriodToAvoidDuplicate)
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Enable.GetHashCode();
-                hashCode = (hashCode * 59) + this.AllowEndLack.GetHashCode();
-                hashCode = (hashCode * 59) + this.AvoidDuplicate.GetHashCode();
-                hashCode = (hashCode * 59) + this.PeriodToAvoidDuplicate.GetHashCode();
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

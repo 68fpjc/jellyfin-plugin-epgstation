@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// Error
     /// </summary>
     [DataContract(Name = "Error")]
-    public partial class Error : IEquatable<Error>, IValidatableObject
+    public partial class Error : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -58,14 +58,14 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// HTTPステータスコード
         /// </summary>
         /// <value>HTTPステータスコード</value>
-        [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
         public int Code { get; set; }
 
         /// <summary>
         /// エラーメッセージ
         /// </summary>
         /// <value>エラーメッセージ</value>
-        [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = true)]
         public string Message { get; set; }
 
         /// <summary>
@@ -100,71 +100,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Error);
-        }
-
-        /// <summary>
-        /// Returns true if Error instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Error to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Error input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Code == input.Code ||
-                    this.Code.Equals(input.Code)
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Errors == input.Errors ||
-                    (this.Errors != null &&
-                    this.Errors.Equals(input.Errors))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Code.GetHashCode();
-                if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
-                if (this.Errors != null)
-                {
-                    hashCode = (hashCode * 59) + this.Errors.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

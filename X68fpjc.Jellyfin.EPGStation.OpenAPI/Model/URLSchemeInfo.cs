@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// URL Scheme
     /// </summary>
     [DataContract(Name = "URLSchemeInfo")]
-    public partial class URLSchemeInfo : IEquatable<URLSchemeInfo>, IValidatableObject
+    public partial class URLSchemeInfo : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="URLSchemeInfo" /> class.
@@ -96,84 +96,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as URLSchemeInfo);
-        }
-
-        /// <summary>
-        /// Returns true if URLSchemeInfo instances are equal
-        /// </summary>
-        /// <param name="input">Instance of URLSchemeInfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(URLSchemeInfo input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Ios == input.Ios ||
-                    (this.Ios != null &&
-                    this.Ios.Equals(input.Ios))
-                ) && 
-                (
-                    this.Android == input.Android ||
-                    (this.Android != null &&
-                    this.Android.Equals(input.Android))
-                ) && 
-                (
-                    this.Mac == input.Mac ||
-                    (this.Mac != null &&
-                    this.Mac.Equals(input.Mac))
-                ) && 
-                (
-                    this.Win == input.Win ||
-                    (this.Win != null &&
-                    this.Win.Equals(input.Win))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Ios != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ios.GetHashCode();
-                }
-                if (this.Android != null)
-                {
-                    hashCode = (hashCode * 59) + this.Android.GetHashCode();
-                }
-                if (this.Mac != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mac.GetHashCode();
-                }
-                if (this.Win != null)
-                {
-                    hashCode = (hashCode * 59) + this.Win.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// 録画番組情報の新規作成成功応答データ
     /// </summary>
     [DataContract(Name = "CreatedNewRecorded")]
-    public partial class CreatedNewRecorded : IEquatable<CreatedNewRecorded>, IValidatableObject
+    public partial class CreatedNewRecorded : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreatedNewRecorded" /> class.
@@ -49,7 +49,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// 録画済み番組 id
         /// </summary>
         /// <value>録画済み番組 id</value>
-        [DataMember(Name = "recordedId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "recordedId", IsRequired = true, EmitDefaultValue = true)]
         public int RecordedId { get; set; }
 
         /// <summary>
@@ -75,53 +75,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as CreatedNewRecorded);
-        }
-
-        /// <summary>
-        /// Returns true if CreatedNewRecorded instances are equal
-        /// </summary>
-        /// <param name="input">Instance of CreatedNewRecorded to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CreatedNewRecorded input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.RecordedId == input.RecordedId ||
-                    this.RecordedId.Equals(input.RecordedId)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.RecordedId.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

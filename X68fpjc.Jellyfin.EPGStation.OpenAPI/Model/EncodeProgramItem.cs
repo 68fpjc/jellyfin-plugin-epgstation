@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// エンコードプログラム情報
     /// </summary>
     [DataContract(Name = "EncodeProgramItem")]
-    public partial class EncodeProgramItem : IEquatable<EncodeProgramItem>, IValidatableObject
+    public partial class EncodeProgramItem : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EncodeProgramItem" /> class.
@@ -67,20 +67,20 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// エンコード id
         /// </summary>
         /// <value>エンコード id</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public int Id { get; set; }
 
         /// <summary>
         /// エンコード名
         /// </summary>
         /// <value>エンコード名</value>
-        [DataMember(Name = "mode", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "mode", IsRequired = true, EmitDefaultValue = true)]
         public string Mode { get; set; }
 
         /// <summary>
         /// Gets or Sets Recorded
         /// </summary>
-        [DataMember(Name = "recorded", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "recorded", IsRequired = true, EmitDefaultValue = true)]
         public RecordedItem Recorded { get; set; }
 
         /// <summary>
@@ -124,85 +124,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as EncodeProgramItem);
-        }
-
-        /// <summary>
-        /// Returns true if EncodeProgramItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of EncodeProgramItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(EncodeProgramItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.Recorded == input.Recorded ||
-                    (this.Recorded != null &&
-                    this.Recorded.Equals(input.Recorded))
-                ) && 
-                (
-                    this.Percent == input.Percent ||
-                    this.Percent.Equals(input.Percent)
-                ) && 
-                (
-                    this.Log == input.Log ||
-                    (this.Log != null &&
-                    this.Log.Equals(input.Log))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Mode != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mode.GetHashCode();
-                }
-                if (this.Recorded != null)
-                {
-                    hashCode = (hashCode * 59) + this.Recorded.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Percent.GetHashCode();
-                if (this.Log != null)
-                {
-                    hashCode = (hashCode * 59) + this.Log.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

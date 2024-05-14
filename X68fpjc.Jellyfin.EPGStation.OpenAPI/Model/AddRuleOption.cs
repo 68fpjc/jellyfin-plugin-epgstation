@@ -29,7 +29,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
     /// ルール追加プション
     /// </summary>
     [DataContract(Name = "AddRuleOption")]
-    public partial class AddRuleOption : IEquatable<AddRuleOption>, IValidatableObject
+    public partial class AddRuleOption : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AddRuleOption" /> class.
@@ -73,13 +73,13 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Gets or Sets SearchOption
         /// </summary>
-        [DataMember(Name = "searchOption", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "searchOption", IsRequired = true, EmitDefaultValue = true)]
         public RuleSearchOption SearchOption { get; set; }
 
         /// <summary>
         /// Gets or Sets ReserveOption
         /// </summary>
-        [DataMember(Name = "reserveOption", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "reserveOption", IsRequired = true, EmitDefaultValue = true)]
         public RuleReserveOption ReserveOption { get; set; }
 
         /// <summary>
@@ -121,89 +121,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AddRuleOption);
-        }
-
-        /// <summary>
-        /// Returns true if AddRuleOption instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AddRuleOption to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AddRuleOption input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.IsTimeSpecification == input.IsTimeSpecification ||
-                    this.IsTimeSpecification.Equals(input.IsTimeSpecification)
-                ) && 
-                (
-                    this.SearchOption == input.SearchOption ||
-                    (this.SearchOption != null &&
-                    this.SearchOption.Equals(input.SearchOption))
-                ) && 
-                (
-                    this.ReserveOption == input.ReserveOption ||
-                    (this.ReserveOption != null &&
-                    this.ReserveOption.Equals(input.ReserveOption))
-                ) && 
-                (
-                    this.SaveOption == input.SaveOption ||
-                    (this.SaveOption != null &&
-                    this.SaveOption.Equals(input.SaveOption))
-                ) && 
-                (
-                    this.EncodeOption == input.EncodeOption ||
-                    (this.EncodeOption != null &&
-                    this.EncodeOption.Equals(input.EncodeOption))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.IsTimeSpecification.GetHashCode();
-                if (this.SearchOption != null)
-                {
-                    hashCode = (hashCode * 59) + this.SearchOption.GetHashCode();
-                }
-                if (this.ReserveOption != null)
-                {
-                    hashCode = (hashCode * 59) + this.ReserveOption.GetHashCode();
-                }
-                if (this.SaveOption != null)
-                {
-                    hashCode = (hashCode * 59) + this.SaveOption.GetHashCode();
-                }
-                if (this.EncodeOption != null)
-                {
-                    hashCode = (hashCode * 59) + this.EncodeOption.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
