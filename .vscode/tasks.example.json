@@ -32,9 +32,9 @@
             "command": "cp",
             "args": [
                 "--update",
-                "X68fpjc.Jellyfin.EPGStation/bin/Debug/net8.0/*.dll",
-                "X68fpjc.Jellyfin.EPGStation.Infrastructure/bin/Debug/net8.0/*.dll",
-                "X68fpjc.Jellyfin.EPGStation.OpenAPI/bin/Debug/net8.0/*.dll",
+                "X68fpjc.Jellyfin.EPGStation/bin/Debug/net9.0/*.dll",
+                "X68fpjc.Jellyfin.EPGStation.Infrastructure/bin/Debug/net9.0/*.dll",
+                "X68fpjc.Jellyfin.EPGStation.OpenAPI/bin/Debug/net9.0/*.dll",
                 "${workspaceFolder}/.vscode/jellyfin-data/plugins/EPGStation/"
             ]
         }

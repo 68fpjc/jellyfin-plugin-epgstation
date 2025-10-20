@@ -17,9 +17,6 @@ namespace X68fpjc.Jellyfin.EPGStation.Providers
         ExternalIdMediaType? IExternalId.Type => ExternalIdMediaType.Movie;
 
         /// <inheritdoc />
-        string IExternalId.UrlFormatString => "{0}";
-
-        /// <inheritdoc />
         bool IExternalId.Supports(IHasProviderIds item) => item is Video;
     }
 }
