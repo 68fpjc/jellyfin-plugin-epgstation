@@ -1,7 +1,7 @@
 ---
 name: "EPGStation"
 guid: "aa93bc86-2b92-4139-aa56-7cc83c282a32"
-version: "1.4.0.0"
+version: "1.4.0.1"
 targetAbi: "10.11.0.0"
 framework: "net9.0"
 overview: "EPGStation metadata provider"
@@ -19,4 +19,4 @@ artifacts:
   - "Polly.dll"
   - "RestSharp.dll"
 changelog: >-
-  Support Jellyfin 10.11
+  Regenerate OpenAPI Client
