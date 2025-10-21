@@ -37,7 +37,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか (optional, default to true)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void IptvChannelM3u8Get(int mode, bool? isHalfWidth = default(bool?), int operationIndex = 0);
+        void IptvChannelM3u8Get(int mode, bool? isHalfWidth = default, int operationIndex = 0);
 
         /// <summary>
         /// IPTV channel list を取得
@@ -50,7 +50,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか (optional, default to true)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> IptvChannelM3u8GetWithHttpInfo(int mode, bool? isHalfWidth = default(bool?), int operationIndex = 0);
+        ApiResponse<Object> IptvChannelM3u8GetWithHttpInfo(int mode, bool? isHalfWidth = default, int operationIndex = 0);
         /// <summary>
         /// IPTV epg を取得
         /// </summary>
@@ -62,7 +62,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="days">取得日数 (optional, default to 3)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void IptvEpgXmlGet(bool? isHalfWidth = default(bool?), int? days = default(int?), int operationIndex = 0);
+        void IptvEpgXmlGet(bool? isHalfWidth = default, int? days = default, int operationIndex = 0);
 
         /// <summary>
         /// IPTV epg を取得
@@ -75,7 +75,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="days">取得日数 (optional, default to 3)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> IptvEpgXmlGetWithHttpInfo(bool? isHalfWidth = default(bool?), int? days = default(int?), int operationIndex = 0);
+        ApiResponse<Object> IptvEpgXmlGetWithHttpInfo(bool? isHalfWidth = default, int? days = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -97,7 +97,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task IptvChannelM3u8GetAsync(int mode, bool? isHalfWidth = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task IptvChannelM3u8GetAsync(int mode, bool? isHalfWidth = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// IPTV channel list を取得
@@ -111,7 +111,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> IptvChannelM3u8GetWithHttpInfoAsync(int mode, bool? isHalfWidth = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> IptvChannelM3u8GetWithHttpInfoAsync(int mode, bool? isHalfWidth = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// IPTV epg を取得
         /// </summary>
@@ -124,7 +124,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task IptvEpgXmlGetAsync(bool? isHalfWidth = default(bool?), int? days = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task IptvEpgXmlGetAsync(bool? isHalfWidth = default, int? days = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// IPTV epg を取得
@@ -138,7 +138,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> IptvEpgXmlGetWithHttpInfoAsync(bool? isHalfWidth = default(bool?), int? days = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> IptvEpgXmlGetWithHttpInfoAsync(bool? isHalfWidth = default, int? days = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -267,7 +267,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか (optional, default to true)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void IptvChannelM3u8Get(int mode, bool? isHalfWidth = default(bool?), int operationIndex = 0)
+        public void IptvChannelM3u8Get(int mode, bool? isHalfWidth = default, int operationIndex = 0)
         {
             IptvChannelM3u8GetWithHttpInfo(mode, isHalfWidth);
         }
@@ -280,7 +280,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isHalfWidth">半角文字で取得するか (optional, default to true)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> IptvChannelM3u8GetWithHttpInfo(int mode, bool? isHalfWidth = default(bool?), int operationIndex = 0)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> IptvChannelM3u8GetWithHttpInfo(int mode, bool? isHalfWidth = default, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -294,6 +294,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -338,7 +339,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task IptvChannelM3u8GetAsync(int mode, bool? isHalfWidth = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task IptvChannelM3u8GetAsync(int mode, bool? isHalfWidth = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await IptvChannelM3u8GetWithHttpInfoAsync(mode, isHalfWidth, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -352,7 +353,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> IptvChannelM3u8GetWithHttpInfoAsync(int mode, bool? isHalfWidth = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> IptvChannelM3u8GetWithHttpInfoAsync(int mode, bool? isHalfWidth = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -411,7 +412,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="days">取得日数 (optional, default to 3)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void IptvEpgXmlGet(bool? isHalfWidth = default(bool?), int? days = default(int?), int operationIndex = 0)
+        public void IptvEpgXmlGet(bool? isHalfWidth = default, int? days = default, int operationIndex = 0)
         {
             IptvEpgXmlGetWithHttpInfo(isHalfWidth, days);
         }
@@ -424,7 +425,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="days">取得日数 (optional, default to 3)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> IptvEpgXmlGetWithHttpInfo(bool? isHalfWidth = default(bool?), int? days = default(int?), int operationIndex = 0)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> IptvEpgXmlGetWithHttpInfo(bool? isHalfWidth = default, int? days = default, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -438,6 +439,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -485,7 +487,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task IptvEpgXmlGetAsync(bool? isHalfWidth = default(bool?), int? days = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task IptvEpgXmlGetAsync(bool? isHalfWidth = default, int? days = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await IptvEpgXmlGetWithHttpInfoAsync(isHalfWidth, days, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -499,7 +501,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> IptvEpgXmlGetWithHttpInfoAsync(bool? isHalfWidth = default(bool?), int? days = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> IptvEpgXmlGetWithHttpInfoAsync(bool? isHalfWidth = default, int? days = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();

@@ -49,7 +49,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="encodeParentDirectoryName3">エンコードモード3親ディレクトリ.</param>
         /// <param name="directory3">エンコードモード3ディレクトリ.</param>
         /// <param name="isDeleteOriginalAfterEncode">エンコード後に ts を削除するか (required).</param>
-        public ReserveEncodedOption(string mode1 = default(string), string encodeParentDirectoryName1 = default(string), string directory1 = default(string), string mode2 = default(string), string encodeParentDirectoryName2 = default(string), string directory2 = default(string), string mode3 = default(string), string encodeParentDirectoryName3 = default(string), string directory3 = default(string), bool isDeleteOriginalAfterEncode = default(bool))
+        public ReserveEncodedOption(string mode1 = default, string encodeParentDirectoryName1 = default, string directory1 = default, string mode2 = default, string encodeParentDirectoryName2 = default, string directory2 = default, string mode3 = default, string encodeParentDirectoryName3 = default, string directory3 = default, bool isDeleteOriginalAfterEncode = default)
         {
             this.IsDeleteOriginalAfterEncode = isDeleteOriginalAfterEncode;
             this.Mode1 = mode1;
@@ -169,7 +169,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

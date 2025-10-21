@@ -37,7 +37,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="parentDirectoryName">親保存ディレクトリ.</param>
         /// <param name="directory">保存ディレクトリ.</param>
         /// <param name="recordedFormat">ファイル名フォーマット.</param>
-        public ReserveSaveOption(string parentDirectoryName = default(string), string directory = default(string), string recordedFormat = default(string))
+        public ReserveSaveOption(string parentDirectoryName = default, string directory = default, string recordedFormat = default)
         {
             this.ParentDirectoryName = parentDirectoryName;
             this.Directory = directory;
@@ -94,7 +94,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

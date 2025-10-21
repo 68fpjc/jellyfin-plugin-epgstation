@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="name">タグ名 (required).</param>
         /// <param name="color">色 (required).</param>
-        public AddRecordedTagOption(string name = default(string), string color = default(string))
+        public AddRecordedTagOption(string name = default, string color = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -99,7 +99,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

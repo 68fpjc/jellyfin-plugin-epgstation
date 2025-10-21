@@ -49,7 +49,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="isEnableEncodedRecordedStream">録画済みのエンコード済みファイルのストリーミングが有効か (required).</param>
         /// <param name="streamConfig">streamConfig.</param>
         /// <param name="kodiHosts">kodi hosts.</param>
-        public Config(int socketIOPort = default(int), ConfigBroadcast broadcast = default(ConfigBroadcast), List<string> recorded = default(List<string>), List<string> encode = default(List<string>), ConfigUrlscheme urlscheme = default(ConfigUrlscheme), bool isEnableLiveStream = default(bool), bool isEnableTSRecordedStream = default(bool), bool isEnableEncodedRecordedStream = default(bool), ConfigStreamConfig streamConfig = default(ConfigStreamConfig), List<string> kodiHosts = default(List<string>))
+        public Config(int socketIOPort = default, ConfigBroadcast broadcast = default, List<string> recorded = default, List<string> encode = default, ConfigUrlscheme urlscheme = default, bool isEnableLiveStream = default, bool isEnableTSRecordedStream = default, bool isEnableEncodedRecordedStream = default, ConfigStreamConfig streamConfig = default, List<string> kodiHosts = default)
         {
             this.SocketIOPort = socketIOPort;
             // to ensure "broadcast" is required (not null)
@@ -186,7 +186,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

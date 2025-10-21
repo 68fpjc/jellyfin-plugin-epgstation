@@ -42,7 +42,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="m2ts">m2ts (required).</param>
         /// <param name="video">video (required).</param>
         /// <param name="download">download (required).</param>
-        public ConfigUrlscheme(URLSchemeInfo m2ts = default(URLSchemeInfo), URLSchemeInfo video = default(URLSchemeInfo), URLSchemeInfo download = default(URLSchemeInfo))
+        public ConfigUrlscheme(URLSchemeInfo m2ts = default, URLSchemeInfo video = default, URLSchemeInfo download = default)
         {
             // to ensure "m2ts" is required (not null)
             if (m2ts == null)
@@ -111,7 +111,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

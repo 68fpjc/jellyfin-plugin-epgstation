@@ -43,7 +43,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="tags">tags.</param>
         /// <param name="saveOption">saveOption.</param>
         /// <param name="encodeOption">encodeOption.</param>
-        public EditManualReserveOption(bool allowEndLack = default(bool), List<int> tags = default(List<int>), ReserveSaveOption saveOption = default(ReserveSaveOption), ReserveEncodedOption encodeOption = default(ReserveEncodedOption))
+        public EditManualReserveOption(bool allowEndLack = default, List<int> tags = default, ReserveSaveOption saveOption = default, ReserveEncodedOption encodeOption = default)
         {
             this.AllowEndLack = allowEndLack;
             this.Tags = tags;
@@ -106,7 +106,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

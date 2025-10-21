@@ -40,7 +40,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// Initializes a new instance of the <see cref="RuleKeywordInfo" /> class.
         /// </summary>
         /// <param name="items">items (required).</param>
-        public RuleKeywordInfo(List<RuleKeywordItem> items = default(List<RuleKeywordItem>))
+        public RuleKeywordInfo(List<RuleKeywordItem> items = default)
         {
             // to ensure "items" is required (not null)
             if (items == null)
@@ -83,7 +83,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

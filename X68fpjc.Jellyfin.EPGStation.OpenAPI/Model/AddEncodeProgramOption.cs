@@ -45,7 +45,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="directory">親ディレクトリ以下のディレクトリ設定.</param>
         /// <param name="mode">エンコードプリセット名 config encode の name (required).</param>
         /// <param name="removeOriginal">元ファイルを削除するか (required).</param>
-        public AddEncodeProgramOption(int recordedId = default(int), int sourceVideoFileId = default(int), string parentDir = default(string), string directory = default(string), string mode = default(string), bool removeOriginal = default(bool))
+        public AddEncodeProgramOption(int recordedId = default, int sourceVideoFileId = default, string parentDir = default, string directory = default, string mode = default, bool removeOriginal = default)
         {
             this.RecordedId = recordedId;
             this.SourceVideoFileId = sourceVideoFileId;
@@ -139,7 +139,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

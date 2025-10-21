@@ -44,7 +44,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="recorded">recorded (required).</param>
         /// <param name="percent">進捗.</param>
         /// <param name="log">ログ.</param>
-        public EncodeProgramItem(int id = default(int), string mode = default(string), RecordedItem recorded = default(RecordedItem), decimal percent = default(decimal), string log = default(string))
+        public EncodeProgramItem(int id = default, string mode = default, RecordedItem recorded = default, decimal percent = default, string log = default)
         {
             this.Id = id;
             // to ensure "mode" is required (not null)
@@ -128,7 +128,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

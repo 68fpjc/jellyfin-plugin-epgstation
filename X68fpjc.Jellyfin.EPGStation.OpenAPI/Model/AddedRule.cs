@@ -40,7 +40,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// Initializes a new instance of the <see cref="AddedRule" /> class.
         /// </summary>
         /// <param name="ruleId">ルール id (required).</param>
-        public AddedRule(int ruleId = default(int))
+        public AddedRule(int ruleId = default)
         {
             this.RuleId = ruleId;
         }
@@ -79,7 +79,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

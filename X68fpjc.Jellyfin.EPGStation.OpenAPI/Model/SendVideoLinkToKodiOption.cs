@@ -40,7 +40,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// Initializes a new instance of the <see cref="SendVideoLinkToKodiOption" /> class.
         /// </summary>
         /// <param name="kodiName">config の kodi の name (required).</param>
-        public SendVideoLinkToKodiOption(string kodiName = default(string))
+        public SendVideoLinkToKodiOption(string kodiName = default)
         {
             // to ensure "kodiName" is required (not null)
             if (kodiName == null)
@@ -84,7 +84,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -39,7 +39,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="excludeTagId">除外する RecordedTagId (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RecordedTags</returns>
-        RecordedTags TagsGet(int? offset = default(int?), int? limit = default(int?), string? name = default(string?), List<string>? excludeTagId = default(List<string>?), int operationIndex = 0);
+        RecordedTags TagsGet(int? offset = default, int? limit = default, string? name = default, List<string>? excludeTagId = default, int operationIndex = 0);
 
         /// <summary>
         /// タグ情報取得
@@ -54,7 +54,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="excludeTagId">除外する RecordedTagId (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RecordedTags</returns>
-        ApiResponse<RecordedTags> TagsGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string? name = default(string?), List<string>? excludeTagId = default(List<string>?), int operationIndex = 0);
+        ApiResponse<RecordedTags> TagsGetWithHttpInfo(int? offset = default, int? limit = default, string? name = default, List<string>? excludeTagId = default, int operationIndex = 0);
         /// <summary>
         /// タグ追加
         /// </summary>
@@ -137,7 +137,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="recordedId">recorded id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void TagsTagIdRelateDelete(int tagId, int? recordedId = default(int?), int operationIndex = 0);
+        void TagsTagIdRelateDelete(int tagId, int? recordedId = default, int operationIndex = 0);
 
         /// <summary>
         /// 録画番組とタグの関連付けを削除
@@ -150,7 +150,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="recordedId">recorded id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> TagsTagIdRelateDeleteWithHttpInfo(int tagId, int? recordedId = default(int?), int operationIndex = 0);
+        ApiResponse<Object> TagsTagIdRelateDeleteWithHttpInfo(int tagId, int? recordedId = default, int operationIndex = 0);
         /// <summary>
         /// 録画番組とタグを関連付ける
         /// </summary>
@@ -199,7 +199,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordedTags</returns>
-        System.Threading.Tasks.Task<RecordedTags> TagsGetAsync(int? offset = default(int?), int? limit = default(int?), string? name = default(string?), List<string>? excludeTagId = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RecordedTags> TagsGetAsync(int? offset = default, int? limit = default, string? name = default, List<string>? excludeTagId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// タグ情報取得
@@ -215,7 +215,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordedTags)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RecordedTags>> TagsGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string? name = default(string?), List<string>? excludeTagId = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RecordedTags>> TagsGetWithHttpInfoAsync(int? offset = default, int? limit = default, string? name = default, List<string>? excludeTagId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// タグ追加
         /// </summary>
@@ -227,7 +227,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedRecordedTag</returns>
-        System.Threading.Tasks.Task<AddedRecordedTag> TagsPostAsync(AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AddedRecordedTag> TagsPostAsync(AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// タグ追加
@@ -240,7 +240,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedRecordedTag)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddedRecordedTag>> TagsPostWithHttpInfoAsync(AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AddedRecordedTag>> TagsPostWithHttpInfoAsync(AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// タグ削除
         /// </summary>
@@ -252,7 +252,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TagsTagIdDeleteAsync(int tagId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task TagsTagIdDeleteAsync(int tagId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// タグ削除
@@ -265,7 +265,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TagsTagIdDeleteWithHttpInfoAsync(int tagId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> TagsTagIdDeleteWithHttpInfoAsync(int tagId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// タグ名変更
         /// </summary>
@@ -278,7 +278,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TagsTagIdPutAsync(int tagId, AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task TagsTagIdPutAsync(int tagId, AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// タグ名変更
@@ -292,7 +292,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TagsTagIdPutWithHttpInfoAsync(int tagId, AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> TagsTagIdPutWithHttpInfoAsync(int tagId, AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 録画番組とタグの関連付けを削除
         /// </summary>
@@ -305,7 +305,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TagsTagIdRelateDeleteAsync(int tagId, int? recordedId = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task TagsTagIdRelateDeleteAsync(int tagId, int? recordedId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 録画番組とタグの関連付けを削除
@@ -319,7 +319,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TagsTagIdRelateDeleteWithHttpInfoAsync(int tagId, int? recordedId = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> TagsTagIdRelateDeleteWithHttpInfoAsync(int tagId, int? recordedId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 録画番組とタグを関連付ける
         /// </summary>
@@ -332,7 +332,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TagsTagIdRelatePutAsync(int tagId, RelateRecordedTagOption relateRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task TagsTagIdRelatePutAsync(int tagId, RelateRecordedTagOption relateRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 録画番組とタグを関連付ける
@@ -346,7 +346,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TagsTagIdRelatePutWithHttpInfoAsync(int tagId, RelateRecordedTagOption relateRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> TagsTagIdRelatePutWithHttpInfoAsync(int tagId, RelateRecordedTagOption relateRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -477,7 +477,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="excludeTagId">除外する RecordedTagId (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RecordedTags</returns>
-        public RecordedTags TagsGet(int? offset = default(int?), int? limit = default(int?), string? name = default(string?), List<string>? excludeTagId = default(List<string>?), int operationIndex = 0)
+        public RecordedTags TagsGet(int? offset = default, int? limit = default, string? name = default, List<string>? excludeTagId = default, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedTags> localVarResponse = TagsGetWithHttpInfo(offset, limit, name, excludeTagId);
             return localVarResponse.Data;
@@ -493,7 +493,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="excludeTagId">除外する RecordedTagId (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RecordedTags</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedTags> TagsGetWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string? name = default(string?), List<string>? excludeTagId = default(List<string>?), int operationIndex = 0)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedTags> TagsGetWithHttpInfo(int? offset = default, int? limit = default, string? name = default, List<string>? excludeTagId = default, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -506,6 +506,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -563,7 +564,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RecordedTags</returns>
-        public async System.Threading.Tasks.Task<RecordedTags> TagsGetAsync(int? offset = default(int?), int? limit = default(int?), string? name = default(string?), List<string>? excludeTagId = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RecordedTags> TagsGetAsync(int? offset = default, int? limit = default, string? name = default, List<string>? excludeTagId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedTags> localVarResponse = await TagsGetWithHttpInfoAsync(offset, limit, name, excludeTagId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -580,7 +581,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RecordedTags)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedTags>> TagsGetWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string? name = default(string?), List<string>? excludeTagId = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<RecordedTags>> TagsGetWithHttpInfoAsync(int? offset = default, int? limit = default, string? name = default, List<string>? excludeTagId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -681,6 +682,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -720,7 +722,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedRecordedTag</returns>
-        public async System.Threading.Tasks.Task<AddedRecordedTag> TagsPostAsync(AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AddedRecordedTag> TagsPostAsync(AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRecordedTag> localVarResponse = await TagsPostWithHttpInfoAsync(addRecordedTagOption, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -734,7 +736,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedRecordedTag)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRecordedTag>> TagsPostWithHttpInfoAsync(AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedRecordedTag>> TagsPostWithHttpInfoAsync(AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'addRecordedTagOption' is set
             if (addRecordedTagOption == null)
@@ -819,6 +821,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -858,7 +861,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TagsTagIdDeleteAsync(int tagId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task TagsTagIdDeleteAsync(int tagId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await TagsTagIdDeleteWithHttpInfoAsync(tagId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -871,7 +874,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> TagsTagIdDeleteWithHttpInfoAsync(int tagId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> TagsTagIdDeleteWithHttpInfoAsync(int tagId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -958,6 +961,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -999,7 +1003,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TagsTagIdPutAsync(int tagId, AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task TagsTagIdPutAsync(int tagId, AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await TagsTagIdPutWithHttpInfoAsync(tagId, addRecordedTagOption, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1013,7 +1017,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> TagsTagIdPutWithHttpInfoAsync(int tagId, AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> TagsTagIdPutWithHttpInfoAsync(int tagId, AddRecordedTagOption addRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'addRecordedTagOption' is set
             if (addRecordedTagOption == null)
@@ -1075,7 +1079,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="recordedId">recorded id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void TagsTagIdRelateDelete(int tagId, int? recordedId = default(int?), int operationIndex = 0)
+        public void TagsTagIdRelateDelete(int tagId, int? recordedId = default, int operationIndex = 0)
         {
             TagsTagIdRelateDeleteWithHttpInfo(tagId, recordedId);
         }
@@ -1088,7 +1092,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="recordedId">recorded id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> TagsTagIdRelateDeleteWithHttpInfo(int tagId, int? recordedId = default(int?), int operationIndex = 0)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> TagsTagIdRelateDeleteWithHttpInfo(int tagId, int? recordedId = default, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -1101,6 +1105,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1145,7 +1150,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TagsTagIdRelateDeleteAsync(int tagId, int? recordedId = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task TagsTagIdRelateDeleteAsync(int tagId, int? recordedId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await TagsTagIdRelateDeleteWithHttpInfoAsync(tagId, recordedId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1159,7 +1164,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> TagsTagIdRelateDeleteWithHttpInfoAsync(int tagId, int? recordedId = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> TagsTagIdRelateDeleteWithHttpInfoAsync(int tagId, int? recordedId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1250,6 +1255,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1291,7 +1297,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TagsTagIdRelatePutAsync(int tagId, RelateRecordedTagOption relateRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task TagsTagIdRelatePutAsync(int tagId, RelateRecordedTagOption relateRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await TagsTagIdRelatePutWithHttpInfoAsync(tagId, relateRecordedTagOption, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1305,7 +1311,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> TagsTagIdRelatePutWithHttpInfoAsync(int tagId, RelateRecordedTagOption relateRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> TagsTagIdRelatePutWithHttpInfoAsync(int tagId, RelateRecordedTagOption relateRecordedTagOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'relateRecordedTagOption' is set
             if (relateRecordedTagOption == null)

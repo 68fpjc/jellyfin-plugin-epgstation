@@ -39,7 +39,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="webm">ライブ WebM ストリーミング設定.</param>
         /// <param name="mp4">ライブ MP4 ストリーミング設定.</param>
         /// <param name="hls">ライブ HLS ストリーミング設定.</param>
-        public ConfigStreamConfigLive(List<M2TSStreamParam> m2ts = default(List<M2TSStreamParam>), List<string> m2tsll = default(List<string>), List<string> webm = default(List<string>), List<string> mp4 = default(List<string>), List<string> hls = default(List<string>))
+        public ConfigStreamConfigLive(List<M2TSStreamParam> m2ts = default, List<string> m2tsll = default, List<string> webm = default, List<string> mp4 = default, List<string> hls = default)
         {
             this.M2ts = m2ts;
             this.M2tsll = m2tsll;
@@ -114,7 +114,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

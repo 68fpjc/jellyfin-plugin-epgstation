@@ -115,7 +115,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task EncodeEncodeIdDeleteAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task EncodeEncodeIdDeleteAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// エンコードをキャンセル
@@ -128,7 +128,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EncodeEncodeIdDeleteWithHttpInfoAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> EncodeEncodeIdDeleteWithHttpInfoAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// エンコード情報取得
         /// </summary>
@@ -140,7 +140,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EncodeInfo</returns>
-        System.Threading.Tasks.Task<EncodeInfo> EncodeGetAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<EncodeInfo> EncodeGetAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// エンコード情報取得
@@ -153,7 +153,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EncodeInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EncodeInfo>> EncodeGetWithHttpInfoAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<EncodeInfo>> EncodeGetWithHttpInfoAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// エンコード追加
         /// </summary>
@@ -165,7 +165,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedEncode</returns>
-        System.Threading.Tasks.Task<AddedEncode> EncodePostAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AddedEncode> EncodePostAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// エンコード追加
@@ -178,7 +178,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedEncode)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddedEncode>> EncodePostWithHttpInfoAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AddedEncode>> EncodePostWithHttpInfoAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -331,6 +331,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -370,7 +371,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task EncodeEncodeIdDeleteAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task EncodeEncodeIdDeleteAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await EncodeEncodeIdDeleteWithHttpInfoAsync(encodeId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -383,7 +384,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> EncodeEncodeIdDeleteWithHttpInfoAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> EncodeEncodeIdDeleteWithHttpInfoAsync(int encodeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -462,6 +463,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -501,7 +503,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EncodeInfo</returns>
-        public async System.Threading.Tasks.Task<EncodeInfo> EncodeGetAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<EncodeInfo> EncodeGetAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo> localVarResponse = await EncodeGetWithHttpInfoAsync(isHalfWidth, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -515,7 +517,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EncodeInfo)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo>> EncodeGetWithHttpInfoAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<EncodeInfo>> EncodeGetWithHttpInfoAsync(bool isHalfWidth, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -601,6 +603,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -640,7 +643,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddedEncode</returns>
-        public async System.Threading.Tasks.Task<AddedEncode> EncodePostAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AddedEncode> EncodePostAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode> localVarResponse = await EncodePostWithHttpInfoAsync(addManualEncodeProgramOption, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -654,7 +657,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddedEncode)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode>> EncodePostWithHttpInfoAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<AddedEncode>> EncodePostWithHttpInfoAsync(AddManualEncodeProgramOption addManualEncodeProgramOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'addManualEncodeProgramOption' is set
             if (addManualEncodeProgramOption == null)

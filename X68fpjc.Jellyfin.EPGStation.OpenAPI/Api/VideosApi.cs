@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="subDirectory">保存ディレクトリ (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void VideosUploadPost(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default(string?), int operationIndex = 0);
+        void VideosUploadPost(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default, int operationIndex = 0);
 
         /// <summary>
         /// アップロードしたビデオファイルを追加
@@ -58,7 +58,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="subDirectory">保存ディレクトリ (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> VideosUploadPostWithHttpInfo(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default(string?), int operationIndex = 0);
+        ApiResponse<Object> VideosUploadPostWithHttpInfo(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default, int operationIndex = 0);
         /// <summary>
         /// ビデオファイル
         /// </summary>
@@ -116,7 +116,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isDownload">ファイルをダウンロードするか (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void VideosVideoFileIdGet(int videoFileId, bool? isDownload = default(bool?), int operationIndex = 0);
+        void VideosVideoFileIdGet(int videoFileId, bool? isDownload = default, int operationIndex = 0);
 
         /// <summary>
         /// ビデオファイル
@@ -129,7 +129,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isDownload">ファイルをダウンロードするか (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> VideosVideoFileIdGetWithHttpInfo(int videoFileId, bool? isDownload = default(bool?), int operationIndex = 0);
+        ApiResponse<Object> VideosVideoFileIdGetWithHttpInfo(int videoFileId, bool? isDownload = default, int operationIndex = 0);
         /// <summary>
         /// ビデオリンクを kodi へ送信
         /// </summary>
@@ -203,7 +203,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task VideosUploadPostAsync(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task VideosUploadPostAsync(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// アップロードしたビデオファイルを追加
@@ -221,7 +221,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VideosUploadPostWithHttpInfoAsync(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VideosUploadPostWithHttpInfoAsync(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ビデオファイル
         /// </summary>
@@ -233,7 +233,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task VideosVideoFileIdDeleteAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task VideosVideoFileIdDeleteAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// ビデオファイル
@@ -246,7 +246,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VideosVideoFileIdDeleteWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VideosVideoFileIdDeleteWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 動画の長さ
         /// </summary>
@@ -258,7 +258,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VideoFileDuration</returns>
-        System.Threading.Tasks.Task<VideoFileDuration> VideosVideoFileIdDurationGetAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VideoFileDuration> VideosVideoFileIdDurationGetAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 動画の長さ
@@ -271,7 +271,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VideoFileDuration)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VideoFileDuration>> VideosVideoFileIdDurationGetWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VideoFileDuration>> VideosVideoFileIdDurationGetWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ビデオファイル
         /// </summary>
@@ -284,7 +284,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task VideosVideoFileIdGetAsync(int videoFileId, bool? isDownload = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task VideosVideoFileIdGetAsync(int videoFileId, bool? isDownload = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// ビデオファイル
@@ -298,7 +298,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VideosVideoFileIdGetWithHttpInfoAsync(int videoFileId, bool? isDownload = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VideosVideoFileIdGetWithHttpInfoAsync(int videoFileId, bool? isDownload = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ビデオリンクを kodi へ送信
         /// </summary>
@@ -311,7 +311,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task VideosVideoFileIdKodiPostAsync(int videoFileId, SendVideoLinkToKodiOption sendVideoLinkToKodiOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task VideosVideoFileIdKodiPostAsync(int videoFileId, SendVideoLinkToKodiOption sendVideoLinkToKodiOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// ビデオリンクを kodi へ送信
@@ -325,7 +325,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VideosVideoFileIdKodiPostWithHttpInfoAsync(int videoFileId, SendVideoLinkToKodiOption sendVideoLinkToKodiOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VideosVideoFileIdKodiPostWithHttpInfoAsync(int videoFileId, SendVideoLinkToKodiOption sendVideoLinkToKodiOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ビデオプレイリスト
         /// </summary>
@@ -337,7 +337,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task VideosVideoFileIdPlaylistGetAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task VideosVideoFileIdPlaylistGetAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// ビデオプレイリスト
@@ -350,7 +350,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VideosVideoFileIdPlaylistGetWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VideosVideoFileIdPlaylistGetWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -483,7 +483,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="subDirectory">保存ディレクトリ (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void VideosUploadPost(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default(string?), int operationIndex = 0)
+        public void VideosUploadPost(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default, int operationIndex = 0)
         {
             VideosUploadPostWithHttpInfo(recordedId, parentDirectoryName, viewName, fileType, file, subDirectory);
         }
@@ -500,7 +500,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="subDirectory">保存ディレクトリ (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> VideosUploadPostWithHttpInfo(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default(string?), int operationIndex = 0)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> VideosUploadPostWithHttpInfo(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default, int operationIndex = 0)
         {
             // verify the required parameter 'parentDirectoryName' is set
             if (parentDirectoryName == null)
@@ -532,6 +532,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -584,7 +585,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task VideosUploadPostAsync(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task VideosUploadPostAsync(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await VideosUploadPostWithHttpInfoAsync(recordedId, parentDirectoryName, viewName, fileType, file, subDirectory, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -602,7 +603,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosUploadPostWithHttpInfoAsync(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosUploadPostWithHttpInfoAsync(int recordedId, string parentDirectoryName, string viewName, VideoFileType fileType, System.IO.Stream file, string? subDirectory = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'parentDirectoryName' is set
             if (parentDirectoryName == null)
@@ -707,6 +708,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -746,7 +748,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task VideosVideoFileIdDeleteAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task VideosVideoFileIdDeleteAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await VideosVideoFileIdDeleteWithHttpInfoAsync(videoFileId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -759,7 +761,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosVideoFileIdDeleteWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosVideoFileIdDeleteWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -838,6 +840,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -877,7 +880,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VideoFileDuration</returns>
-        public async System.Threading.Tasks.Task<VideoFileDuration> VideosVideoFileIdDurationGetAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VideoFileDuration> VideosVideoFileIdDurationGetAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<VideoFileDuration> localVarResponse = await VideosVideoFileIdDurationGetWithHttpInfoAsync(videoFileId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -891,7 +894,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VideoFileDuration)</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<VideoFileDuration>> VideosVideoFileIdDurationGetWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<VideoFileDuration>> VideosVideoFileIdDurationGetWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -945,7 +948,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isDownload">ファイルをダウンロードするか (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void VideosVideoFileIdGet(int videoFileId, bool? isDownload = default(bool?), int operationIndex = 0)
+        public void VideosVideoFileIdGet(int videoFileId, bool? isDownload = default, int operationIndex = 0)
         {
             VideosVideoFileIdGetWithHttpInfo(videoFileId, isDownload);
         }
@@ -958,7 +961,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="isDownload">ファイルをダウンロードするか (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> VideosVideoFileIdGetWithHttpInfo(int videoFileId, bool? isDownload = default(bool?), int operationIndex = 0)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> VideosVideoFileIdGetWithHttpInfo(int videoFileId, bool? isDownload = default, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -976,6 +979,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1020,7 +1024,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task VideosVideoFileIdGetAsync(int videoFileId, bool? isDownload = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task VideosVideoFileIdGetAsync(int videoFileId, bool? isDownload = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await VideosVideoFileIdGetWithHttpInfoAsync(videoFileId, isDownload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1034,7 +1038,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosVideoFileIdGetWithHttpInfoAsync(int videoFileId, bool? isDownload = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosVideoFileIdGetWithHttpInfoAsync(int videoFileId, bool? isDownload = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
@@ -1130,6 +1134,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1171,7 +1176,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task VideosVideoFileIdKodiPostAsync(int videoFileId, SendVideoLinkToKodiOption sendVideoLinkToKodiOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task VideosVideoFileIdKodiPostAsync(int videoFileId, SendVideoLinkToKodiOption sendVideoLinkToKodiOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await VideosVideoFileIdKodiPostWithHttpInfoAsync(videoFileId, sendVideoLinkToKodiOption, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1185,7 +1190,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosVideoFileIdKodiPostWithHttpInfoAsync(int videoFileId, SendVideoLinkToKodiOption sendVideoLinkToKodiOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosVideoFileIdKodiPostWithHttpInfoAsync(int videoFileId, SendVideoLinkToKodiOption sendVideoLinkToKodiOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'sendVideoLinkToKodiOption' is set
             if (sendVideoLinkToKodiOption == null)
@@ -1272,6 +1277,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1311,7 +1317,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task VideosVideoFileIdPlaylistGetAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task VideosVideoFileIdPlaylistGetAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await VideosVideoFileIdPlaylistGetWithHttpInfoAsync(videoFileId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1324,7 +1330,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosVideoFileIdPlaylistGetWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> VideosVideoFileIdPlaylistGetWithHttpInfoAsync(int videoFileId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();

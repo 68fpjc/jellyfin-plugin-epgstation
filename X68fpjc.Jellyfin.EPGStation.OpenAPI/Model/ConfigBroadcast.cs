@@ -43,7 +43,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="bS">bS (required).</param>
         /// <param name="cS">cS (required).</param>
         /// <param name="sKY">sKY (required).</param>
-        public ConfigBroadcast(bool gR = default(bool), bool bS = default(bool), bool cS = default(bool), bool sKY = default(bool))
+        public ConfigBroadcast(bool gR = default, bool bS = default, bool cS = default, bool sKY = default)
         {
             this.GR = gR;
             this.BS = bS;
@@ -105,7 +105,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

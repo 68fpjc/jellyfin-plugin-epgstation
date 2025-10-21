@@ -52,7 +52,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="subGenre2">サブジャンル.</param>
         /// <param name="genre3">ジャンル.</param>
         /// <param name="subGenre3">サブジャンル.</param>
-        public CreateNewRecordedOption(int ruleId = default(int), long channelId = default(long), long startAt = default(long), long endAt = default(long), string name = default(string), string description = default(string), string extended = default(string), int genre1 = default(int), int subGenre1 = default(int), int genre2 = default(int), int subGenre2 = default(int), int genre3 = default(int), int subGenre3 = default(int))
+        public CreateNewRecordedOption(int ruleId = default, long channelId = default, long startAt = default, long endAt = default, string name = default, string description = default, string extended = default, int genre1 = default, int subGenre1 = default, int genre2 = default, int subGenre2 = default, int genre3 = default, int subGenre3 = default)
         {
             this.ChannelId = channelId;
             this.StartAt = startAt;
@@ -204,12 +204,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ChannelId (long) maximum
             if (this.ChannelId > (long)6553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ChannelId, must be a value less than or equal to 6553565535.", new [] { "ChannelId" });
+                yield return new ValidationResult("Invalid value for ChannelId, must be a value less than or equal to 6553565535.", new [] { "ChannelId" });
             }
 
             yield break;

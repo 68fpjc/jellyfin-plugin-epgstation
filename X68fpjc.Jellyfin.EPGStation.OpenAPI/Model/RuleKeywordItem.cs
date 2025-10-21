@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="id">ルール id (required).</param>
         /// <param name="keyword">keyword (required).</param>
-        public RuleKeywordItem(int id = default(int), string keyword = default(string))
+        public RuleKeywordItem(int id = default, string keyword = default)
         {
             this.Id = id;
             // to ensure "keyword" is required (not null)
@@ -93,7 +93,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -42,7 +42,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="code">HTTPステータスコード (required).</param>
         /// <param name="message">エラーメッセージ (required).</param>
         /// <param name="errors">Error.</param>
-        public Error(int code = default(int), string message = default(string), string errors = default(string))
+        public Error(int code = default, string message = default, string errors = default)
         {
             this.Code = code;
             // to ensure "message" is required (not null)
@@ -104,7 +104,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

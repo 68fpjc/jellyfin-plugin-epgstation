@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="channels">channels (required).</param>
         /// <param name="genres">genres (required).</param>
-        public RecordedSearchOptions(List<RecordedChannelListItem> channels = default(List<RecordedChannelListItem>), List<RecordedGenreListItem> genres = default(List<RecordedGenreListItem>))
+        public RecordedSearchOptions(List<RecordedChannelListItem> channels = default, List<RecordedGenreListItem> genres = default)
         {
             // to ensure "channels" is required (not null)
             if (channels == null)
@@ -97,7 +97,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

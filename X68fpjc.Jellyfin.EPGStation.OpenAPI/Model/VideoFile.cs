@@ -50,7 +50,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="filename">ビデオファイル名.</param>
         /// <param name="type">type (required).</param>
         /// <param name="size">ファイルサイズ (required).</param>
-        public VideoFile(int id = default(int), string name = default(string), string filename = default(string), VideoFileType type = default(VideoFileType), long size = default(long))
+        public VideoFile(int id = default, string name = default, string filename = default, VideoFileType type = default, long size = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -123,7 +123,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

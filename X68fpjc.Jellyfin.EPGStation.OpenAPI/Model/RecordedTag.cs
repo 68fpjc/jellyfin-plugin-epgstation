@@ -42,7 +42,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="id">録画 tag id (required).</param>
         /// <param name="name">タグ名 (required).</param>
         /// <param name="color">色 (required).</param>
-        public RecordedTag(int id = default(int), string name = default(string), string color = default(string))
+        public RecordedTag(int id = default, string name = default, string color = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -109,7 +109,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

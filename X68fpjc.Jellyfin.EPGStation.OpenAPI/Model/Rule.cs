@@ -26,7 +26,7 @@ using OpenAPIDateConverter = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.OpenAPID
 namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
 {
     /// <summary>
-    /// ルール
+    /// Rule
     /// </summary>
     [DataContract(Name = "Rule")]
     public partial class Rule : IValidatableObject
@@ -39,16 +39,15 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Rule" /> class.
         /// </summary>
-        /// <param name="id">ルール id (required).</param>
-        /// <param name="reservesCnt">予約件数.</param>
         /// <param name="isTimeSpecification">時刻指定予約か (required).</param>
         /// <param name="searchOption">searchOption (required).</param>
         /// <param name="reserveOption">reserveOption (required).</param>
         /// <param name="saveOption">saveOption.</param>
         /// <param name="encodeOption">encodeOption.</param>
-        public Rule(int id = default(int), int reservesCnt = default(int), bool isTimeSpecification = default(bool), RuleSearchOption searchOption = default(RuleSearchOption), RuleReserveOption reserveOption = default(RuleReserveOption), ReserveSaveOption saveOption = default(ReserveSaveOption), ReserveEncodedOption encodeOption = default(ReserveEncodedOption))
+        /// <param name="id">ルール id (required).</param>
+        /// <param name="reservesCnt">予約件数.</param>
+        public Rule(bool isTimeSpecification = default, RuleSearchOption searchOption = default, RuleReserveOption reserveOption = default, ReserveSaveOption saveOption = default, ReserveEncodedOption encodeOption = default, int id = default, int reservesCnt = default)
         {
-            this.Id = id;
             this.IsTimeSpecification = isTimeSpecification;
             // to ensure "searchOption" is required (not null)
             if (searchOption == null)
@@ -62,24 +61,11 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
                 throw new ArgumentNullException("reserveOption is a required property for Rule and cannot be null");
             }
             this.ReserveOption = reserveOption;
-            this.ReservesCnt = reservesCnt;
+            this.Id = id;
             this.SaveOption = saveOption;
             this.EncodeOption = encodeOption;
+            this.ReservesCnt = reservesCnt;
         }
-
-        /// <summary>
-        /// ルール id
-        /// </summary>
-        /// <value>ルール id</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public int Id { get; set; }
-
-        /// <summary>
-        /// 予約件数
-        /// </summary>
-        /// <value>予約件数</value>
-        [DataMember(Name = "reservesCnt", EmitDefaultValue = false)]
-        public int ReservesCnt { get; set; }
 
         /// <summary>
         /// 時刻指定予約か
@@ -113,6 +99,20 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         public ReserveEncodedOption EncodeOption { get; set; }
 
         /// <summary>
+        /// ルール id
+        /// </summary>
+        /// <value>ルール id</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// 予約件数
+        /// </summary>
+        /// <value>予約件数</value>
+        [DataMember(Name = "reservesCnt", EmitDefaultValue = false)]
+        public int ReservesCnt { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -120,13 +120,13 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Rule {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  ReservesCnt: ").Append(ReservesCnt).Append("\n");
             sb.Append("  IsTimeSpecification: ").Append(IsTimeSpecification).Append("\n");
             sb.Append("  SearchOption: ").Append(SearchOption).Append("\n");
             sb.Append("  ReserveOption: ").Append(ReserveOption).Append("\n");
             sb.Append("  SaveOption: ").Append(SaveOption).Append("\n");
             sb.Append("  EncodeOption: ").Append(EncodeOption).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  ReservesCnt: ").Append(ReservesCnt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,7 +145,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

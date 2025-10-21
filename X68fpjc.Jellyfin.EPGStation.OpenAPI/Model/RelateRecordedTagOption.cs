@@ -40,7 +40,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// Initializes a new instance of the <see cref="RelateRecordedTagOption" /> class.
         /// </summary>
         /// <param name="recordedId">録画済み番組 id (required).</param>
-        public RelateRecordedTagOption(int recordedId = default(int))
+        public RelateRecordedTagOption(int recordedId = default)
         {
             this.RecordedId = recordedId;
         }
@@ -79,7 +79,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

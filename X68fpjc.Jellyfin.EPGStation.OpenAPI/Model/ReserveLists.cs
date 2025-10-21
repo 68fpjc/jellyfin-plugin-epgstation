@@ -43,7 +43,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="conflicts">conflicts (required).</param>
         /// <param name="skips">skips (required).</param>
         /// <param name="overlaps">overlaps (required).</param>
-        public ReserveLists(ReserveListItem normal = default(ReserveListItem), ReserveListItem conflicts = default(ReserveListItem), ReserveListItem skips = default(ReserveListItem), ReserveListItem overlaps = default(ReserveListItem))
+        public ReserveLists(ReserveListItem normal = default, ReserveListItem conflicts = default, ReserveListItem skips = default, ReserveListItem overlaps = default)
         {
             // to ensure "normal" is required (not null)
             if (normal == null)
@@ -125,7 +125,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -46,7 +46,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="isSaveSameDirectory">ソースビデオファイルと同じ場所に保存するか.</param>
         /// <param name="mode">エンコードプリセット名 config encode の name (required).</param>
         /// <param name="removeOriginal">元ファイルを削除するか (required).</param>
-        public AddManualEncodeProgramOption(int recordedId = default(int), int sourceVideoFileId = default(int), string parentDir = default(string), string directory = default(string), bool isSaveSameDirectory = default(bool), string mode = default(string), bool removeOriginal = default(bool))
+        public AddManualEncodeProgramOption(int recordedId = default, int sourceVideoFileId = default, string parentDir = default, string directory = default, bool isSaveSameDirectory = default, string mode = default, bool removeOriginal = default)
         {
             this.RecordedId = recordedId;
             this.SourceVideoFileId = sourceVideoFileId;
@@ -144,7 +144,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

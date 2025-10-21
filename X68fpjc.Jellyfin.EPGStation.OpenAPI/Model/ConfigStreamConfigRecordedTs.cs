@@ -37,7 +37,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="webm">録画済み TS ファイルの WebM ストリーミング設定.</param>
         /// <param name="mp4">録画済み TS ファイルの MP4 ストリーミング設定.</param>
         /// <param name="hls">録画済み TS ファイルの HLS ストリーミング設定.</param>
-        public ConfigStreamConfigRecordedTs(List<string> webm = default(List<string>), List<string> mp4 = default(List<string>), List<string> hls = default(List<string>))
+        public ConfigStreamConfigRecordedTs(List<string> webm = default, List<string> mp4 = default, List<string> hls = default)
         {
             this.Webm = webm;
             this.Mp4 = mp4;
@@ -94,7 +94,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -98,7 +98,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="videoComponentType">videoComponentType.</param>
         /// <param name="audioSamplingRate">audioSamplingRate.</param>
         /// <param name="audioComponentType">audioComponentType.</param>
-        public ReserveItem(int id = default(int), int ruleId = default(int), bool isSkip = default(bool), bool isConflict = default(bool), bool isOverlap = default(bool), bool allowEndLack = default(bool), bool isTimeSpecified = default(bool), List<int> tags = default(List<int>), string parentDirectoryName = default(string), string directory = default(string), string recordedFormat = default(string), int encodeMode1 = default(int), string encodeParentDirectoryName1 = default(string), string encodeDirectory1 = default(string), int encodeMode2 = default(int), string encodeParentDirectoryName2 = default(string), string encodeDirectory2 = default(string), int encodeMode3 = default(int), string encodeParentDirectoryName3 = default(string), int encodeDirectory3 = default(int), bool isDeleteOriginalAfterEncode = default(bool), long programId = default(long), long channelId = default(long), long startAt = default(long), long endAt = default(long), string name = default(string), string description = default(string), string extended = default(string), Object rawExtended = default(Object), int genre1 = default(int), int subGenre1 = default(int), int genre2 = default(int), int subGenre2 = default(int), int genre3 = default(int), int subGenre3 = default(int), ProgramVideoType? videoType = default(ProgramVideoType?), ProgramVideoResolution? videoResolution = default(ProgramVideoResolution?), int videoStreamContent = default(int), int videoComponentType = default(int), ProgramAudioSamplingRate? audioSamplingRate = default(ProgramAudioSamplingRate?), int audioComponentType = default(int))
+        public ReserveItem(int id = default, int ruleId = default, bool isSkip = default, bool isConflict = default, bool isOverlap = default, bool allowEndLack = default, bool isTimeSpecified = default, List<int> tags = default, string parentDirectoryName = default, string directory = default, string recordedFormat = default, int encodeMode1 = default, string encodeParentDirectoryName1 = default, string encodeDirectory1 = default, int encodeMode2 = default, string encodeParentDirectoryName2 = default, string encodeDirectory2 = default, int encodeMode3 = default, string encodeParentDirectoryName3 = default, int encodeDirectory3 = default, bool isDeleteOriginalAfterEncode = default, long programId = default, long channelId = default, long startAt = default, long endAt = default, string name = default, string description = default, string extended = default, Object rawExtended = default, int genre1 = default, int subGenre1 = default, int genre2 = default, int subGenre2 = default, int genre3 = default, int subGenre3 = default, ProgramVideoType? videoType = default, ProgramVideoResolution? videoResolution = default, int videoStreamContent = default, int videoComponentType = default, ProgramAudioSamplingRate? audioSamplingRate = default, int audioComponentType = default)
         {
             this.Id = id;
             this.IsSkip = isSkip;
@@ -455,18 +455,18 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ProgramId (long) maximum
             if (this.ProgramId > (long)655356553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ProgramId, must be a value less than or equal to 655356553565535.", new [] { "ProgramId" });
+                yield return new ValidationResult("Invalid value for ProgramId, must be a value less than or equal to 655356553565535.", new [] { "ProgramId" });
             }
 
             // ChannelId (long) maximum
             if (this.ChannelId > (long)6553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ChannelId, must be a value less than or equal to 6553565535.", new [] { "ChannelId" });
+                yield return new ValidationResult("Invalid value for ChannelId, must be a value less than or equal to 6553565535.", new [] { "ChannelId" });
             }
 
             yield break;

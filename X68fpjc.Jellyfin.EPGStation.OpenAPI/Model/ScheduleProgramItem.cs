@@ -78,7 +78,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="videoComponentType">videoComponentType.</param>
         /// <param name="audioSamplingRate">audioSamplingRate.</param>
         /// <param name="audioComponentType">audioComponentType.</param>
-        public ScheduleProgramItem(long id = default(long), long channelId = default(long), long startAt = default(long), long endAt = default(long), bool isFree = default(bool), string name = default(string), string description = default(string), string extended = default(string), Object rawExtended = default(Object), int genre1 = default(int), int subGenre1 = default(int), int genre2 = default(int), int subGenre2 = default(int), int genre3 = default(int), int subGenre3 = default(int), ProgramVideoType? videoType = default(ProgramVideoType?), ProgramVideoResolution? videoResolution = default(ProgramVideoResolution?), int videoStreamContent = default(int), int videoComponentType = default(int), ProgramAudioSamplingRate? audioSamplingRate = default(ProgramAudioSamplingRate?), int audioComponentType = default(int))
+        public ScheduleProgramItem(long id = default, long channelId = default, long startAt = default, long endAt = default, bool isFree = default, string name = default, string description = default, string extended = default, Object rawExtended = default, int genre1 = default, int subGenre1 = default, int genre2 = default, int subGenre2 = default, int genre3 = default, int subGenre3 = default, ProgramVideoType? videoType = default, ProgramVideoResolution? videoResolution = default, int videoStreamContent = default, int videoComponentType = default, ProgramAudioSamplingRate? audioSamplingRate = default, int audioComponentType = default)
         {
             this.Id = id;
             this.ChannelId = channelId;
@@ -278,18 +278,18 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Id (long) maximum
             if (this.Id > (long)655356553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, must be a value less than or equal to 655356553565535.", new [] { "Id" });
+                yield return new ValidationResult("Invalid value for Id, must be a value less than or equal to 655356553565535.", new [] { "Id" });
             }
 
             // ChannelId (long) maximum
             if (this.ChannelId > (long)6553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ChannelId, must be a value less than or equal to 6553565535.", new [] { "ChannelId" });
+                yield return new ValidationResult("Invalid value for ChannelId, must be a value less than or equal to 6553565535.", new [] { "ChannelId" });
             }
 
             yield break;

@@ -37,7 +37,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="maxsize">ファイル最大サイズ (kByte) (optional, default to 512)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DropLogsDropLogFileIdGet(int dropLogFileId, int? maxsize = default(int?), int operationIndex = 0);
+        void DropLogsDropLogFileIdGet(int dropLogFileId, int? maxsize = default, int operationIndex = 0);
 
         /// <summary>
         /// ドロップログ
@@ -50,7 +50,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="maxsize">ファイル最大サイズ (kByte) (optional, default to 512)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DropLogsDropLogFileIdGetWithHttpInfo(int dropLogFileId, int? maxsize = default(int?), int operationIndex = 0);
+        ApiResponse<Object> DropLogsDropLogFileIdGetWithHttpInfo(int dropLogFileId, int? maxsize = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -72,7 +72,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DropLogsDropLogFileIdGetAsync(int dropLogFileId, int? maxsize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DropLogsDropLogFileIdGetAsync(int dropLogFileId, int? maxsize = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// ドロップログ
@@ -86,7 +86,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DropLogsDropLogFileIdGetWithHttpInfoAsync(int dropLogFileId, int? maxsize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DropLogsDropLogFileIdGetWithHttpInfoAsync(int dropLogFileId, int? maxsize = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -215,7 +215,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="maxsize">ファイル最大サイズ (kByte) (optional, default to 512)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DropLogsDropLogFileIdGet(int dropLogFileId, int? maxsize = default(int?), int operationIndex = 0)
+        public void DropLogsDropLogFileIdGet(int dropLogFileId, int? maxsize = default, int operationIndex = 0)
         {
             DropLogsDropLogFileIdGetWithHttpInfo(dropLogFileId, maxsize);
         }
@@ -228,7 +228,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="maxsize">ファイル最大サイズ (kByte) (optional, default to 512)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> DropLogsDropLogFileIdGetWithHttpInfo(int dropLogFileId, int? maxsize = default(int?), int operationIndex = 0)
+        public X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object> DropLogsDropLogFileIdGetWithHttpInfo(int dropLogFileId, int? maxsize = default, int operationIndex = 0)
         {
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();
 
@@ -242,6 +242,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
             };
 
             var localVarContentType = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -286,7 +287,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DropLogsDropLogFileIdGetAsync(int dropLogFileId, int? maxsize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DropLogsDropLogFileIdGetAsync(int dropLogFileId, int? maxsize = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await DropLogsDropLogFileIdGetWithHttpInfoAsync(dropLogFileId, maxsize, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -300,7 +301,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> DropLogsDropLogFileIdGetWithHttpInfoAsync(int dropLogFileId, int? maxsize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.ApiResponse<Object>> DropLogsDropLogFileIdGetWithHttpInfoAsync(int dropLogFileId, int? maxsize = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions localVarRequestOptions = new X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.RequestOptions();

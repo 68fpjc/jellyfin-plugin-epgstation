@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="varRecords">varRecords (required).</param>
         /// <param name="total">録画総件数 (required).</param>
-        public Records(List<RecordedItem> varRecords = default(List<RecordedItem>), int total = default(int))
+        public Records(List<RecordedItem> varRecords = default, int total = default)
         {
             // to ensure "varRecords" is required (not null)
             if (varRecords == null)
@@ -93,7 +93,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -42,7 +42,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="option">option (required).</param>
         /// <param name="isHalfWidth">半角文字で取得するか (required).</param>
         /// <param name="limit">検索結果取得最大件数.</param>
-        public ScheduleSearchOption(RuleSearchOption option = default(RuleSearchOption), bool isHalfWidth = default(bool), decimal limit = default(decimal))
+        public ScheduleSearchOption(RuleSearchOption option = default, bool isHalfWidth = default, decimal limit = default)
         {
             // to ensure "option" is required (not null)
             if (option == null)
@@ -103,7 +103,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

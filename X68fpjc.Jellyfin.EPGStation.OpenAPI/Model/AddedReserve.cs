@@ -40,7 +40,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// Initializes a new instance of the <see cref="AddedReserve" /> class.
         /// </summary>
         /// <param name="reserveId">予約 id (required).</param>
-        public AddedReserve(int reserveId = default(int))
+        public AddedReserve(int reserveId = default)
         {
             this.ReserveId = reserveId;
         }
@@ -79,7 +79,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

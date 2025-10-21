@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="runningItems">runningItems (required).</param>
         /// <param name="waitItems">waitItems (required).</param>
-        public EncodeInfo(List<EncodeProgramItem> runningItems = default(List<EncodeProgramItem>), List<EncodeProgramItem> waitItems = default(List<EncodeProgramItem>))
+        public EncodeInfo(List<EncodeProgramItem> runningItems = default, List<EncodeProgramItem> waitItems = default)
         {
             // to ensure "runningItems" is required (not null)
             if (runningItems == null)
@@ -97,7 +97,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

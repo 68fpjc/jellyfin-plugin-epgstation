@@ -44,7 +44,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="avoidDuplicate">録画済みの重複番組を排除するか (required).</param>
         /// <param name="periodToAvoidDuplicate">重複を避ける期間.</param>
         /// <param name="tags">tags.</param>
-        public RuleReserveOption(bool enable = default(bool), bool allowEndLack = default(bool), bool avoidDuplicate = default(bool), int periodToAvoidDuplicate = default(int), List<int> tags = default(List<int>))
+        public RuleReserveOption(bool enable = default, bool allowEndLack = default, bool avoidDuplicate = default, int periodToAvoidDuplicate = default, List<int> tags = default)
         {
             this.Enable = enable;
             this.AllowEndLack = allowEndLack;
@@ -118,7 +118,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -57,7 +57,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="durationMin">番組最小時間 (分).</param>
         /// <param name="durationMax">番組最大時間 (分).</param>
         /// <param name="searchPeriods">検索対象期間.</param>
-        public RuleSearchOption(string keyword = default(string), string ignoreKeyword = default(string), bool keyCS = default(bool), bool keyRegExp = default(bool), bool name = default(bool), bool description = default(bool), bool extended = default(bool), bool ignoreKeyCS = default(bool), bool ignoreKeyRegExp = default(bool), bool ignoreName = default(bool), bool ignoreDescription = default(bool), bool ignoreExtended = default(bool), bool gR = default(bool), bool bS = default(bool), bool cS = default(bool), bool sKY = default(bool), List<long> channelIds = default(List<long>), List<Genre> genres = default(List<Genre>), List<SearchTime> times = default(List<SearchTime>), bool isFree = default(bool), int durationMin = default(int), int durationMax = default(int), List<SearchPeriod> searchPeriods = default(List<SearchPeriod>))
+        public RuleSearchOption(string keyword = default, string ignoreKeyword = default, bool keyCS = default, bool keyRegExp = default, bool name = default, bool description = default, bool extended = default, bool ignoreKeyCS = default, bool ignoreKeyRegExp = default, bool ignoreName = default, bool ignoreDescription = default, bool ignoreExtended = default, bool gR = default, bool bS = default, bool cS = default, bool sKY = default, List<long> channelIds = default, List<Genre> genres = default, List<SearchTime> times = default, bool isFree = default, int durationMin = default, int durationMax = default, List<SearchPeriod> searchPeriods = default)
         {
             this.Keyword = keyword;
             this.IgnoreKeyword = ignoreKeyword;
@@ -294,7 +294,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

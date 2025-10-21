@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="varRules">varRules (required).</param>
         /// <param name="total">ルール総件数 (required).</param>
-        public Rules(List<Rule> varRules = default(List<Rule>), int total = default(int))
+        public Rules(List<Rule> varRules = default, int total = default)
         {
             // to ensure "varRules" is required (not null)
             if (varRules == null)
@@ -93,7 +93,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -43,7 +43,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="errorCnt">エラーカウント (required).</param>
         /// <param name="dropCnt">ドロップカウント (required).</param>
         /// <param name="scramblingCnt">スクランブルカウント (required).</param>
-        public DropLogFile(int id = default(int), int errorCnt = default(int), int dropCnt = default(int), int scramblingCnt = default(int))
+        public DropLogFile(int id = default, int errorCnt = default, int dropCnt = default, int scramblingCnt = default)
         {
             this.Id = id;
             this.ErrorCnt = errorCnt;
@@ -109,7 +109,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

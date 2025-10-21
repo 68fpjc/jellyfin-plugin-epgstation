@@ -43,7 +43,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="conflicts">競合予約数 (required).</param>
         /// <param name="skips">競合予約数 (required).</param>
         /// <param name="overlaps">重複予約数 (required).</param>
-        public ReserveCnts(int normal = default(int), int conflicts = default(int), int skips = default(int), int overlaps = default(int))
+        public ReserveCnts(int normal = default, int conflicts = default, int skips = default, int overlaps = default)
         {
             this.Normal = normal;
             this.Conflicts = conflicts;
@@ -109,7 +109,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

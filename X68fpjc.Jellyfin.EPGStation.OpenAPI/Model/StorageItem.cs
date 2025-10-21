@@ -43,7 +43,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="available">空き容量 (byte) (required).</param>
         /// <param name="used">使用量 (byte) (required).</param>
         /// <param name="total">総容量 (byte) (required).</param>
-        public StorageItem(string name = default(string), int available = default(int), int used = default(int), int total = default(int))
+        public StorageItem(string name = default, int available = default, int used = default, int total = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -114,7 +114,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

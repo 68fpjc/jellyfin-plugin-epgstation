@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="cnt">録画数 (required).</param>
         /// <param name="genre">ジャンル (required).</param>
-        public RecordedGenreListItem(int cnt = default(int), int genre = default(int))
+        public RecordedGenreListItem(int cnt = default, int genre = default)
         {
             this.Cnt = cnt;
             this.Genre = genre;
@@ -89,7 +89,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

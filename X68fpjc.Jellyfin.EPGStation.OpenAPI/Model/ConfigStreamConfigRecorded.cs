@@ -36,7 +36,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="ts">ts.</param>
         /// <param name="encoded">encoded.</param>
-        public ConfigStreamConfigRecorded(ConfigStreamConfigRecordedTs ts = default(ConfigStreamConfigRecordedTs), ConfigStreamConfigRecordedEncoded encoded = default(ConfigStreamConfigRecordedEncoded))
+        public ConfigStreamConfigRecorded(ConfigStreamConfigRecordedTs ts = default, ConfigStreamConfigRecordedEncoded encoded = default)
         {
             this.Ts = ts;
             this.Encoded = encoded;
@@ -82,7 +82,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

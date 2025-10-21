@@ -36,7 +36,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="live">live.</param>
         /// <param name="recorded">recorded.</param>
-        public ConfigStreamConfig(ConfigStreamConfigLive live = default(ConfigStreamConfigLive), ConfigStreamConfigRecorded recorded = default(ConfigStreamConfigRecorded))
+        public ConfigStreamConfig(ConfigStreamConfigLive live = default, ConfigStreamConfigRecorded recorded = default)
         {
             this.Live = live;
             this.Recorded = recorded;
@@ -82,7 +82,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

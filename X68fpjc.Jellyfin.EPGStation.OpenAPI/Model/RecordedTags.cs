@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="tags">tags (required).</param>
         /// <param name="total">予約総件数 (required).</param>
-        public RecordedTags(List<RecordedTag> tags = default(List<RecordedTag>), int total = default(int))
+        public RecordedTags(List<RecordedTag> tags = default, int total = default)
         {
             // to ensure "tags" is required (not null)
             if (tags == null)
@@ -93,7 +93,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="startAt">時刻 (ms) (required).</param>
         /// <param name="endAt">時刻 (ms) (required).</param>
-        public SearchPeriod(long startAt = default(long), long endAt = default(long))
+        public SearchPeriod(long startAt = default, long endAt = default)
         {
             this.StartAt = startAt;
             this.EndAt = endAt;
@@ -89,7 +89,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

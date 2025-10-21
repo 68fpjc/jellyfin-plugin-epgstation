@@ -26,7 +26,7 @@ using OpenAPIDateConverter = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.OpenAPID
 namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
 {
     /// <summary>
-    /// 手動予約オプション
+    /// ManualReserveOption
     /// </summary>
     [DataContract(Name = "ManualReserveOption")]
     public partial class ManualReserveOption : IValidatableObject
@@ -39,35 +39,21 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ManualReserveOption" /> class.
         /// </summary>
-        /// <param name="programId">program id.</param>
-        /// <param name="timeSpecifiedOption">時刻指定オプション.</param>
         /// <param name="allowEndLack">末尾切れを許すか (required).</param>
         /// <param name="tags">tags.</param>
         /// <param name="saveOption">saveOption.</param>
         /// <param name="encodeOption">encodeOption.</param>
-        public ManualReserveOption(long programId = default(long), Object timeSpecifiedOption = default(Object), bool allowEndLack = default(bool), List<int> tags = default(List<int>), ReserveSaveOption saveOption = default(ReserveSaveOption), ReserveEncodedOption encodeOption = default(ReserveEncodedOption))
+        /// <param name="programId">program id.</param>
+        /// <param name="timeSpecifiedOption">timeSpecifiedOption.</param>
+        public ManualReserveOption(bool allowEndLack = default, List<int> tags = default, ReserveSaveOption saveOption = default, ReserveEncodedOption encodeOption = default, long programId = default, ManualReserveOptionAllOfTimeSpecifiedOption timeSpecifiedOption = default)
         {
             this.AllowEndLack = allowEndLack;
-            this.ProgramId = programId;
-            this.TimeSpecifiedOption = timeSpecifiedOption;
             this.Tags = tags;
             this.SaveOption = saveOption;
             this.EncodeOption = encodeOption;
+            this.ProgramId = programId;
+            this.TimeSpecifiedOption = timeSpecifiedOption;
         }
-
-        /// <summary>
-        /// program id
-        /// </summary>
-        /// <value>program id</value>
-        [DataMember(Name = "programId", EmitDefaultValue = false)]
-        public long ProgramId { get; set; }
-
-        /// <summary>
-        /// 時刻指定オプション
-        /// </summary>
-        /// <value>時刻指定オプション</value>
-        [DataMember(Name = "timeSpecifiedOption", EmitDefaultValue = false)]
-        public Object TimeSpecifiedOption { get; set; }
 
         /// <summary>
         /// 末尾切れを許すか
@@ -95,6 +81,19 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         public ReserveEncodedOption EncodeOption { get; set; }
 
         /// <summary>
+        /// program id
+        /// </summary>
+        /// <value>program id</value>
+        [DataMember(Name = "programId", EmitDefaultValue = false)]
+        public long ProgramId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TimeSpecifiedOption
+        /// </summary>
+        [DataMember(Name = "timeSpecifiedOption", EmitDefaultValue = false)]
+        public ManualReserveOptionAllOfTimeSpecifiedOption TimeSpecifiedOption { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,12 +101,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ManualReserveOption {\n");
-            sb.Append("  ProgramId: ").Append(ProgramId).Append("\n");
-            sb.Append("  TimeSpecifiedOption: ").Append(TimeSpecifiedOption).Append("\n");
             sb.Append("  AllowEndLack: ").Append(AllowEndLack).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  SaveOption: ").Append(SaveOption).Append("\n");
             sb.Append("  EncodeOption: ").Append(EncodeOption).Append("\n");
+            sb.Append("  ProgramId: ").Append(ProgramId).Append("\n");
+            sb.Append("  TimeSpecifiedOption: ").Append(TimeSpecifiedOption).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,12 +125,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ProgramId (long) maximum
             if (this.ProgramId > (long)655356553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ProgramId, must be a value less than or equal to 655356553565535.", new [] { "ProgramId" });
+                yield return new ValidationResult("Invalid value for ProgramId, must be a value less than or equal to 655356553565535.", new [] { "ProgramId" });
             }
 
             yield break;

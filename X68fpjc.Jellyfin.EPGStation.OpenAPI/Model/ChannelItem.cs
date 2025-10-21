@@ -53,7 +53,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="hasLogoData">ロゴデータを持っているか (required).</param>
         /// <param name="channelType">channelType (required).</param>
         /// <param name="channel">channel (required).</param>
-        public ChannelItem(long id = default(long), long serviceId = default(long), long networkId = default(long), string name = default(string), string halfWidthName = default(string), bool hasLogoData = default(bool), ChannelType channelType = default(ChannelType), string channel = default(string))
+        public ChannelItem(long id = default, long serviceId = default, long networkId = default, string name = default, string halfWidthName = default, bool hasLogoData = default, ChannelType channelType = default, string channel = default)
         {
             this.Id = id;
             this.ServiceId = serviceId;
@@ -162,24 +162,24 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Id (long) maximum
             if (this.Id > (long)6553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, must be a value less than or equal to 6553565535.", new [] { "Id" });
+                yield return new ValidationResult("Invalid value for Id, must be a value less than or equal to 6553565535.", new [] { "Id" });
             }
 
             // ServiceId (long) maximum
             if (this.ServiceId > (long)6553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ServiceId, must be a value less than or equal to 6553565535.", new [] { "ServiceId" });
+                yield return new ValidationResult("Invalid value for ServiceId, must be a value less than or equal to 6553565535.", new [] { "ServiceId" });
             }
 
             // NetworkId (long) maximum
             if (this.NetworkId > (long)6553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NetworkId, must be a value less than or equal to 6553565535.", new [] { "NetworkId" });
+                yield return new ValidationResult("Invalid value for NetworkId, must be a value less than or equal to 6553565535.", new [] { "NetworkId" });
             }
 
             yield break;

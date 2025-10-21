@@ -57,7 +57,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="endAt">時刻 (ms) (required).</param>
         /// <param name="description">ストリーミング番組詳細.</param>
         /// <param name="extended">ストリーミング番組拡張.</param>
-        public StreamInfoItem(int streamId = default(int), StreamType type = default(StreamType), decimal mode = default(decimal), bool isEnable = default(bool), long channelId = default(long), int videoFileId = default(int), int recordedId = default(int), string name = default(string), long startAt = default(long), long endAt = default(long), string description = default(string), string extended = default(string))
+        public StreamInfoItem(int streamId = default, StreamType type = default, decimal mode = default, bool isEnable = default, long channelId = default, int videoFileId = default, int recordedId = default, string name = default, long startAt = default, long endAt = default, string description = default, string extended = default)
         {
             this.StreamId = streamId;
             this.Type = type;
@@ -193,12 +193,12 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ChannelId (long) maximum
             if (this.ChannelId > (long)6553565535)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ChannelId, must be a value less than or equal to 6553565535.", new [] { "ChannelId" });
+                yield return new ValidationResult("Invalid value for ChannelId, must be a value less than or equal to 6553565535.", new [] { "ChannelId" });
             }
 
             yield break;

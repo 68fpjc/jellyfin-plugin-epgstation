@@ -26,33 +26,42 @@ using OpenAPIDateConverter = X68fpjc.Jellyfin.EPGStation.OpenAPI.Client.OpenAPID
 namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
 {
     /// <summary>
-    /// recorded が持つ channelId のリスト
+    /// 時刻指定オプション
     /// </summary>
-    [DataContract(Name = "RecordedChannelListItem")]
-    public partial class RecordedChannelListItem : IValidatableObject
+    [DataContract(Name = "ManualReserveOption_allOf_timeSpecifiedOption")]
+    public partial class ManualReserveOptionAllOfTimeSpecifiedOption : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RecordedChannelListItem" /> class.
+        /// Initializes a new instance of the <see cref="ManualReserveOptionAllOfTimeSpecifiedOption" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected RecordedChannelListItem() { }
+        protected ManualReserveOptionAllOfTimeSpecifiedOption() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="RecordedChannelListItem" /> class.
+        /// Initializes a new instance of the <see cref="ManualReserveOptionAllOfTimeSpecifiedOption" /> class.
         /// </summary>
-        /// <param name="cnt">録画数 (required).</param>
+        /// <param name="name">番組名 (required).</param>
         /// <param name="channelId">放送局 id (required).</param>
-        public RecordedChannelListItem(int cnt = default, long channelId = default)
+        /// <param name="startAt">時刻 (ms) (required).</param>
+        /// <param name="endAt">時刻 (ms) (required).</param>
+        public ManualReserveOptionAllOfTimeSpecifiedOption(string name = default, long channelId = default, long startAt = default, long endAt = default)
         {
-            this.Cnt = cnt;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for ManualReserveOptionAllOfTimeSpecifiedOption and cannot be null");
+            }
+            this.Name = name;
             this.ChannelId = channelId;
+            this.StartAt = startAt;
+            this.EndAt = endAt;
         }
 
         /// <summary>
-        /// 録画数
+        /// 番組名
         /// </summary>
-        /// <value>録画数</value>
-        [DataMember(Name = "cnt", IsRequired = true, EmitDefaultValue = true)]
-        public int Cnt { get; set; }
+        /// <value>番組名</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
         /// 放送局 id
@@ -62,15 +71,31 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         public long ChannelId { get; set; }
 
         /// <summary>
+        /// 時刻 (ms)
+        /// </summary>
+        /// <value>時刻 (ms)</value>
+        [DataMember(Name = "startAt", IsRequired = true, EmitDefaultValue = true)]
+        public long StartAt { get; set; }
+
+        /// <summary>
+        /// 時刻 (ms)
+        /// </summary>
+        /// <value>時刻 (ms)</value>
+        [DataMember(Name = "endAt", IsRequired = true, EmitDefaultValue = true)]
+        public long EndAt { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RecordedChannelListItem {\n");
-            sb.Append("  Cnt: ").Append(Cnt).Append("\n");
+            sb.Append("class ManualReserveOptionAllOfTimeSpecifiedOption {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ChannelId: ").Append(ChannelId).Append("\n");
+            sb.Append("  StartAt: ").Append(StartAt).Append("\n");
+            sb.Append("  EndAt: ").Append(EndAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

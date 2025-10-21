@@ -41,7 +41,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="channel">channel (required).</param>
         /// <param name="programs">programs (required).</param>
-        public Schedule(ScheduleChannleItem channel = default(ScheduleChannleItem), List<ScheduleProgramItem> programs = default(List<ScheduleProgramItem>))
+        public Schedule(ScheduleChannleItem channel = default, List<ScheduleProgramItem> programs = default)
         {
             // to ensure "channel" is required (not null)
             if (channel == null)
@@ -97,7 +97,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

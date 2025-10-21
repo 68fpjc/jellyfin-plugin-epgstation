@@ -38,7 +38,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="android">android.</param>
         /// <param name="mac">mac.</param>
         /// <param name="win">win.</param>
-        public URLSchemeInfo(string ios = default(string), string android = default(string), string mac = default(string), string win = default(string))
+        public URLSchemeInfo(string ios = default, string android = default, string mac = default, string win = default)
         {
             this.Ios = ios;
             this.Android = android;
@@ -100,7 +100,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

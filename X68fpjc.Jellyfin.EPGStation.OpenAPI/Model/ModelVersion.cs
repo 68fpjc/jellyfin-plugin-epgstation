@@ -40,7 +40,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// Initializes a new instance of the <see cref="ModelVersion" /> class.
         /// </summary>
         /// <param name="varVersion">varVersion (required).</param>
-        public ModelVersion(string varVersion = default(string))
+        public ModelVersion(string varVersion = default)
         {
             // to ensure "varVersion" is required (not null)
             if (varVersion == null)
@@ -83,7 +83,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

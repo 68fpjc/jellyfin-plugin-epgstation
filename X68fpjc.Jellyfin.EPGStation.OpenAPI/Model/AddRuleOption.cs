@@ -44,7 +44,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// <param name="reserveOption">reserveOption (required).</param>
         /// <param name="saveOption">saveOption.</param>
         /// <param name="encodeOption">encodeOption.</param>
-        public AddRuleOption(bool isTimeSpecification = default(bool), RuleSearchOption searchOption = default(RuleSearchOption), RuleReserveOption reserveOption = default(RuleReserveOption), ReserveSaveOption saveOption = default(ReserveSaveOption), ReserveEncodedOption encodeOption = default(ReserveEncodedOption))
+        public AddRuleOption(bool isTimeSpecification = default, RuleSearchOption searchOption = default, RuleReserveOption reserveOption = default, ReserveSaveOption saveOption = default, ReserveEncodedOption encodeOption = default)
         {
             this.IsTimeSpecification = isTimeSpecification;
             // to ensure "searchOption" is required (not null)
@@ -125,7 +125,7 @@ namespace X68fpjc.Jellyfin.EPGStation.OpenAPI.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
